@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Natural experiments</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Juan Tellez" />
+    <meta name="date" content="2022-11-15" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="css/my-theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/ath-inferno-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+
+
+
+class: left, middle
+background-image: url("images/dubois-spiral-2.png")
+background-position: right
+background-size: contain
+
+# Natural experiments
+
+### *The Scientific Study of Politics*
+
+### Professor Juan Tellez 
+
+#### University of California, Davis
+
+---
+
+
+class: center
+.large[
+# Today's agenda
+]
+
+--
+.box-1.large.sp-after[The causal revolution]
+
+--
+.box-2.large.sp-after[Natural experiments]
+
+--
+.box-3.large.sp-after[Regression discontinuities]
+
+---
+
+
+class: center, middle, inverse
+# A brief, unfair history of social science research
+---
+
+
+# Garbage can models
+
+
+.pull-left[
+* for a long time there was a tendency to estimate **"garbage can" models**
+* throw every variable under the sun into regression model, hope for the best
+* in some cases, no pre-meditated *treatment* variable
+]
+
+.pull-right[
+&lt;img src="images/garbage-models.png" width="100%" /&gt;
+]
+
+---
+
+
+# An empty-garbage-can model
+  
+  
+.pull-left[
+Some studies don't even control for confounds
+
+
+From the dog ownership improves health article in the homework: 
+      
+["*A possible limitation was that the analyses were not adjusted for confounders.*"](https://www.ahajournals.org/doi/10.1161/CIRCOUTCOMES.119.005554)
+
+]
+
+.pull-right[
+&lt;img src="images/morty.jpeg" width="80%" /&gt;
+
+]
+
+---
+
+
+# Causal inference
+
+
+.pull-left[
+* More recently: a greater emphasis on worrying about **causality**
+* Recognition that confounds are lurking everywhere, and we should worry about them
+* Recognition that **pipes** and **colliders** means we *shouldn't* just throw every variable into a model
+]
+
+.pull-right[
+&lt;img src="images/causality.png" width="100%" /&gt;
+]
+
+
+---
+
+# Improvements but obvious limits
+
+--
+
+.large[**IF**] we can correctly specify our model (i.e., control for all backdoors, leave front-doors open) we will identify the effect of X on Y
+
+--
+
+Easier said than done! Often there is some confound (like W) that we **know exists but can't measure**, or worse, **don't know exists at all**
+
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-4-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+# The causal revolution
+
+
+Hard to correctly specify the DAG and measure all the variables; what can we do?
+
+--
+
+Ideal - an experiment -- where *treatment is randomly assigned*; where *nothing causes treatment assignment* -- but this is rarely feasible
+
+
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-5-1.png" width="70%" /&gt;
+
+---
+
+# Natural experiments
+
+
+.pull-left[
+Alternative - find moments, situations, or weird, freak occurrences where some group is exposed to some *treatment* .shout[by chance] while another group was not
+
+These weird moments in history are called **natural experiments**
+]
+
+
+.pull-right[
+&lt;img src="images/natural_experiments.jpeg" width="80%" /&gt;
+
+]
+
+
+---
+
+
+# A good (last) year for causality
+
+
+2021 Nobel Prize winners in economics pioneered **quasi-experimental methods** -- using research designs that leverage *natural experiments*
+
+.pull-left[
+&lt;img src="images/card-nobel.jpeg" width="60%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+&lt;img src="images/angrist-nobel.jpeg" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+
+class: center, middle, inverse
+# Regression discontinuity
+---
+
+
+
+# Do gifted programs pay off? 
+
+
+.pull-left[
+* Millions of kids across the US placed in gifted programs
+* Parents/society have to weigh pros and cons; is this worth doing? 
+* For instance: does being in gifted program **increase** your chances of success later in life? 
+]
+
+
+.pull-right[
+&lt;img src="images/gifted-kid2.jpeg" width="80%" /&gt;
+
+]
+
+???
+Explain gifted
+What does it mean to cause here?
+
+---
+  
+
+# The (fake) data
+
+
+Go out and collect data on people who were and were not in gifted:
+
+
+
+|Name            | Age| Grade|gifted |     earnings|
+|:---------------|---:|-----:|:------|------------:|
+|Regie           |  88|  97.8|no     | 49887.34....|
+|Belon           |  28|  87.4|no     | 30797.59....|
+|Lionna          |  82|  87.7|no     | 84581.10....|
+|Makesha         |  47|  87.9|no     | 33048.98....|
+|Mikaia          |  26|  86.3|no     | 64106.17....|
+|Rozanna         |  23|  89.0|no     | 75985.28....|
+|Travionne       |  50|  89.1|no     | 133618.0....|
+|Keileigh        |  51|  90.8|yes    | 106037.2....|
+|Rany            |  52|  82.7|no     | 56347.54....|
+|Kostas          |  86|  87.8|no     | 75820.79....|
+|Niyanah         |  20|  80.1|no     | 82885.88....|
+|Dayanne         |  85|  93.8|no     | 117958.5....|
+|Ninasimone      |  71|  90.1|no     | 92145.77....|
+|Niveyah         |  77|  92.2|no     | 87415.91....|
+|Camoni          |  23|  86.2|no     | 104886.0....|
+|Kadeesha        |  87|  85.9|no     | 36695.80....|
+|Aureana         |  20|  85.3|yes    | 129207.1....|
+|Decklen         |  88|  90.3|no     | 93982.81....|
+|Zigmund         |  36|  85.3|no     | 84855.78....|
+|Blancha         |  40|  88.4|no     | 91180.90....|
+|Jhosselyn       |  89|  88.9|no     | 75516.57....|
+|Narayan         |  41|  90.9|no     | 79545.08....|
+|Karyssa         |  81|  88.8|yes    | 122157.1....|
+|Porshea         |  86|  93.8|no     | 74724.23....|
+|Jodi            |  30|  85.4|no     | 94972.95....|
+|Keriyah         |  87|  92.2|no     | 85760.41....|
+|Makiba          |  87|  95.5|no     | 127746.4....|
+|Llasmin         |  43|  96.8|no     | 44603.46....|
+|Williman        |  68|  88.5|yes    | 89189.25....|
+|Avelina         |  23|  84.8|no     | 69930.82....|
+|Merelin         |  36|  79.1|no     | 81410.23....|
+|Alima           |  32|  94.1|yes    | 126725.7....|
+|Sinforosa       |  38|  82.6|no     | 50016.83....|
+|Chenier         |  86|  89.1|no     | 68480.76....|
+|Cledith         |  36|  84.9|no     | 74255.97....|
+|Kyuana          |  76|  86.5|yes    | 102542.9....|
+|Cheick          |  44|  81.2|no     | 75656.39....|
+|Sarang          |  28|  79.4|no     | 32485.26....|
+|Kanna           |  62|  83.8|no     | 80640.61....|
+|Juhi            |  48|  89.8|no     | 89456.27....|
+|Jonchristopher  |  50|  88.2|no     | 68578.83....|
+|Aneya           |  40|  89.3|no     | 92866.83....|
+|Reganne         |  82|  84.5|no     | 67169.20....|
+|Aubreeanna      |  81|  95.2|no     | 126008.0....|
+|Antawn          |  85|  83.0|no     | 225551.9....|
+|Knut            |  65|  93.2|no     | 98175.79....|
+|Chestley        |  89|  86.8|yes    | 111373.1....|
+|Mahleah         |  43|  86.5|no     | 36229.65....|
+|Yekusiel        |  76|  91.9|no     | 74557.58....|
+|Yaritzy         |  43|  91.6|yes    | 100830.1....|
+|Kayleeann       |  34|  84.8|no     | 107914.2....|
+|Mialynn         |  71|  80.5|yes    | 63752.02....|
+|Arienne         |  36|  84.9|no     | 136014.1....|
+|Navarro         |  69|  91.5|no     | 115813.0....|
+|Jahrod          |  45|  96.0|no     | 13003.92....|
+|Gesel           |  34|  86.2|no     | 44604.48....|
+|Deondria        |  52|  86.7|no     | 122405.9....|
+|Caniesha        |  78|  85.1|no     | 82922.40....|
+|Nyzere          |  85|  88.1|no     | 188223.1....|
+|Bethannie       |  46|  88.0|yes    | 88097.93....|
+|Tahliya         |  61|  89.6|no     | 57008.42....|
+|Deontez         |  35|  87.1|no     | 60550.55....|
+|Kage            |  29|  90.6|no     | 78560.12....|
+|Sitiveni        |  25|  83.1|no     | 89174.50....|
+|Yirmeyah        |  72|  91.7|no     | 122139.4....|
+|Rubylee         |  42|  82.0|no     | 115217.1....|
+|Tzippy          |  54|  80.5|yes    | 116490.8....|
+|Lakeda          |  18|  88.2|no     | 110823.3....|
+|Geraldyne       |  42|  89.2|yes    | 78133.53....|
+|Agela           |  73|  86.6|no     | 62805.53....|
+|Brinlyn         |  35|  86.6|no     | 99611.22....|
+|Caliya          |  58|  83.3|no     | 80228.34....|
+|Gladys          |  71|  90.7|no     | 90020.46....|
+|Daneen          |  75|  84.6|no     | 90533.76....|
+|Bersain         |  41|  91.1|yes    | 91441.22....|
+|Burgandi        |  38|  92.9|no     | 34226.31....|
+|Mistey          |  81|  91.7|no     | 57467.04....|
+|Tashyra         |  55|  95.5|no     | 40872.49....|
+|Jaystin         |  80|  85.2|no     | 42050.75....|
+|Ditya           |  72|  99.5|yes    | 96674.53....|
+|Sheilia         |  27|  90.0|no     | 70966.69....|
+|Sheneka         |  87|  90.5|no     | 61416.40....|
+|Laneshia        |  63|  87.2|yes    | 80061.28....|
+|Caiya           |  72|  87.1|no     | 31505.83....|
+|Kendia          |  31|  91.0|no     | 70011.47....|
+|Melindasue      |  46|  89.0|yes    | 102630.8....|
+|Terez           |  42|  89.5|no     | 100174.1....|
+|Franciszek      |  73|  84.5|no     | 21798.86....|
+|Davaun          |  36|  82.5|yes    | 231938.6....|
+|Hardin          |  89|  81.8|no     | 92625.32....|
+|Lakeva          |  67|  87.8|no     | 24037.15....|
+|Myron           |  80|  91.8|yes    | 68531.81....|
+|Tokunbo         |  43|  88.9|no     | 42034.44....|
+|Dirinda         |  41|  81.9|yes    | 132223.4....|
+|Talicia         |  85|  84.0|no     | 33843.27....|
+|Jacobee         |  88|  94.8|no     | 127023.8....|
+|Olive           |  18|  88.3|no     | 19763.29....|
+|Zelaya          |  39|  78.9|yes    | 90981.91....|
+|Emee            |  40|  93.3|yes    | 77468.41....|
+|Arihaan         |  76|  86.0|no     | 39807.07....|
+|Qualik          |  46|  85.6|no     | 58131.42....|
+|Vonette         |  89|  82.4|no     | 92680.66....|
+|Libertie        |  86|  83.2|no     | 61795.84....|
+|Lawanna         |  21|  94.4|yes    | 125184.2....|
+|Darnley         |  48|  88.9|no     | 96899.94....|
+|Suze            |  89|  89.5|no     | 43758.36....|
+|Ashon           |  65|  84.7|no     | 91165.67....|
+|Esabella        |  25|  82.0|no     | 67588.40....|
+|Janelly         |  28|  88.9|no     | 59233.36....|
+|Moiya           |  45|  88.6|no     | 82991.84....|
+|Charmian        |  51|  86.9|no     | 93071.20....|
+|Lyssa           |  69|  86.3|yes    | 111781.1....|
+|Tkiyah          |  69|  86.3|no     | 48453.64....|
+|Kwana           |  31|  85.6|yes    | 68942.97....|
+|Ranyah          |  81|  84.0|no     | 101637.5....|
+|Leonnah         |  84|  86.7|no     | 213051.9....|
+|Zenayah         |  39|  90.3|yes    | 133221.5....|
+|Kato            |  53|  92.9|no     | 100839.3....|
+|Liasia          |  76|  86.3|no     | 65915.13....|
+|Linnard         |  31|  81.8|no     | 42082.51....|
+|Kassadee        |  82| 100.0|no     | 112097.6....|
+|Bernice         |  59|  84.4|yes    | 183995.4....|
+|Macksen         |  78|  87.4|no     | 74769.51....|
+|Mariaeduard     |  64|  86.6|no     | 126579.6....|
+|Criston         |  41|  85.7|yes    | 117172.7....|
+|Idabell         |  88|  94.6|no     | 134248.6....|
+|Bush            |  58|  86.9|no     | 44790.96....|
+|Chasya          |  19|  87.7|no     | 39611.19....|
+|Maribel         |  87|  88.0|no     | 74670.33....|
+|Khiyon          |  86|  87.3|no     | 141781.9....|
+|Lasonda         |  21|  85.7|no     | 25212.60....|
+|Izreal          |  72|  86.3|no     | 84681.90....|
+|Irvan           |  28|  92.7|no     | 75303.01....|
+|Tishona         |  30|  97.3|no     | 43576.01....|
+|Rolin           |  40|  87.7|no     | 83239.33....|
+|Tandra          |  26|  85.4|no     | 63903.94....|
+|Yashasvi        |  22|  85.7|no     | 35570.84....|
+|Tyzion          |  36|  85.8|no     | 57317.21....|
+|Prynn           |  26|  87.2|no     | 110519.4....|
+|Perrion         |  58|  84.2|no     | 59123.45....|
+|Cashanti        |  41|  82.9|yes    | 146020.5....|
+|Zelpha          |  35|  96.1|no     | 70851.39....|
+|Emanuele        |  88|  88.7|yes    | 98494.53....|
+|Ekamjot         |  25|  87.6|yes    | 115915.6....|
+|Ethridge        |  76|  91.5|yes    | 133272.8....|
+|Ronen           |  19|  87.8|no     | 78276.45....|
+|Lorain          |  24|  86.1|no     | 42415.05....|
+|Skyleigh        |  46|  92.1|no     | 43109.98....|
+|Herline         |  19|  88.5|no     | 48159.05....|
+|Dicki           |  64|  88.2|yes    | 118614.0....|
+|Khalifah        |  43|  93.3|yes    | 162938.7....|
+|Jaryl           |  64|  83.5|no     | 72492.80....|
+|Barnet          |  71|  86.6|no     | 33611.55....|
+|Juanjose        |  38|  82.5|yes    | 105574.4....|
+|Kyreem          |  52|  84.6|no     | 75924.09....|
+|Radhika         |  35|  86.4|no     | 110057.8....|
+|Janaia          |  49|  84.3|yes    | 102101.9....|
+|Jahcari         |  68|  80.1|yes    | 98688.17....|
+|Thiego          |  26|  87.8|no     | 65459.77....|
+|Pearlean        |  57|  89.5|no     | 53581.23....|
+|Chantee         |  68|  92.3|no     | 69663.38....|
+|Sharoll         |  78|  88.3|yes    | 83947.61....|
+|Raelen          |  82|  86.6|yes    | 91595.65....|
+|Marcellous      |  61|  83.7|no     | 18266.28....|
+|Matayah         |  62|  87.9|no     | 69487.66....|
+|Edyce           |  73|  83.5|yes    | 98272.48....|
+|Evalet          |  89|  91.8|yes    | 90449.86....|
+|Amukta          |  68|  83.8|no     | 165138.5....|
+|Burris          |  22|  88.9|no     | 29888.60....|
+|Rihcard         |  28|  86.5|no     | 79536.59....|
+|Orville         |  85|  91.0|no     | 64173.57....|
+|Yishay          |  81|  89.5|yes    | 79436.80....|
+|Tawna           |  38|  96.3|no     | 93522.30....|
+|Daran           |  62|  95.2|yes    | 105177.4....|
+|Hidemi          |  81|  88.7|no     | 22988.52....|
+|Gus             |  40|  93.5|no     | 73141.21....|
+|Naasir          |  50|  90.1|no     | 12426.87....|
+|Delinia         |  21|  88.4|no     | 95189.53....|
+|Colum           |  89|  84.9|no     | 46199.75....|
+|Olachi          |  47|  89.5|no     | 184818.5....|
+|Kadeyn          |  66|  86.4|no     | 92243.01....|
+|Alp             |  39|  93.2|no     | 45978.06....|
+|Callie          |  31|  91.7|no     | 74181.55....|
+|Betzabel        |  34|  93.9|no     | 24955.95....|
+|Jabora          |  81|  87.8|yes    | 161535.9....|
+|Valentia        |  43|  84.0|no     | 138528.8....|
+|Starley         |  55| 100.0|no     | 46228.73....|
+|Xariyah         |  22|  79.7|no     | 95510.13....|
+|Saudia          |  33|  88.2|yes    | 111884.3....|
+|Kassandrea      |  46|  93.9|no     | 101651.2....|
+|Sandon          |  31|  91.4|no     | 89901.66....|
+|Petty           |  30|  91.2|no     | 121181.7....|
+|Keishon         |  21|  83.4|yes    | 69184.28....|
+|Saul            |  54|  90.7|no     | 60556.39....|
+|Khamilah        |  75|  88.2|no     | 71372.60....|
+|Other           |  29|  85.2|no     | 32217.13....|
+|Yisroel         |  39|  95.1|no     | 80715.86....|
+|Nitosha         |  63|  85.3|yes    | 107115.6....|
+|Aryah           |  49|  84.2|no     | 69376.39....|
+|Demona          |  48|  96.1|no     | 124492.7....|
+|Musaab          |  27|  88.9|no     | 117662.1....|
+|Jere            |  42|  90.1|no     | 57153.17....|
+|Esta            |  45|  87.3|yes    | 129407.4....|
+|Travianna       |  77|  93.5|no     | 87407.36....|
+|Mycala          |  43|  82.1|no     | 89770.37....|
+|Jivan           |  85|  83.7|no     | 91529.90....|
+|Orphia          |  65|  82.5|no     | 75774.64....|
+|Kahmani         |  46|  86.0|no     | 35014.68....|
+|Khachik         |  20|  88.0|no     | 55249.31....|
+|Jaydun          |  82|  83.4|no     | 101114.8....|
+|Broghan         |  49|  90.7|no     | 90606.58....|
+|Ermin           |  48|  83.4|no     | 159422.6....|
+|Uladimir        |  63|  85.0|no     | 77006.82....|
+|Taquez          |  73|  83.4|no     | 81521.33....|
+|Ahlyana         |  58|  87.7|no     | 72344.78....|
+|Dulse           |  25|  82.9|no     | 40291.27....|
+|Kipton          |  43|  87.3|no     | 75537.99....|
+|Ajee            |  20|  86.2|yes    | 86100.94....|
+|Girlene         |  40|  89.8|no     | 40404.13....|
+|Hyatt           |  20|  89.7|yes    | 112275.0....|
+|Peat            |  43|  87.3|no     | 70729.33....|
+|Ashston         |  20|  86.0|no     | 88153.85....|
+|Yassiel         |  61|  92.1|no     | 76060.04....|
+|Sayen           |  20|  86.2|yes    | 66923.88....|
+|Suhaan          |  54|  87.2|yes    | 148812.0....|
+|Mrk             |  40|  94.7|no     | 20365.35....|
+|Lucielle        |  75|  85.9|no     | 81678.61....|
+|Devontre        |  75|  88.5|yes    | 125552.4....|
+|Vallory         |  68|  87.7|no     | 113372.6....|
+|Nicere          |  19|  90.4|no     | 75650.84....|
+|Fatai           |  38|  88.3|no     | 19973.42....|
+|Bryer           |  57|  87.1|no     | 102874.1....|
+|Chartese        |  81|  84.4|no     | 100989.2....|
+|Luida           |  21|  91.3|no     | 158783.1....|
+|Ebben           |  55|  89.6|no     | 25440.24....|
+|Dovie           |  70|  91.6|no     | 86797.55....|
+|Graylynn        |  73|  82.6|no     | 102006.1....|
+|Alexsa          |  64|  89.4|yes    | 88245.50....|
+|Doyt            |  31|  89.0|no     | 244135.9....|
+|Jamarion        |  26|  87.4|no     | 167839.4....|
+|Roze            |  89|  88.5|yes    | 90776.89....|
+|Ruthanne        |  60|  81.5|no     | 83190.01....|
+|Syer            |  18|  85.5|yes    | 118591.4....|
+|Brisaida        |  71|  87.9|no     | 87474.72....|
+|Vertice         |  46|  88.6|no     | 100077.4....|
+|Kaiser          |  87|  91.9|no     | 39836.48....|
+|Angelicamarie   |  80|  91.7|no     | 123723.3....|
+|Rodger          |  79|  87.8|yes    | 122977.9....|
+|Jerimia         |  61|  92.1|no     | 25172.96....|
+|Harrilyn        |  82|  82.5|no     | 79710.11....|
+|Hany            |  79|  88.1|no     | 71185.10....|
+|Timohty         |  76|  85.2|no     | 30358.62....|
+|Mariyan         |  71|  86.8|no     | 65662.11....|
+|Aileana         |  63|  85.2|yes    | 89399.44....|
+|Yutaro          |  27|  86.5|no     | 23501.36....|
+|Cammi           |  46|  85.9|no     | 102948.9....|
+|Maudeline       |  89|  84.7|no     | 106182.9....|
+|Jerryn          |  81|  89.5|no     | 97282.97....|
+|Brandiann       |  19|  88.8|yes    | 79236.18....|
+|Jery            |  31|  85.1|no     | 37964.83....|
+|Ezana           |  88|  90.7|no     | 127319.0....|
+|Fiorella        |  52|  88.4|no     | 49237.31....|
+|Anousone        |  69|  84.7|no     | 22751.92....|
+|Jahlissa        |  36|  85.0|yes    | 98518.43....|
+|Elzear          |  58|  90.0|no     | 56747.97....|
+|Gladine         |  28|  76.5|no     | 15167.82....|
+|Laisa           |  34|  87.8|no     | 182437.0....|
+|Evalyn          |  46|  87.6|yes    | 107305.4....|
+|Laquandra       |  40|  86.3|yes    | 82412.28....|
+|Kasiyah         |  83|  83.6|no     | 57099.73....|
+|Andrietta       |  53|  93.2|no     | 76981.48....|
+|Mervyn          |  24|  91.3|no     | 74316.54....|
+|Frenda          |  84|  96.7|no     | 86812.66....|
+|Shaymus         |  20|  83.1|no     | 89990.81....|
+|Tashiona        |  53|  85.8|no     | 118300.9....|
+|Glatha          |  20|  87.0|no     | 55147.72....|
+|Vincentina      |  47|  89.9|no     | 78416.33....|
+|Rahsheen        |  79|  81.2|no     | 95685.63....|
+|Jaisean         |  23|  85.5|yes    | 92157.20....|
+|Winfried        |  60|  90.3|no     | 75725.28....|
+|Leonia          |  42|  95.0|yes    | 101803.9....|
+|Beesan          |  87|  85.9|yes    | 113210.9....|
+|Jenness         |  68|  82.4|no     | 67025.14....|
+|Deaquan         |  29|  82.3|no     | 144794.8....|
+|Krisalyn        |  66|  85.4|no     | 26421.80....|
+|Veleta          |  87|  93.6|no     | 49225.87....|
+|Cyle            |  39|  86.4|no     | 65045.60....|
+|Jaydian         |  26|  88.5|no     | 22955.66....|
+|Oma             |  80|  83.7|yes    | 174889.0....|
+|Nomar           |  52|  85.8|no     | 55706.02....|
+|Nur             |  31|  88.2|no     | 34331.20....|
+|Maelyn          |  67|  88.9|no     | 33736.69....|
+|Moise           |  27|  89.8|no     | 64703.33....|
+|Aneatra         |  37|  89.0|no     | 55276.99....|
+|Myniah          |  23|  89.0|no     | 92772.31....|
+|Mariangelis     |  56|  84.6|no     | 79125.46....|
+|Elexi           |  87|  86.8|yes    | 73569.57....|
+|Shamya          |  65|  94.1|yes    | 90101.22....|
+|Semaya          |  43|  83.5|no     | 97626.29....|
+|Madrona         |  67|  89.2|no     | 166501.5....|
+|Jahnasia        |  28|  85.2|yes    | 76342.23....|
+|Mmary           |  55|  93.4|yes    | 93417.68....|
+|Ansen           |  55|  77.1|yes    | 73628.85....|
+|Shakim          |  70|  90.4|no     | 86698.51....|
+|Erenst          |  67|  88.7|no     | 80333.91....|
+|Derrold         |  40|  79.7|no     | 59778.35....|
+|Ilomae          |  86|  94.6|no     | 59967.72....|
+|Latavion        |  36|  85.4|no     | 41998.41....|
+|Malette         |  70|  86.3|no     | 45561.86....|
+|Ulyss           |  24|  86.9|no     | 37740.07....|
+|Demarrio        |  53|  83.8|yes    | 119659.8....|
+|Reinalda        |  37|  84.4|no     | 61001.60....|
+|Jessicaanne     |  19|  89.3|no     | 127463.4....|
+|Valeta          |  21|  90.4|yes    | 73701.19....|
+|Iula            |  45|  86.2|no     | 69133.54....|
+|Shereda         |  59|  86.9|no     | 65065.10....|
+|Michaline       |  22|  88.5|no     | 52140.28....|
+|Zandel          |  49|  86.0|no     | 98969.11....|
+|Christopherpaul |  84|  91.1|no     | 119371.9....|
+|Angeluis        |  80|  83.7|no     | 12542.85....|
+|Ellissa         |  87|  85.7|no     | 80921.55....|
+|Logunn          |  30|  89.7|no     | 101002.7....|
+|Chamisa         |  83|  86.9|no     | 99003.92....|
+|Greyston        |  32|  81.2|no     | 108320.3....|
+|Reylee          |  31|  85.3|yes    | 81431.04....|
+|Raya            |  40|  86.4|no     | 74466.69....|
+|Sirkka          |  61|  89.0|no     | 19901.06....|
+|Niyathi         |  23|  85.3|yes    | 106897.4....|
+|Deuel           |  27|  84.2|yes    | 88253.29....|
+|Betsayda        |  87|  88.8|no     | 131537.5....|
+|Natalieann      |  40|  85.1|yes    | 111334.6....|
+|Priest          |  56|  90.2|no     | 49019.91....|
+|Ayvin           |  73|  86.7|no     | 66989.52....|
+|Myrt            |  22|  92.5|no     | 56770.32....|
+|Aristotelis     |  71|  84.8|no     | 76706.87....|
+|Jumarion        |  22|  90.5|no     | 17876.53....|
+|Toral           |  66|  90.4|no     | 47665.33....|
+|Valynda         |  19|  86.3|no     | 72855.96....|
+|Eduard          |  84|  81.5|no     | 93489.21....|
+|Jorgedavid      |  36|  95.8|no     | 95392.51....|
+|Adekemi         |  24|  90.7|yes    | 102710.8....|
+|Tex             |  51|  91.1|yes    | 73587.66....|
+|Aariyan         |  54|  86.3|yes    | 77863.74....|
+|Daan            |  20|  89.6|yes    | 57238.33....|
+|Daynesha        |  38|  91.3|no     | 51106.65....|
+|Leani           |  76|  93.2|no     | 99759.07....|
+|Jefferi         |  59|  87.6|no     | 77486.50....|
+|Omotayo         |  37|  90.1|yes    | 71699.68....|
+|Sandar          |  81|  92.9|no     | 81241.57....|
+|Destined        |  79|  98.7|no     | 37697.30....|
+|Josephene       |  25|  88.6|no     | 31903.02....|
+|Inella          |  21|  82.2|no     | 116241.5....|
+|Nixon           |  46|  89.2|no     | 88740.11....|
+|Ahriel          |  70|  87.3|yes    | 102398.0....|
+|Nylae           |  58|  88.4|no     | 105035.4....|
+|Iyanla          |  20|  87.1|no     | 28757.46....|
+|Teadora         |  70|  91.7|no     | 55721.67....|
+|Issic           |  82|  85.9|no     | 55361.95....|
+|Engelbert       |  58|  87.5|no     | 28767.18....|
+|Siddarth        |  59|  92.0|no     | 143378.7....|
+|Jerrimiah       |  68|  89.9|yes    | 77705.94....|
+|Danyka          |  34|  92.1|no     | 90428.67....|
+|Pam             |  26|  88.4|no     | 121955.1....|
+|Dietra          |  26|  86.0|yes    | 69580.16....|
+|Asenath         |  36|  90.3|yes    | 83365.09....|
+|Maleyah         |  49|  89.2|yes    | 117978.6....|
+|Carlo           |  74|  90.7|no     | 103729.2....|
+|Beni            |  75|  83.9|no     | 67763.91....|
+|Nazim           |  19|  86.9|no     | 87258.13....|
+|Fajr            |  30|  87.6|no     | 47115.60....|
+|Diala           |  60|  96.6|no     | 72776.44....|
+|Laqunita        |  69|  90.5|no     | 39529.10....|
+|Viviene         |  83|  86.9|yes    | 88495.68....|
+|Zellar          |  24|  89.2|yes    | 159549.1....|
+|Jolee           |  65|  95.9|yes    | 89162.84....|
+|Haidar          |  83|  90.4|no     | 144297.7....|
+|Ledon           |  41|  88.9|yes    | 117119.4....|
+|Kallyn          |  26|  96.2|no     | 16930.35....|
+|Shaida          |  30|  90.8|no     | 53805.08....|
+|Greer           |  58|  82.3|no     | 73154.24....|
+|Alyisa          |  44|  92.9|yes    | 53544.36....|
+|Michaeal        |  28|  87.5|no     | 106505.2....|
+|Fira            |  21|  90.1|no     | 83665.73....|
+|Toshia          |  67|  89.6|no     | 32577.08....|
+|Marycruz        |  58|  88.8|no     | 121110.0....|
+|Ativa           |  52|  84.4|yes    | 88338.93....|
+|Chariel         |  23|  83.5|no     | 26824.17....|
+|Shandal         |  38|  90.0|no     | 93232.93....|
+|Kaaya           |  26|  92.6|no     | 40028.13....|
+|Chantavia       |  86|  88.1|no     | 151797.5....|
+|Psalms          |  56|  87.1|no     | 86933.81....|
+|Genise          |  35|  91.3|no     | 47497.90....|
+|Moyinoluwa      |  38|  90.8|yes    | 78913.20....|
+|Leycester       |  40|  88.1|no     | 121499.1....|
+|Lyniah          |  76|  94.3|no     | 131467.9....|
+|Freddia         |  65|  85.9|no     | 22686.41....|
+|Demaurion       |  61|  94.7|yes    | 86686.03....|
+|Quanisha        |  72|  87.0|yes    | 102338.8....|
+|Sylester        |  46|  89.3|no     | 141033.8....|
+|Xabier          |  47|  82.2|no     | 73471.27....|
+|Aubrea          |  61|  92.0|no     | 23906.72....|
+|Nanea           |  26|  88.7|no     | 87224.38....|
+|Katlin          |  49|  87.4|no     | 63721.22....|
+|Calijah         |  52|  85.6|yes    | 125132.8....|
+|Anni            |  31|  86.5|no     | 98559.73....|
+|Magaret         |  53|  89.4|no     | 58256.19....|
+|Mekea           |  69|  84.5|no     | 68894.79....|
+|Reisa           |  55|  85.7|no     | 55329.72....|
+|Chentel         |  66|  85.5|no     | 75603.02....|
+|Benzion         |  84|  96.2|no     | 22995.60....|
+|Onyah           |  56|  92.7|no     | 109617.7....|
+|Ahron           |  83|  84.7|no     | 41515.67....|
+|Kyly            |  68|  82.9|yes    | 140560.3....|
+|Riayn           |  70|  88.0|no     | 58782.12....|
+|Tanika          |  74|  83.3|no     | 100277.0....|
+|Zyrus           |  36|  88.9|yes    | 93644.08....|
+|Bernadina       |  70|  82.4|no     | 113826.1....|
+|Jarvaris        |  41|  94.6|yes    | 139468.3....|
+|Dominck         |  37|  86.2|no     | 16349.24....|
+|Edberg          |  41|  92.9|no     | 71342.83....|
+|Qiara           |  31|  90.3|yes    | 143272.7....|
+|Amyna           |  36|  93.8|no     | 84480.98....|
+|Juliyana        |  62|  86.9|no     | 56813.25....|
+|Mandalin        |  18|  91.0|yes    | 84945.37....|
+|Nomi            |  70|  96.1|yes    | 171554.3....|
+|Artiana         |  46|  85.8|no     | 103311.1....|
+|Makeyla         |  22|  88.8|no     | 47391.52....|
+|Tamaran         |  35|  84.9|yes    | 140803.3....|
+|Daxson          |  33|  87.5|yes    | 119280.1....|
+|Aliiyah         |  89|  84.4|no     | 109462.5....|
+|Ceren           |  48|  87.3|no     | 20516.77....|
+|Myar            |  53|  91.7|no     | 95600.54....|
+|Wila            |  40|  79.3|yes    | 154759.4....|
+|Alera           |  66|  84.3|no     | 52376.86....|
+|Tydus           |  64|  91.2|no     | 123050.4....|
+|Lorensa         |  26|  95.8|no     | 83471.37....|
+|Maayan          |  32|  89.0|no     | 95266.43....|
+|Jniya           |  37|  87.0|no     | 25288.54....|
+|Bassem          |  30|  92.4|no     | 107248.7....|
+|Marchel         |  61|  91.8|no     | 96702.09....|
+|Tamiaya         |  63|  92.8|yes    | 99349.96....|
+|Sakia           |  75|  84.5|no     | 76928.41....|
+|Vittoria        |  65|  86.6|yes    | 116047.7....|
+|Geriel          |  80|  83.5|yes    | 127963.4....|
+|Annayeli        |  70|  92.0|no     | 100656.2....|
+|Jenuel          |  31|  84.2|no     | 171981.8....|
+|Izsabella       |  42|  88.2|yes    | 94045.40....|
+|Ilaya           |  71|  92.8|yes    | 116567.1....|
+|Leaton          |  49|  85.8|no     | 186952.4....|
+|Tramon          |  56|  80.9|no     | 125663.9....|
+|Zona            |  45|  85.9|yes    | 138944.7....|
+|Kyha            |  46|  87.7|no     | 54702.14....|
+|Chauncy         |  82|  88.6|yes    | 114958.6....|
+|Carmelia        |  29|  96.6|no     | 85885.81....|
+|Daxen           |  25|  92.4|no     | 90551.38....|
+|Veda            |  72|  82.6|no     | 145188.4....|
+|Yahdira         |  56|  87.1|no     | 80292.85....|
+|Waynesha        |  74|  93.3|yes    | 91368.91....|
+|Ettel           |  57|  92.1|yes    | 124471.4....|
+|Gaelan          |  26|  86.5|no     | 48721.79....|
+|Brandea         |  65|  93.7|no     | 31364.94....|
+|Alynia          |  85|  88.7|no     | 66177.70....|
+|Lamisha         |  35|  85.6|yes    | 88215.15....|
+|Willabelle      |  52|  90.4|yes    | 60596.89....|
+|Keaundrea       |  58|  84.5|no     | 129001.9....|
+|Trillian        |  54|  90.4|no     | 27045.53....|
+|Lemarcus        |  67|  81.0|no     | 199422.8....|
+|Costella        |  54|  88.3|no     | 67365.96....|
+|Alynda          |  82|  87.1|yes    | 96256.05....|
+|Opalene         |  84|  94.0|no     | 86446.72....|
+|Sullivan        |  19|  82.1|no     | 176497.9....|
+|Jibril          |  33|  91.5|yes    | 130057.5....|
+|Kunio           |  25|  81.6|yes    | 93175.50....|
+|Drennen         |  54|  90.5|no     | 97187.66....|
+|Nacari          |  68|  82.6|no     | 110641.8....|
+|Sheralee        |  24|  88.7|yes    | 72989.29....|
+|Tinishia        |  55|  87.9|yes    | 144389.2....|
+|Kresta          |  83|  85.1|no     | 65801.20....|
+|Meshonda        |  27|  92.7|no     | 97253.82....|
+|Yurivia         |  42|  90.6|no     | 81712.84....|
+|Najilah         |  68|  81.3|no     | 108365.8....|
+|Benuel          |  87|  89.5|no     | 41987.17....|
+|Janariah        |  33|  85.0|no     | 32057.07....|
+|Bianet          |  39|  93.7|no     | 151103.3....|
+|Zakerria        |  23|  83.3|no     | 140712.5....|
+|Aahaan          |  77|  91.6|no     | 27292.86....|
+|Emilin          |  77|  93.1|no     | 88836.29....|
+|Anjae           |  52|  94.1|no     | 57325.48....|
+|Kherrington     |  19|  88.6|yes    | 70497.37....|
+|Somtochukwu     |  71|  88.5|no     | 73004.32....|
+|Smiya           |  34|  83.3|no     | 125470.3....|
+|Lezlee          |  73|  91.2|no     | 90000.83....|
+|Torivio         |  39|  86.1|no     | 128716.7....|
+|Morse           |  79|  93.9|no     | 69982.42....|
+|Nadia           |  69|  85.4|no     | 32122.19....|
+|Aylssa          |  76|  92.9|yes    | 69927.40....|
+|Dellah          |  54|  87.5|no     | 158892.6....|
+|Ellarine        |  85|  88.0|no     | 81887.41....|
+|Coeta           |  46|  92.0|yes    | 71039.69....|
+|Tsuneo          |  74|  94.1|no     | 49577.27....|
+|Demaurea        |  46|  86.4|no     | 89420.94....|
+|Alaunah         |  18|  98.5|yes    | 110277.4....|
+|Dontarrius      |  21|  88.4|yes    | 108231.0....|
+|Pattijo         |  38|  85.2|no     | 84237.74....|
+|Netia           |  65|  91.1|no     | 33975.77....|
+|Ellyana         |  68|  85.0|no     | 80984.34....|
+|Tifphanie       |  57|  87.3|no     | 27100.84....|
+|Angelous        |  46|  89.3|no     | 96350.48....|
+|Valice          |  22|  89.2|yes    | 84703.51....|
+|Kahmila         |  84|  85.6|no     | 62452.33....|
+|Johnalbert      |  78|  91.8|no     | 94882.28....|
+|Khalfani        |  88|  87.0|no     | 22183.57....|
+|Michaelynn      |  87|  91.8|no     | 163556.6....|
+|Elliora         |  49|  89.3|no     | 87897.26....|
+|Tramayne        |  59|  85.0|no     | 15400.96....|
+|Sriram          |  77|  86.3|no     | 11843.88....|
+|Nechemya        |  34|  81.4|no     | 157781.4....|
+|Jeroldine       |  56|  89.5|no     | 102403.6....|
+|Anddy           |  27|  95.8|yes    | 88970.87....|
+|Asheton         |  37|  90.1|no     | 34242.52....|
+|Jazma           |  53|  93.1|no     | 120779.3....|
+|Tahjee          |  55|  87.6|no     | 35269.85....|
+|Avyukt          |  61|  88.6|yes    | 92583.18....|
+|Niia            |  45|  79.2|yes    | 64526.76....|
+|Hazelle         |  20|  86.7|no     | 63893.34....|
+|Cade            |  21|  90.9|no     | 78923.19....|
+|Hadrien         |  55|  95.4|no     | 116827.7....|
+|Lanasia         |  46|  94.8|no     | 33083.47....|
+|Tyris           |  82|  85.8|no     | 74411.30....|
+|Danica          |  25|  87.1|no     | 107559.8....|
+|Jewellee        |  31|  89.3|no     | 76341.06....|
+|Lashaon         |  78|  91.3|yes    | 108911.0....|
+|Adysson         |  70|  84.3|no     | 10643.09....|
+|Shreyasi        |  69|  88.6|no     | 80625.21....|
+|Justyse         |  28|  87.5|no     | 110572.1....|
+|Shelbia         |  88|  91.1|no     | 85000.01....|
+|Coalton         |  39|  88.2|no     | 85545.48....|
+|Kahdeem         |  78|  89.6|yes    | 113593.8....|
+|Freyda          |  68|  87.5|no     | 177388.5....|
+|Chiane          |  34|  93.3|yes    | 163050.0....|
+|Geff            |  75|  92.0|no     | 74980.98....|
+|Ranota          |  67|  84.7|no     | 139244.2....|
+|Jerrit          |  53|  87.8|no     | 61870.77....|
+|Aalyia          |  23|  89.2|no     | 72612.62....|
+|Eldene          |  68|  87.1|no     | 49854.02....|
+|Perline         |  59|  89.2|no     | 122390.2....|
+|Endre           |  67|  90.9|no     | 82771.82....|
+|Vrunda          |  50|  85.4|yes    | 99414.83....|
+|Tess            |  25|  89.3|yes    | 105580.2....|
+|Dellas          |  76|  82.7|no     | 153469.1....|
+|Keevan          |  42|  87.6|no     | 76137.94....|
+|Medina          |  39|  88.4|no     | 76053.04....|
+|Becket          |  21|  82.8|no     | 29457.86....|
+|Nay             |  50|  94.5|no     | 24923.08....|
+|Juleeanna       |  85|  85.4|no     | 55554.67....|
+|Jourdan         |  53|  90.4|yes    | 60399.61....|
+|Iyon            |  87|  85.7|no     | 80032.68....|
+|Sadao           |  38|  95.7|no     | 52394.96....|
+|Daronn          |  82|  84.8|no     | 45924.46....|
+|Jennevy         |  29|  87.3|no     | 61401.74....|
+|Joria           |  45|  85.5|no     | 37068.29....|
+|Marnell         |  76|  89.6|yes    | 85470.93....|
+|Chrysander      |  68|  87.3|no     | 49352.72....|
+|Kaeshon         |  50|  94.9|no     | 51036.08....|
+|Uciel           |  78|  93.5|no     | 76927.85....|
+|Kabron          |  45|  89.8|no     | 86889.40....|
+|Jenalea         |  53|  92.8|yes    | 113478.2....|
+|Mavelyn         |  43|  81.7|yes    | 87646.51....|
+|Charlana        |  23|  90.2|no     | 14358.74....|
+|Jakiaya         |  38|  82.3|no     | 68917.48....|
+|Maneh           |  40|  89.2|no     | 88320.51....|
+|Olivier         |  18|  87.1|no     | 54020.19....|
+|Frederi         |  29|  83.4|no     | 91305.30....|
+|Mariabella      |  37|  90.8|no     | 17179.08....|
+|Katira          |  30|  87.8|yes    | 114066.6....|
+|Vaden           |  42|  84.3|no     | 96753.42....|
+|Draeden         |  62|  85.7|yes    | 108771.9....|
+|Mileigh         |  63|  88.5|no     | 84268.95....|
+|Sadiyya         |  85|  89.7|yes    | 89821.46....|
+|Irelynd         |  86|  90.1|no     | 54052.85....|
+|Creola          |  35|  86.2|no     | 61124.73....|
+|Tushar          |  83|  88.9|no     | 104472.6....|
+|Amar            |  43|  88.2|no     | 83089.48....|
+|Satine          |  81|  91.5|no     | 115596.6....|
+|Emmalia         |  44|  95.3|yes    | 151626.6....|
+|Margerite       |  72|  82.7|yes    | 77615.39....|
+|Mirle           |  88|  85.8|no     | 60114.45....|
+|Lisia           |  72|  89.4|no     | 129780.8....|
+|Shernika        |  29|  97.2|no     | 90029.37....|
+|Millinia        |  87|  89.1|no     | 79915.92....|
+|Carlinda        |  75|  93.0|no     | 82230.08....|
+|Geter           |  48|  87.6|no     | 90837.89....|
+|Jocelyn         |  56|  89.6|no     | 98387.12....|
+|Santoria        |  44|  89.2|no     | 133694.1....|
+|Tynie           |  54|  91.4|no     | 90636.46....|
+|Keegin          |  71|  81.0|yes    | 120767.6....|
+|Lunie           |  51|  92.6|yes    | 92374.01....|
+|Refugia         |  25|  92.8|yes    | 110283.4....|
+|Margel          |  69|  88.4|yes    | 112825.7....|
+|Aquanette       |  39|  79.7|no     | 25109.08....|
+|Adaijah         |  23|  87.1|no     | 69816.98....|
+|Wayden          |  23|  87.2|no     | 24056.90....|
+|Anavae          |  26|  84.5|no     | 75812.92....|
+|Caylynn         |  77|  90.9|yes    | 93316.72....|
+|Meiyi           |  35|  81.2|yes    | 107796.7....|
+|Judithann       |  67|  87.4|no     | 99078.69....|
+|Parinita        |  22|  91.6|no     | 121562.8....|
+|Cordalro        |  45|  82.7|no     | 103087.1....|
+|Deondre         |  45|  85.4|no     | 52212.59....|
+|Chekita         |  32|  82.1|no     | 57133.50....|
+|Nenah           |  47|  85.6|no     | 103254.0....|
+|Sasan           |  83|  85.0|yes    | 95871.54....|
+|Deliza          |  85|  88.4|no     | 172465.0....|
+|Itxel           |  50|  83.9|yes    | 81757.94....|
+|Lavenia         |  32|  88.0|yes    | 149921.9....|
+|Starlee         |  23|  86.5|no     | 61251.61....|
+|Kaze            |  23|  93.4|no     | 46655.81....|
+|Simrit          |  82|  87.6|no     | 41257.10....|
+|Tamie           |  33|  93.4|no     | 88028.66....|
+|Deandrae        |  30|  89.0|no     | 11444.01....|
+|Ples            |  86|  83.7|yes    | 75371.52....|
+|Jonuel          |  84|  90.8|no     | 33558.25....|
+|Arsenial        |  52|  93.9|no     | 106663.1....|
+|Bleeker         |  27|  83.5|no     | 32799.77....|
+|Havok           |  59|  83.8|yes    | 93566.58....|
+|Ruben           |  86|  87.2|no     | 88622.45....|
+|Ostin           |  42|  88.9|yes    | 123595.0....|
+|Doyl            |  43|  88.6|yes    | 117078.4....|
+|Raffie          |  66|  93.6|no     | 69744.28....|
+|Janasha         |  68|  84.5|no     | 65066.45....|
+|Joviana         |  57|  96.7|no     | 66397.67....|
+|Bartolome       |  41|  84.2|no     | 21971.22....|
+|Norleen         |  62|  88.2|no     | 55420.51....|
+|Enchante        |  64|  89.8|no     | 66116.25....|
+|Tyberius        |  69|  89.1|no     | 87482.42....|
+|Josealejandro   |  27|  94.0|yes    | 104195.2....|
+|Eztli           |  33|  86.5|no     | 52975.74....|
+|Murlee          |  55|  89.7|no     | 54135.36....|
+|Eusebia         |  19|  88.0|yes    | 116141.0....|
+|Bertrand        |  83|  84.3|no     | 84694.71....|
+|Demauria        |  80|  86.4|no     | 115742.5....|
+|Tiare           |  73|  92.9|no     | 124466.7....|
+|Helyn           |  76|  92.5|no     | 38993.21....|
+|Therin          |  48|  92.9|no     | 104374.1....|
+|Sierramarie     |  75|  86.4|yes    | 102043.7....|
+|Gerry           |  44|  87.9|no     | 82289.60....|
+|Shalicia        |  30|  83.0|no     | 73945.87....|
+|Lyubov          |  60|  89.0|yes    | 76121.03....|
+|Nikkisha        |  29|  90.2|no     | 77590.02....|
+|Ezaria          |  86|  84.8|no     | 84037.43....|
+|Jawuan          |  58|  88.7|no     | 84625.31....|
+|Lywanda         |  36|  87.9|no     | 175098.0....|
+|Saniqua         |  84|  96.0|no     | 91216.52....|
+|Akshitha        |  38|  79.1|yes    | 99818.62....|
+|Cypress         |  25|  87.5|yes    | 75677.41....|
+|Kaylalynn       |  50|  82.4|no     | 120551.75589|
+|Deobrah         |  74|  89.4|no     | 49806.24....|
+|Boluwatife      |  46|  82.8|no     | 80301.60....|
+|Yaslyn          |  47|  94.4|no     | 62619.59....|
+|Johana          |  62|  85.4|yes    | 79869.47....|
+|Kilyan          |  40|  91.0|no     | 41693.97....|
+|Ulrik           |  63|  84.5|no     | 38991.78....|
+|Marjarie        |  67|  87.2|no     | 68378.63....|
+|Kemori          |  42|  90.4|no     | 43767.30....|
+|Donovann        |  47|  90.3|no     | 52963.97....|
+|Aanya           |  20|  89.4|no     | 53205.01....|
+|Michiye         |  61|  96.0|no     | 69714.52....|
+|Gleneva         |  83|  83.4|no     | 57743.36....|
+|Girther         |  41|  88.4|no     | 52797.42....|
+|Darnasia        |  42|  88.1|no     | 22252.30....|
+|Juneann         |  60|  83.4|no     | 44697.24....|
+|Johniesha       |  36|  84.5|yes    | 99419.37....|
+|Aadi            |  89|  81.7|no     | 72588.41....|
+|Sandler         |  75|  84.2|no     | 38320.79....|
+|Triumph         |  56|  87.6|no     | 147761.2....|
+|Girtrude        |  52|  82.2|yes    | 91088.07....|
+|Waverley        |  71|  88.0|no     | 73783.33....|
+|Kelseigh        |  70|  88.0|no     | 34531.68....|
+|Antonious       |  66|  82.4|no     | 57541.43....|
+|Dmorea          |  50|  83.6|yes    | 84120.88....|
+|Quinzel         |  47|  85.3|no     | 93667.55....|
+|Anothny         |  76|  84.2|no     | 162066.4....|
+|Elijuah         |  53|  79.9|no     | 28750.57....|
+|Daryal          |  57|  83.3|no     | 120512.3....|
+|Mckynzie        |  23|  85.0|no     | 167710.5....|
+|Demitrius       |  72|  82.1|no     | 140920.6....|
+|Dejai           |  75|  85.9|no     | 78039.49....|
+|Chess           |  60|  88.9|no     | 45364.23....|
+|Mariposa        |  87|  88.8|yes    | 93394.62....|
+|Providenza      |  26|  85.8|no     | 113835.2....|
+|Angelicamaria   |  74|  87.7|no     | 30299.37....|
+|Ayana           |  28|  82.6|no     | 76400.99....|
+|Lorae           |  21|  93.2|yes    | 108339.9....|
+|Jahden          |  53|  92.3|no     | 125144.8....|
+|Sherol          |  39|  92.0|yes    | 103272.8....|
+|Chari           |  45|  85.7|no     | 99176.19....|
+|Rebekka         |  31|  91.7|no     | 86048.05....|
+|Lenvil          |  36|  89.6|no     | 86847.35....|
+|Tomekia         |  48|  83.0|no     | 95668.24....|
+|Dienna          |  29|  92.2|no     | 104539.0....|
+|Naira           |  44|  88.8|no     | 85089.72....|
+|Francel         |  66|  85.3|yes    | 65399.41....|
+|Gibram          |  67|  89.5|no     | 45503.83....|
+|Maebh           |  41|  89.8|no     | 59780.11....|
+|Goldie          |  30|  83.2|yes    | 90503.77....|
+|Renetha         |  24|  86.9|yes    | 86250.66....|
+|Elijahwan       |  43|  84.3|no     | 22558.24....|
+|Ryne            |  65|  86.4|no     | 33825.14....|
+|Sayra           |  70|  82.4|no     | 59071.83....|
+|Alexender       |  86|  90.5|yes    | 70083.90....|
+|Corabella       |  89|  84.0|no     | 92305.31....|
+|Tirese          |  63|  87.3|no     | 126066.9....|
+|Kevi            |  66|  88.1|no     | 57262.44....|
+|Tavan           |  25|  83.8|no     | 108743.5....|
+|Tanza           |  59|  90.6|no     | 92352.84....|
+|Imanuel         |  67|  85.2|no     | 106061.7....|
+|Pavneet         |  75|  87.3|no     | 110894.0....|
+|Nazli           |  85|  82.8|no     | 92790.56....|
+|Luciana         |  83|  85.2|no     | 118639.8....|
+|Eina            |  85|  87.8|yes    | 101716.2....|
+|Chinaza         |  34|  95.9|no     | 37013.61....|
+|Jesusantonio    |  72|  85.8|no     | 57439.13....|
+|Crisbel         |  60|  84.7|no     | 117037.4....|
+|Babbie          |  44|  91.0|no     | 84843.02....|
+|Doneka          |  59|  88.4|no     | 86714.14....|
+|Clash           |  38|  93.2|no     | 74070.74....|
+|Kimoralee       |  45|  91.6|no     | 36316.71....|
+|Socorra         |  27|  92.0|no     | 16199.06....|
+|Quanecia        |  56|  85.8|no     | 95542.94....|
+|Kanasha         |  46|  88.3|yes    | 147510.9....|
+|Drelon          |  73|  90.7|no     | 86334.00....|
+|Izma            |  82|  88.6|no     | 62398.68....|
+|Syrianna        |  56|  86.8|no     | 67461.11....|
+|Earlisha        |  36|  92.7|no     | 71399.65....|
+|Derri           |  70|  89.5|yes    | 72982.55....|
+|Shontea         |  61|  86.6|no     | 143683.1....|
+|Jahlen          |  35|  82.3|no     | 76437.04....|
+|Memoree         |  49|  85.6|no     | 58128.18....|
+|Roosevelt       |  85|  94.1|no     | 63536.84....|
+|Johnan          |  21|  91.8|no     | 92636.45....|
+|Aquavion        |  51|  81.9|no     | 58884.47....|
+|Nocole          |  82|  96.3|no     | 120190.3....|
+|Jalexia         |  76|  86.9|no     | 121775.9....|
+|Daishaun        |  36|  87.0|no     | 32375.95....|
+|Sheny           |  59|  91.6|yes    | 92983.90....|
+|Eevie           |  81|  83.7|no     | 106479.1....|
+|Nikan           |  45|  86.1|yes    | 112031.4....|
+|Czaria          |  25|  90.9|yes    | 66505.02....|
+|Ronaldinho      |  84|  83.4|yes    | 87184.19....|
+|Eray            |  79|  89.6|no     | 14914.93....|
+|Kazim           |  58|  79.0|no     | 81210.00....|
+|Shaquille       |  85|  92.3|no     | 140153.7....|
+|Madysson        |  58|  89.4|no     | 49256.40....|
+|Jessiyah        |  37|  89.2|no     | 97211.37....|
+|Shanicia        |  84|  84.5|yes    | 113491.5....|
+|Selden          |  67|  84.6|no     | 52315.78....|
+|Patress         |  21|  92.3|no     | 39127.02....|
+|Sigismund       |  48|  90.4|no     | 73505.36....|
+|Kieon           |  42|  89.8|no     | 105061.8....|
+|Vergean         |  27|  87.5|no     | 55396.28....|
+|Dalonta         |  87|  88.6|no     | 79616.20....|
+|Lianny          |  41|  89.3|no     | 116100.7....|
+|Amillianna      |  43|  86.0|no     | 33720.89....|
+|Terrika         |  60|  87.1|yes    | 96285.90....|
+|Rylynn          |  72|  89.8|no     | 59536.14....|
+|Latori          |  66|  85.4|no     | 147239.9....|
+|Alphe           |  42|  87.3|no     | 69023.34....|
+|Burdette        |  34|  86.8|yes    | 175039.9....|
+|Andan           |  68|  85.5|yes    | 94221.03....|
+|Rishan          |  71|  85.6|no     | 91389.18....|
+|Eythel          |  27|  85.2|no     | 105552.7....|
+|Leana           |  55|  89.5|yes    | 88059.88....|
+|Dajour          |  45|  87.2|no     | 91712.04....|
+|Haniff          |  25|  94.6|no     | 56296.29....|
+|Evalynne        |  59|  90.5|no     | 72924.43....|
+|Davayah         |  44|  80.6|yes    | 70077.87....|
+|Nickolaus       |  28|  84.7|no     | 81387.16....|
+|Carolgene       |  32|  90.9|no     | 82302.07....|
+|Madoc           |  50|  87.3|no     | 109775.0....|
+|Baxlee          |  58|  92.6|no     | 60520.14....|
+|Lemmy           |  19|  92.0|no     | 76089.34....|
+|Karamvir        |  49|  85.7|no     | 68291.51....|
+|Robah           |  54|  84.5|no     | 123543.2....|
+|Ladelle         |  42|  92.0|no     | 24789.92....|
+|Ilija           |  75|  84.4|yes    | 118743.2....|
+|Kenlin          |  88|  87.4|yes    | 74003.19....|
+|Alexionna       |  46|  87.7|no     | 99663.56....|
+|Darionte        |  56|  82.8|no     | 16373.49....|
+|Rachal          |  78|  82.6|no     | 60592.54....|
+|Sherille        |  33|  95.7|no     | 157106.2....|
+|Marybeth        |  22|  87.7|no     | 75709.16....|
+|Delenia         |  48|  87.1|no     | 100387.4....|
+|Semarias        |  38|  90.5|no     | 103965.5....|
+|Laylynn         |  82|  89.6|no     | 66447.00....|
+|Lillette        |  70|  86.6|no     | 80224.33....|
+|Armenda         |  88|  89.3|no     | 141119.8....|
+|Shevelle        |  78|  80.9|no     | 119804.5....|
+|Tine            |  32|  95.9|yes    | 73520.67....|
+|Marquiss        |  51|  88.9|no     | 82039.13....|
+|Lukus           |  73|  88.6|no     | 145108.6....|
+|Lawson          |  82|  90.9|yes    | 105652.5....|
+|Malonda         |  42|  89.4|yes    | 86214.13....|
+|Meyli           |  77|  86.1|no     | 83964.93....|
+|Vella           |  86|  83.0|no     | 108896.4....|
+|Lauramarie      |  80|  89.1|no     | 219822.9....|
+|Mckensie        |  80|  94.8|no     | 73452.64....|
+|Chassy          |  22|  85.3|yes    | 126100.3....|
+|Adelphia        |  87|  82.3|no     | 85677.33....|
+|Juanfrancisco   |  27|  92.1|yes    | 89905.15....|
+|Shaylin         |  75|  99.0|yes    | 77999.95....|
+|Liamalexander   |  39|  85.8|no     | 87673.22....|
+|Casiana         |  77|  90.0|yes    | 114679.9....|
+|Alajuwon        |  39|  84.3|no     | 43084.14....|
+|Leamon          |  77|  92.3|no     | 120913.1....|
+|Vignesh         |  76|  85.6|yes    | 99963.07....|
+|Kincade         |  22|  84.0|yes    | 97980.15....|
+|Zayliana        |  29|  91.8|no     | 22144.91....|
+|Shauntia        |  88|  93.4|no     | 151539.8....|
+|Vasu            |  51|  83.5|no     | 83730.38....|
+|Aaliyan         |  63|  94.0|no     | 102371.0....|
+|Jessicca        |  81|  84.7|no     | 71137.05....|
+|Laretta         |  46|  86.1|yes    | 117084.0....|
+|Joshaua         |  78|  89.0|no     | 57143.94....|
+|Ureka           |  77|  83.8|no     | 45651.00....|
+|Rivky           |  53|  84.4|no     | 127182.2....|
+|Andes           |  83|  92.7|no     | 41207.28....|
+|Jailen          |  45|  93.2|no     | 32566.12....|
+|Dayany          |  59|  91.2|no     | 91062.11....|
+|Khadedra        |  34|  86.7|no     | 97799.48....|
+|Mckinsley       |  57|  91.5|no     | 51550.30....|
+|Clever          |  75|  81.6|yes    | 99296.43....|
+|Abdiwali        |  58|  91.0|no     | 68872.73....|
+|Nerida          |  27|  91.6|no     | 133562.9....|
+|Markila         |  21|  92.5|no     | 120592.5....|
+|Shariq          |  75|  84.9|no     | 154843.3....|
+|Branan          |  82|  88.0|yes    | 67667.91....|
+|Daveisha        |  69|  93.6|no     | 165905.7....|
+|Wilmer          |  40|  81.2|no     | 90524.62....|
+|Shachi          |  20|  88.2|no     | 44241.49....|
+|Youcef          |  25|  92.8|no     | 27274.52....|
+|Macala          |  69|  87.4|no     | 62482.68....|
+|Haeun           |  85|  89.0|no     | 118983.1....|
+|Lodine          |  27|  91.4|yes    | 153361.9....|
+|Mercede         |  86|  98.9|yes    | 93753.24....|
+|Jeriod          |  20|  84.0|no     | 111631.6....|
+|Aaryahi         |  88|  92.6|yes    | 85238.51....|
+|Hadija          |  74|  90.7|no     | 111146.7....|
+|Macyn           |  84|  91.9|no     | 44963.09....|
+|Dreyten         |  25|  85.3|no     | 66345.27....|
+|Octavian        |  71|  91.9|no     | 93826.08....|
+|Donita          |  46|  92.9|no     | 121967.7....|
+|Tavo            |  54|  96.0|no     | 77024.44....|
+|Eulices         |  55|  94.3|no     | 75652.11....|
+|Daleena         |  66|  91.9|no     | 115869.7....|
+|Avishka         |  75|  98.2|no     | 92880.43....|
+|Allicyn         |  64|  88.7|no     | 135644.5....|
+|Ximenna         |  42|  89.3|yes    | 65503.26....|
+|Jasminda        |  45|  88.5|no     | 44271.50....|
+|Morna           |  60|  94.5|no     | 48127.04....|
+|Rykan           |  27|  87.6|no     | 29518.91....|
+|Raymonda        |  89|  83.0|no     | 139197.4....|
+|Tige            |  86|  87.1|no     | 145782.6....|
+|Jancie          |  76|  87.9|no     | 102421.1....|
+|Peretz          |  49|  86.2|no     | 65360.76....|
+|Kailon          |  57|  78.6|no     | 71676.28....|
+|Jovetta         |  45|  85.1|no     | 51186.42....|
+|Adrin           |  81|  86.1|no     | 49516.40....|
+|Julya           |  65|  87.8|no     | 49225.02....|
+|Lual            |  47|  90.8|no     | 47334.56....|
+|Montrez         |  29|  87.6|no     | 135350.5....|
+|Clovie          |  46|  87.8|no     | 97754.61....|
+|Hather          |  18|  91.4|no     | 33605.99....|
+|Suhaila         |  83|  83.6|no     | 74458.56....|
+|Nyeem           |  69|  89.5|no     | 31368.37....|
+|Ozair           |  77|  94.0|yes    | 83520.06....|
+|Raycine         |  81|  89.7|no     | 65965.42....|
+|Jaesyn          |  69|  93.1|no     | 70312.51....|
+|Braylenn        |  73|  85.3|yes    | 128780.0....|
+|Shakya          |  89|  91.9|no     | 29178.99....|
+|Niari           |  56|  81.6|no     | 80856.20....|
+|Duarte          |  55|  94.2|yes    | 92335.41....|
+|Jave            |  88|  89.9|yes    | 86565.64....|
+|Sharnetta       |  77|  82.1|no     | 141722.1....|
+|Mattigan        |  74|  88.3|yes    | 84860.81....|
+|Merissa         |  48|  85.5|no     | 76424.53....|
+|Halona          |  25|  81.4|no     | 89066.66....|
+|Sha             |  61|  90.2|no     | 63320.67....|
+|Pami            |  43|  88.0|no     | 99321.80....|
+|Enrigue         |  34|  91.5|yes    | 73927.00....|
+|Trevonne        |  71|  98.4|no     | 63875.72....|
+|Esaw            |  88|  84.4|yes    | 98310.07....|
+|Esparanza       |  48|  90.7|no     | 141629.4....|
+|Burdett         |  31|  88.5|yes    | 88219.28....|
+|Halford         |  58|  86.0|no     | 103383.4....|
+|Greidis         |  57|  86.5|no     | 43935.33....|
+|Joda            |  47|  82.1|yes    | 121218.8....|
+|Ellyza          |  83|  89.2|no     | 97814.26....|
+|Jhomar          |  50|  92.0|no     | 8177.444....|
+|Shalae          |  85|  85.5|no     | 77078.92....|
+|Nin             |  79|  86.7|no     | 56779.16....|
+|Naylan          |  61|  85.9|no     | 36313.15....|
+|Manila          |  36|  88.3|no     | 50984.53....|
+|Jocob           |  47|  79.4|no     | 10755.88....|
+|Hritik          |  28|  86.1|no     | 101397.7....|
+|Maiya           |  64|  88.1|no     | 26408.78....|
+|Angia           |  26|  84.7|no     | 123319.1....|
+|Khandis         |  24|  87.4|no     | 77688.01....|
+|Dathan          |  59|  91.4|no     | 41605.90....|
+|Lynice          |  64|  82.5|no     | 85816.04....|
+|Eutimio         |  36|  94.1|no     | 44748.12....|
+|Jamelvin        |  61|  93.9|no     | 89744.30....|
+|Junhao          |  65|  84.9|no     | 74617.09....|
+|Khya            |  55|  97.3|no     | 41381.92....|
+|Zauria          |  40|  88.0|yes    | 113611.9....|
+|Olas            |  65|  85.9|no     | 85670.74....|
+|Shallen         |  19|  90.2|no     | 53697.41....|
+|Ilanie          |  43|  88.4|no     | 110274.7....|
+|Zahra           |  57|  98.2|no     | 65694.79....|
+|Shely           |  53|  81.4|yes    | 124903.0....|
+|Jaspar          |  32|  89.9|yes    | 105774.5....|
+|Katheriene      |  89|  91.0|no     | 58323.15....|
+|Kolleen         |  50|  87.1|no     | 90576.65....|
+|Bob             |  82|  85.4|no     | 38724.39....|
+|Jacole          |  43|  88.1|no     | 78336.37....|
+|Eulalia         |  74|  87.7|no     | 59096.50....|
+|Janeshia        |  38|  92.2|no     | 86810.58....|
+|Mikeala         |  40|  92.7|no     | 119828.5....|
+|Shavelle        |  30|  86.5|no     | 120996.0....|
+|Cyress          |  50|  82.5|no     | 63007.37....|
+|Bracie          |  84|  90.2|yes    | 123455.3....|
+|Lekecia         |  36|  95.8|yes    | 174026.9....|
+|Zacarias        |  50|  92.9|no     | 34310.73....|
+|Janitta         |  76|  86.0|no     | 65175.13....|
+|Sadiee          |  18|  89.1|yes    | 112083.8....|
+|Hollyn          |  73|  83.4|no     | 99819.44....|
+|Arthus          |  39|  85.4|no     | 51496.25....|
+|Anasha          |  76|  90.5|no     | 73802.67....|
+|Ellenore        |  86|  91.2|no     | 136656.5....|
+|Tyshianna       |  68|  80.4|no     | 101143.8....|
+|Olesya          |  26|  91.3|no     | 49442.77....|
+|Erianna         |  86|  82.9|no     | 82388.77....|
+|Ila             |  73|  94.7|no     | 55932.62....|
+|Ragan           |  62|  93.4|no     | 74993.79....|
+|Shakiara        |  63|  87.0|no     | 59672.27....|
+|Kaidan          |  45|  92.8|no     | 62226.04....|
+|Trampis         |  56|  82.3|yes    | 98616.06....|
+|Maysn           |  60|  93.1|no     | 41913.18....|
+|Nashely         |  58|  86.5|no     | 78125.22....|
+|Jothan          |  70|  81.2|no     | 99077.24....|
+|Wenona          |  44|  82.4|yes    | 93062.83....|
+|Shylynn         |  18|  84.3|no     | 68524.78....|
+|Verabelle       |  60|  88.3|yes    | 88946.84....|
+|Medger          |  50|  84.2|no     | 38343.89....|
+|Yariana         |  55|  87.7|no     | 41034.64....|
+|Dellanie        |  89|  87.7|yes    | 127113.4....|
+|Papa            |  59|  95.0|yes    | 81454.50....|
+|Chaniqua        |  41|  91.0|no     | 121666.8....|
+|Argusta         |  44|  91.4|no     | 84986.31....|
+|Sugar           |  29|  86.1|no     | 78219.76....|
+|Tuleen          |  24|  86.8|no     | 66226.93....|
+|Malikai         |  69|  89.0|no     | 42662.65....|
+|Jamilia         |  70|  94.1|no     | 52897.27....|
+|Synquis         |  35|  87.0|no     | 205267.6....|
+|Zahro           |  65|  91.3|no     | 99641.38....|
+|Mareena         |  21|  94.4|no     | 55208.21....|
+|Latoria         |  58|  88.1|yes    | 101736.2....|
+|Ahmiah          |  50|  90.3|no     | 68424.19....|
+|Gilles          |  72|  85.5|no     | 89085.21....|
+|Moices          |  63|  91.8|no     | 98464.45....|
+|Lagail          |  27|  93.7|yes    | 75067.78....|
+|Khadijah        |  67|  86.0|no     | 87354.12....|
+|Radeen          |  70|  84.0|no     | 87525.40....|
+|Beverle         |  63|  86.4|no     | 31373.53....|
+|Natusha         |  31|  89.7|no     | 113412.5....|
+|Avantay         |  69|  87.4|no     | 66167.57....|
+|Tuba            |  71|  87.4|yes    | 86369.14....|
+|Edra            |  32|  83.3|no     | 38157.69....|
+|Charlottee      |  44|  91.7|yes    | 106376.7....|
+|Zoeylynn        |  68|  86.5|no     | 51430.95....|
+|Cyann           |  38|  91.9|yes    | 100536.5....|
+|Annon           |  50|  93.1|no     | 80796.99....|
+|Jeth            |  28|  87.6|yes    | 66924.57....|
+|Angelina        |  73|  91.1|no     | 86165.14....|
+|Jabarius        |  89|  86.6|no     | 67050.76....|
+|Kden            |  59|  86.0|no     | 97901.90....|
+|Ericah          |  41|  93.4|yes    | 81124.50....|
+|Mandalyn        |  64|  89.1|no     | 60760.25....|
+|Dayahna         |  60|  83.9|no     | 75528.20....|
+|Jalyla          |  36|  85.2|no     | 66730.35....|
+|Prachi          |  19|  81.9|no     | 67854.69....|
+|Joella          |  54|  88.4|no     | 98010.92....|
+|Aillene         |  34|  85.3|no     | 65091.54....|
+|Esat            |  71|  87.8|no     | 106580.2....|
+|Ashlyn          |  62|  87.8|no     | 64241.80....|
+|Xeniyah         |  62|  92.3|no     | 90885.66....|
+|Haskie          |  52|  89.8|yes    | 107566.1....|
+|Malie           |  86|  90.6|no     | 210873.6....|
+|Mahlik          |  74|  95.3|no     | 19583.28....|
+|Adyen           |  37|  97.6|no     | 68655.07....|
+|Jewelianna      |  23|  81.5|no     | 62560.03....|
+
+
+---
+
+
+# The results
+
+
+Big gifted program premium: $23,608.30 more in earnings
+
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-11-1.png" width="100%" /&gt;
+
+???
+Does this mean gifted caused this, or even some of it?
+
+---
+
+
+# The problem
+
+
+So many potential confounds, including ones that are really, really hard to measure (like .shout[ability]) and others that are .shout[unknown]
+
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-12-1.png" width="100%" /&gt;
+
+
+---
+
+
+# The solution
+
+.pull-left[
+To get into gifted you typically need a certain score on an aptitude/IQ test
+
+Imagine that the **cutoff** score is 75/100; above you're in gifted, below you are not
+
+How was that cutoff chosen?
+
+]
+
+.pull-right[
+&lt;img src="images/phrenology.jpeg" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+
+
+# The solution
+
+
+The precise **cutoff** is completely arbitrary; could have been 74.5, or 76, or 80, or whatever
+
+--
+
+The *arbitrary* nature of the cutoff creates a **natural experiment**
+
+--
+
+A student who a 76 and a student who got a 34 are probably very different; if one makes more money than the other today, is that because of gifted? or other factors (.shout[ability]?)
+
+--
+
+But a student who got a 76 and one who got a 74 are probably interchangeable
+
+--
+
+Few points difference might be function of: .shout[random] error, luck, whatever
+
+
+---
+
+
+# The natural experiment
+
+
+If we look *only* at students who scored close to the 75 cutoff we have the makings of a **natural experiment**
+
+--
+
+Around cutoff, essentially random whether you get treatment (gifted program) or not
+
+--
+
+“Natural experiments”: situations where some *thing* (often a rule) creates random assignment of treatment
+
+
+---
+
+
+# Looking around the cutoff
+
+
+In analysis terms, (can be) simple: look only at students who scored close to 75, let's say +/- 2:
+
+
+```r
+subset_students = fake_students %&gt;% 
+* filter(test &gt;= 73 &amp; test &lt;= 77)
+```
+
+
+--
+
+Then we estimate model on this group; let's also estimate in the full (confounded!) sample
+
+
+
+```r
+wrong_model = lm(earnings ~ gifted, data = fake_students)
+discon_model = lm(earnings ~ gifted, data = subset_students)
+```
+
+
+---
+
+
+# The results
+
+
+Ouch! Looks like being in gifted actually **hurts** students in the long-run:
+
+.scroll-output[
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-16">
+<col><col><col><tr>
+<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">all students</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">students near cutoff</th></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(Intercept)</th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">78609.542 ***</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">111397.204 ***</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></th><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(1263.895)&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(5371.935)&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">giftedyes</th><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">23608.296 ***</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">-18110.369&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(2618.381)&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(8988.967)&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">nobs</th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th colspan="3" style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"> *** p &lt; 0.001;  ** p &lt; 0.01;  * p &lt; 0.05.</th></tr>
+</table>
+
+]
+
+---
+
+
+# Visualize it
+
+
+People with higher aptitude/training/ability/etc. better off today:
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-17-1.png" width="100%" /&gt;
+
+
+---
+
+
+# The cutoff
+
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-18-1.png" width="100%" /&gt;
+
+
+---
+
+
+# The natural experiment
+
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-19-1.png" width="100%" /&gt;
+
+
+---
+
+
+# The discontinuity
+
+
+These are the students who, **by chance**, just barely made it (or not) into gifted
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-20-1.png" width="100%" /&gt;
+
+
+---
+
+
+# The discontinuity
+
+
+On average, the students who *by chance* made it in make **less money**
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-21-1.png" width="100%" /&gt;
+
+
+---
+
+
+# The payoff
+
+
+.pull-left[
+In the **naive** estimate we think gifted programs help students in the long-run; 
+
+With the **discontinuity** we see the opposite: gifted hurts
+
+
+*Arbitrary cutoff* gets us unconfounded estimates for free: no need to worry about backdoor paths
+]
+
+.pull-right[
+&lt;img src="images/gifted-kid.jpeg" width="100%" /&gt;
+
+]
+
+---
+
+class: center, middle, inverse
+# Other examples
+---
+
+
+# Moral hazard
+
+
+* How much **moral hazard** is there in insurance? E.g., if your insurance covers 10k in services, will provider charge you $10k even if you only need 8k in services?
+
+--
+
+* Naive estimate: `lm(cost of service ~ insurance_coverage)`
+
+--
+
+* What's wrong with the naive estimate?
+
+
+---
+
+
+&lt;img src="images/diamond-rd.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+# Baby problems
+
+
+* Insurance will cover two nights in a hospital after delivery
+
+--
+
+* But how long is "**a night**"? 
+
+--
+
+* Nights counted by number of *midnights* (*arbitrary cutoff*)
+
+--
+
+* 👶 born on Monday at 11:59pm = gets Tue + Wed in hospital
+
+--
+
+* 👶 born on Tuesday at 12:01am = gets Tue + Wed + Thur in hospital (by chance, get extra minimum coverage)
+
+
+---
+
+
+# Finding
+
+
+1 in 4 babies born after midnight spend an *extra night in hospital* (💵💵💵), even when there is *no health benefit to doing so*
+
+
+&lt;img src="images/diamond-rd-graph.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+
+## Other examples: McNamara and the Whiz Kids
+
+
+.pull-left[
+What effect did bombing raids in Vietnam have on development? Problem: the places that *were* bombed are **very different** from the places that were never bombed
+
+Decision to bomb based on scoring system. A **discontinuity** due to rounding: hamlet with score of 4.4999 gets a 4, hamlet with 4.5001 gets a 5
+]
+
+.pull-right[
+&lt;img src="images/dell-vietnam.png" width="100%" /&gt;
+
+]
+
+???
+McNamara and whiz kids
+
+---
+
+
+# Big picture
+
+
+Natural experiments are "strongest" causal tool, and regression discontinuity designs are probably the most convincing approach
+
+
+--
+
+Easy to implement; less worry about confounding; the tough part? Finding one! And collecting the data
+
+--
+
+Often the result of some rule, boundary, or some other random, **arbitrary** process having a sudden impact in the world
+
+--
+
+
+Premium on: *specific* knowledge of a particular region/area/issue
+
+
+
+---
+
+
+# 🚨 Your turn: 🧠🧠🧠 🚨
+
+
+With the person to your right (or whatever):
+
+.small[
+1. Write down as many rules, demarcations, cutoffs, etc., out there in the world that you can think of. 
+
+2. Can any of these create an opportunity for a natural experiment, where *something* happens to some people/countries/places but not to others as a result of this rule/cutoff/thing? 
+
+3. What problem could that natural experiment help solve? In the gifted program case: the IQ test cutoff helps solve the problem of estimating the effect of gifted programs on future success. 
+
+4. Post a summary in the Slack and if the idea is good enough I will steal it and publish it. 
+
+]
+
+
+
+<div class="countdown" id="timer_6373e5ea" style="right:0;bottom:0;font-size:2em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+
+class: center, middle, inverse
+# No free lunch
+
+--
+
+Natural experiments are great but there is still reason to worry
+
+--
+
+If we find a good one, the thing we are trying to estimate might *unexpectedly* change (is this bad? depends)
+
+--
+
+People are **strategic**; if there's a rule out there that has consequences, they will do what they can to end up on the right side of it
+
+---
+
+
+# Limitations: changing estimates
+
+
+By focusing on units near cutoff, our estimate subtly changes: 
+
+--
+
+* ~~effect of putting *a child* in gifted on future earnings~~
+
+--
+
+* effect of putting a child *with roughly 75 IQ* in gifted on earnings ✅
+
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-27-1.png" width="70%" /&gt;
+
+
+---
+
+# Limitations: "sorting around the cutoff"
+
+
+There is also a risk that if people *know* about the cutoff they will behave strategically in ways that **confound our estimate** 
+
+--
+
+Imagine that there is room to pressure/bully the school psychologist into turning a 74.9 into a 75 so little Timmy can be gifted
+
+--
+
+
+And image wealthier/better-connected/etc parents are better bullies than poor parents
+
+--
+
+In that case, being gifted is no longer as-if random for those close to the cutoff -- wealthy parents **cause** you to get over the cutoff
+
+
+---
+
+
+# Sorting around the cut-off
+
+
+If parents can force almost-there kids into gifted, parents become a **backdoor path to earnings** (since your parents likely affect your earnings directly, or in other ways)
+
+
+&lt;img src="10-controls-II_files/figure-html/unnamed-chunk-28-1.png" width="90%" /&gt;
+
+
+---
+
+
+# 🚨 Your turn: sorting around the cutoff 🚨
+
+
+Think back to the arbitrary cutoff you came up with in the last exercise. Discuss again with your neighbor:
+
+
+1. Could someone "game" or sort around that cutoff? 
+2. What would that look like? 
+3. And how could it confound your estimate / ruin the natural experiment? 
+
+
+
+<div class="countdown" id="timer_6373e8c9" style="right:0;bottom:0;font-size:2em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLanguage": "r",
+"highlightLines": true,
+"highlightSpans": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

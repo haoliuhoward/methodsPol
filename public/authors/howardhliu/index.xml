@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Methods of Political Analysis</title>
+    <link>/authors/howardhliu/</link>
+      <atom:link href="/authors/howardhliu/index.xml" rel="self" type="application/rss+xml" />
+    <description>Methods of Political Analysis</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en</language>
+    <image>
+      <url>/media/social-image.png</url>
+      <title>Methods of Political Analysis</title>
+      <link>/authors/howardhliu/</link>
+    </image>
+    
+  </channel>
+</rss>

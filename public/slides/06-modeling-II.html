@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Modeling II</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Juan Tellez" />
+    <meta name="date" content="2022-10-20" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="css/my-theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/halloween.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+
+
+
+class: left, middle
+background-image: url("images/dubois-spiral-2.png")
+background-position: right
+background-size: contain
+
+# Modeling II
+
+### *The Scientific Study of Politics*
+
+### Professor Juan Tellez 
+
+#### University of California, Davis
+
+---
+
+
+class: center
+.large[
+# Today's agenda
+]
+
+--
+.box-1.large.sp-after[Modeling with `lm`]
+
+--
+.box-2.large.sp-after[Modeling with numbers]
+
+--
+.box-3.large.sp-after[Modeling with categories]
+
+---
+
+
+# The big picture: modeling
+
+.pull-left[
+What we want out of our model:
+
+Does TV news make people more energized to vote? Or does it turn them off from politics? 
+
+**How much** does an additional hour of TV increase (or decrease) the likelihood that someone votes? 
+
+**What level** of Y (voter turnout) should we expect for a given level of X (exposure to the news)? 
+
+]
+
+.pull-right[
+&lt;img src="images/big-picture.jpeg" width="70%" /&gt;
+
+]
+
+
+---
+
+
+
+class: center, middle, inverse
+# Modeling with lm
+---
+
+
+# How does car weight impact fuel efficiency?
+
+Remember, we want the underlying model from this line
+
+`\(mpg = \beta_0 + \beta1 \times weight\)`
+
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-2-1.png" width="80%" /&gt;
+
+---
+
+
+# Modeling in R
+
+--
+
+We can use the `lm()` function to create models in R, using this formula:
+
+&gt; lm(.red[Outcome] ~ .blue[Treatment_1 + Treatment_2 + ...], data = DATA)
+
+
+--
+
+
+```r
+*weight_model = lm(mpg ~ wt, data = mtcars)
+```
+
+Notice! Saved as a model object
+
+---
+
+
+# Extract the model
+
+We can extract the model equation with `tidy()`, from the `broom` package
+
+
+```r
+tidy(weight_model)
+```
+
+```
+## # A tibble: 2 × 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)    37.3      1.88      19.9  8.24e-19
+## 2 wt             -5.34     0.559     -9.56 1.29e-10
+```
+
+---
+
+# Making sense of the table
+
+
+`\(mpg = \beta_0 + \beta_1 \times weight\)`
+
+
+```r
+tidy(weight_model)
+```
+
+```
+## # A tibble: 2 × 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)    37.3      1.88      19.9  8.24e-19
+## 2 wt             -5.34     0.559     -9.56 1.29e-10
+```
+
+--
+
+The `estimate` column gives us `\(\beta_0\)` (intercept) and `\(\beta_1\)` (slope for weight)
+
+--
+
+Note! We only care about the first two columns of `tidy()` so far
+
+---
+
+
+# Extract the model
+
+
+`\(mpg = \beta_0 + \beta_1 \times weight\)`
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: yellow !important;"&gt; 37.29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.88 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19.86 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; wt &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: yellow !important;"&gt; -5.34 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -9.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+The intercept ( `\(\beta_0\)` ) = 37.29
+
+--
+
+The slope ( `\(\beta_1\)` ) = -5.3
+
+--
+
+The model: `\(mpg = 37.29 + -5.3 \times weight\)`
+
+---
+
+class: center, middle, inverse
+# Modeling with numbers
+---
+
+
+# Back to the cars
+
+The model: `\(mpg = 37.29 + -5.3 \times weight\)`
+
+How do we interpret the slope on *weight*? 
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-7-1.png" width="80%" /&gt;
+
+
+---
+
+
+# Interpretation: continuous variables
+
+
+.pull-left[
+As you turn the dimmer (*treatment variable*) the light (*outcome variable*) changes
+
+Turn the dimmer up, the light increases by SLOPE amount
+
+Turn the dimmer down, the light decreases by SLOPE amount
+
+The change is **gradual**
+]
+
+.pull-right[
+&lt;img src="images/dimmer.jpeg" width="100%" /&gt;
+]
+
+---
+
+# Interpretation: the slope
+
+`\(mpg = 37.2 + \color{red}{-5.3} \times weight\)`
+
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37.29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.88 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19.86 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; wt &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -5.34 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -9.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+--
+
+**General**: for every *unit increase* in X (weight), Y (mpg) changes by `\(\color{red}{5.3}\)` *units*
+
+--
+
+**Specific**: for every *ton of weight* you add to a car, you lose `\(\color{red}{5.3}\)` *miles per gallon* of fuel efficiency
+
+
+---
+
+
+# Interpretation: the intercept
+
+
+`\(mpg = \color{red}{37.2} + -5.3 \times weight\)`
+
+--
+
+Remember that the Y-intercept is the *value of Y when X = 0*
+
+
+$$
+`\begin{aligned}
+Y = 6 + 2x \\
+X = 0 \\
+Y = 6 + 2 \times 0 \\
+Y = 6
+\end{aligned}`
+$$
+---
+
+
+# Interpretation: the intercept
+
+
+Take the formula: `\(mpg = \color{red}{37.2} + -5.3 \times weight\)`
+
+--
+
+Set X (weight) equal to 0 `\(\rightarrow\)` `\(\color{red}{37.2} + (-5.3 \times 0) = \color{red}{37.2}\)`
+
+--
+
+
+**General**: The estimated value of Y (mpg), when X (weight) equals zero, is `\(\color{red}{37.2}\)` units
+
+--
+
+**Specific**: The estimated fuel efficiency for a car that weighs *0 tons* is `\(\color{red}{37.2}\)` miles per gallon
+
+---
+
+
+# Spot the intercept
+
+`\(mpg = 37.29 + -5.3 \times weight\)`
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-10-1.png" width="80%" /&gt;
+
+We can confirm we're not crazy if we zoom out; the line crosses y-axis at 37.2
+
+---
+
+
+# Nonsense intercepts
+
+
+`\(mpg = 37.2 + -5.3 \times weight\)`
+
+
+Interpretation of the intercept:
+
+&gt; The average fuel efficiency for a car that weighs nothing is 37.2 miles per gallon
+
+--
+
+Note that this is **nonsense**: a car cannot weigh zero tons
+
+--
+
+You will run into this often: don't let it confuse you!
+
+--
+
+the intercept will rarely be useful on its own; But we **need** it to draw the line!
+
+
+---
+
+
+# Another example: gapminder
+
+
+Say we want to estimate the relationship between **GDP per capita** and **life expectancy**
+
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-11-1.png" width="100%" /&gt;
+
+---
+
+
+# The model
+
+We fit the model using `lm()`
+
+
+```r
+wealth_mod = lm(lifeExp ~ gdpPercap, data = gapminder)
+```
+
+--
+
+
+We extract the coefficient estimates using `tidy()`
+
+
+```r
+tidy(wealth_mod)
+```
+
+```
+## # A tibble: 2 × 5
+##   term         estimate std.error statistic   p.value
+##   &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 (Intercept) 54.0      0.315         171.  0        
+## 2 gdpPercap    0.000765 0.0000258      29.7 3.57e-156
+```
+
+
+
+---
+
+# Interpreting the model
+
+`\(LifeExp = \beta_0 + \beta1 \times gdpPercap\)`
+
+
+```
+## # A tibble: 2 × 5
+##   term         estimate std.error statistic   p.value
+##   &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 (Intercept) 54.0      0.315         171.  0        
+## 2 gdpPercap    0.000765 0.0000258      29.7 3.57e-156
+```
+
+--
+
+`\(\beta_1\)`, the slope = for every additional dollar of GDP, a country's life expectancy rises by .0007 years
+
+--
+
+`\(\beta_0\)`, the intercept = the average life expectancy for a country with no economic activity (GDP = 0) is 54 years
+
+---
+
+
+# The scale of the coefficients
+
+
+`\(LifeExp = 54 + .0007 \times gdpPercap\)`
+
+
+Slope: for every **dollar** increase in GDP, life expectancy increases by 0.0007 years
+
+--
+
+Tiny! Does this mean a country's wealth has little to do with their health?
+
+--
+
+No! It is a problem with the **scale** that GDP is in
+
+--
+
+one dollar differences in GDP are tiny, meaningless; GDP changes by much more from year to year
+
+
+---
+
+# Variable scales
+
+
+We can rescale GDP so that it's in 10s of thousands of dollars:
+
+
+```r
+gapminder = gapminder %&gt;%
+  mutate(gdp_10k = gdpPercap/10000)
+```
+
+---
+
+
+# Variable scales
+
+Note the variable is the same; only thing that has changed is the scale!
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-16-1.png" width="100%" /&gt;
+
+---
+
+
+# Re-fit the model
+
+
+
+
+```r
+wealth_mod_10k = lm(lifeExp ~ gdp_10k, data = gapminder)
+tidy(wealth_mod_10k)
+```
+
+```
+## # A tibble: 2 × 5
+##   term        estimate std.error statistic   p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 (Intercept)    54.0      0.315     171.  0        
+## 2 gdp_10k         7.65     0.258      29.7 3.57e-156
+```
+
+--
+
+for every additional $10,000 of GDP, a country gains about 7.65 years
+
+--
+
+Mind your *scales*: if a coefficient is tiny, ask yourself if the scale makes sense
+
+
+---
+
+# 🚨 🚢 Why do some countries export more than others? 🚢 🚨
+
+--
+
+1. For a year of your choosing, make a scatterplot of imports (x-axis) and exports (y-axis) with a trend-line. Add labels so you can see which countries are the outliers. 
+
+--
+
+2. Estimate a model that models how much a country exports, using a treatment variable of your choosing. Interpret the model output. 
+
+
+
+<div class="countdown" id="timer_63517820" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+---
+
+
+
+class: center, middle, inverse
+# Regression with categorical variables
+---
+
+
+# Categorical variables
+
+
+We can also use categorical variables in our models
+
+--
+
+The simplest categorical variable is a *binary variable*: Men vs. women, young vs. old, has a policy in place (vs. not), TRUE/FALSE
+
+--
+
+Dummy variables (1/0) are a common type of binary variable
+
+--
+
+Let's say I wanted to look at the relationship between a country's .blue[organ donation policy] and its .red[organ donation rate]
+
+
+---
+
+
+# Binary variables in models
+
+
+I can include the binary variable in a regression model:
+
+
+```r
+donor_mod = lm(donors ~ opt, data = organdata)
+```
+
+--
+
+And look at the output:
+
+
+```
+## # A tibble: 2 × 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)    14.3      0.446     32.1  7.10e-76
+## 2 optOut          5.50     0.705      7.80 5.00e-13
+```
+
+
+But how do we interpret the "slope" of a binary variable?
+
+
+---
+
+
+# Binary variables
+
+
+Remember, with categorical variables we are **comparing groups**
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-21-1.png" width="100%" /&gt;
+
+---
+
+# Binary variables: line of best fit
+
+
+For these variables, each group has "its own" line of best fit
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-22-1.png" width="100%" /&gt;
+
+---
+
+
+# Binary variables: the slope
+
+
+What we want to know is how much higher or lower one group is, on average, than the other; this is the difference between the .red[red line] and the .blue[blue line]
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-23-1.png" width="80%" /&gt;
+
+--
+
+In this case it is 5.5 `\(\rightarrow\)` how many more organ donors countries with an "opt out" policy have, on average, than countries with an "opt in" policy
+
+
+---
+
+
+# Back to the regression output
+
+Note that this is exactly what the model output is giving us:
+
+
+```
+## # A tibble: 2 × 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)    14.3      0.446     32.1  7.10e-76
+## 2 optOut          5.50     0.705      7.80 5.00e-13
+```
+
+--
+
+The model is picking one of the categories ("Opt in") and treating it as a **baseline category**
+
+--
+
+It then tells us how much **higher**/**lower** on average, the other category is ("Opt out")
+
+
+---
+
+exclude: true
+# Back to the plot
+
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-25-1.png" width="100%" /&gt;
+
+
+---
+
+# How to interpret categorical variables?
+
+
+.pull-left[
+
+Turn the light on (`opt` goes from "In" to "Out"), the light *increases* by SLOPE
+
+Turn the light off (`opt` goes from "Out" to "In"), the light *decreases* by SLOPE
+
+The change is **instant**
+]
+
+.pull-right[
+&lt;img src="images/switch.jpeg" width="100%" /&gt;
+]
+
+---
+
+
+
+# Interpreting categories
+
+.small[
+`\(\operatorname{\widehat{donors}} = \color{red}{14.31} + \color{blue}{5.5}(\operatorname{opt}_{\operatorname{Out}})\)`
+]
+
+
+```
+## # A tibble: 2 × 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)    14.3      0.446     32.1  7.10e-76
+## 2 optOut          5.50     0.705      7.80 5.00e-13
+```
+
+.small[
+Slope: Country-years where people have to OPT OUT of donating their organs have, on average, .blue[5.5] more donations per million residents than country-years where people have to OPT IN
+
+]
+
+--
+
+.small[
+Intercept (set `optOut` = 0 or "off", i.e., countries where `opt == "in"`): Country-years where people have to OPT IN to organ donation have, on average, .red[14.31] donations per million residents
+]
+
+
+---
+
+
+
+# More complicated categorical variables
+
+
+Most of the variables we care about are not just binary
+
+--
+
+They take on many values
+
+--
+
+E.g., education levels, sex, race, religion, etc.
+
+--
+
+What happens when we include one of these in a model? 
+
+--
+
+Say we wanted to look at how .blue[life expectancy] varies across .red[continents]
+
+---
+
+# The model
+
+We can estimate the model, same as before:
+
+
+```r
+continent_mod = lm(lifeExp ~ continent, data = gapminder)
+tidy(continent_mod)
+```
+
+```
+## # A tibble: 5 × 5
+##   term              estimate std.error statistic   p.value
+##   &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 (Intercept)           48.9     0.370     132.  0        
+## 2 continentAmericas     15.8     0.649      24.3 1.38e-112
+## 3 continentAsia         11.2     0.593      18.9 2.44e- 72
+## 4 continentEurope       23.0     0.611      37.7 1.38e-226
+## 5 continentOceania      25.5     1.92       13.3 2.99e- 38
+```
+
+
+Now we get more coefficients! What do they mean?
+
+
+---
+
+
+# The plot
+
+
+With complex categorical variables, we are also comparing across groups
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-29-1.png" width="80%" /&gt;
+
+What is the "slope"? We have multiple groups, what are we comparing each group to?
+
+---
+
+
+# Multiple categories
+
+
+Just like before, R will pick one of the groups to treat as the "**baseline**"
+
+--
+
+It will then tell us how much higher/lower the other categories are, on average, .shout[relative to that baseline]
+
+--
+
+
+```
+## # A tibble: 5 × 5
+##   term              estimate std.error statistic   p.value
+##   &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 (Intercept)           48.9     0.370     132.  0        
+## 2 continentAmericas     15.8     0.649      24.3 1.38e-112
+## 3 continentAsia         11.2     0.593      18.9 2.44e- 72
+## 4 continentEurope       23.0     0.611      37.7 1.38e-226
+## 5 continentOceania      25.5     1.92       13.3 2.99e- 38
+```
+
+What group is the baseline here?
+
+---
+
+
+exclude: true
+# Multiple categories
+
+
+R treats Africa as the baseline and tells us how much higher (or lower) life expectancy is in the other continents, on average
+
+&lt;img src="06-modeling-II_files/figure-html/unnamed-chunk-31-1.png" width="100%" /&gt;
+
+
+---
+
+
+# Interpretation
+
+
+```
+## # A tibble: 5 × 5
+##   term              estimate std.error statistic   p.value
+##   &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 (Intercept)           48.9     0.370     132.  0        
+## 2 continentAmericas     15.8     0.649      24.3 1.38e-112
+## 3 continentAsia         11.2     0.593      18.9 2.44e- 72
+## 4 continentEurope       23.0     0.611      37.7 1.38e-226
+## 5 continentOceania      25.5     1.92       13.3 2.99e- 38
+```
+
+.small[
+
+* `continentAmericas` = countries in the Americas have, on average, 15.8 years more life expectancy than countries in *Africa* (the baseline)
+
+* `continentAsia` = countries in Asia have, on average, 11.2 years more life expectancy than countries in *Africa*
+
+* `Intercept` = (set Americas = 0, Asia = 0, Europe = 0, Oceania = 0) `\(\rightarrow\)` the average life expectancy in **Africa** is 48.9 years
+
+]
+
+
+---
+
+# Interpretation formula
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Type &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Approach &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Intercept &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Continuous &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A one unit increase in X, SLOPE unit change in Y &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Average value of Y when X = 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Category &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The category is SLOPE units higher/lower than the intercept &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Average value of Y for baseline (missing) category &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+Interpreting coefficients is pretty confusing; it just requires practice
+
+
+---
+
+
+# We're on our way
+
+
+We now know (sorta) how to interpret the coefficients on those big tables in the political science papers:
+
+--
+
+&lt;img src="images/reg-table.png" width="100%" /&gt;
+
+???
+Imagine that `prior war` is a binary variable for whether the country had a war in the previous year (or not); how to interpret?
+
+---
+
+
+
+# 🚨 Your turn: 👨‍👧‍👦 Kids 👨‍👧‍👦 🚨
+
+
+Using the `gss_sm` dataset:
+
+--
+
+1. Do happier people tend to have more or fewer kids than less happy people? Regress `childs` (outcome) against `happy` (treatment). Interpret the output.
+
+--
+
+2. How does religious belief affect the decision to have bigger or smaller families? Regress the number of siblings `sibs` (outcome) against respondent religion `relig`. Based on the output: which religion has the largest families, on average?
+
+--
+
+.small[
+Hint: to figure out what values a categorical variable takes on, use the `distinct()` function, like so: `data %&gt;% distinct(variable)`
+]
+
+
+<div class="countdown" id="timer_63517510" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLanguage": "r",
+"highlightLines": true,
+"highlightSpans": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en" 
+      xmlns:og="http://ogp.me/ns#" 
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In-class example Summarize Summarize &#43; group_by() The Bob Ross example The flying etiquette example In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
+day1-summarise.R day2-summarise.R Summarize Let’s load the libraries.
+# libraries library(tidyverse) library(nycflights13) library(fivethirtyeight) Say we want to take the average of a variable in our dataset.">
+
+  
+  <link rel="alternate" hreflang="en" href="/class/data-summary/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#b55716">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu1e2353bd87e0b7890d448fb2a2c440a0_1004273_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu1e2353bd87e0b7890d448fb2a2c440a0_1004273_192x192_fill_lanczos_center_3.png">
+
+  <link rel="canonical" href="/class/data-summary/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@haoliuhoward">
+  <meta property="twitter:creator" content="@haoliuhoward">
+  
+  <meta property="og:site_name" content="Methods of Political Analysis">
+  <meta property="og:url" content="/class/data-summary/">
+  <meta property="og:title" content="Summarizing Data | Methods of Political Analysis">
+  <meta property="og:description" content="In-class example Summarize Summarize &#43; group_by() The Bob Ross example The flying etiquette example In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
+day1-summarise.R day2-summarise.R Summarize Let’s load the libraries.
+# libraries library(tidyverse) library(nycflights13) library(fivethirtyeight) Say we want to take the average of a variable in our dataset."><meta property="og:image" content="/media/social-image.png">
+  <meta property="twitter:image" content="/media/social-image.png"><meta property="og:locale" content="en">
+  
+    
+    
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
+  <meta name="application-name" content="POLI502: Methods of Political Analysis" />
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="/img/mstile-144x144.png" />
+
+
+  <title>Summarizing Data | Methods of Political Analysis</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70"
+    data-target="#TableOfContents"
+    >
+
+    <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Methods of Political Analysis</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Methods of Political Analysis</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/syllabus/"><span>Syllabus</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/schedule/"><span>Schedule</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/assignment/"><span>Assignments</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/reference/"><span>Reference</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/"><span><i class="fab fa-slack"></i> Slack</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+    
+
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+            
+
+
+
+
+
+  
+    
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/class/getting-started/">Class</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/class/getting-started/">R, Rstudio, basics</a>
+      </li>
+      
+      <li >
+        <a href="/class/dataviz/">Data visualization</a>
+      </li>
+      
+      <li >
+        <a href="/class/data-wrangle/">Data Wrangling</a>
+      </li>
+      
+      <li class="active">
+        <a href="/class/data-summary/">Summarizing Data</a>
+      </li>
+      
+      <li >
+        <a href="/class/data-tidy/">Tidy data</a>
+      </li>
+      
+      <li >
+        <a href="/class/regression/">Correlation and regression</a>
+      </li>
+      
+      <li >
+        <a href="/class/prediction/">Prediction</a>
+      </li>
+      
+      <li >
+        <a href="/class/causality/">Causality</a>
+      </li>
+      
+      <li >
+        <a href="/class/confounds/">Confounds</a>
+      </li>
+      
+      <li >
+        <a href="/class/dags/">DAGs</a>
+      </li>
+      
+      <li >
+        <a href="/class/controls/">Natural Experiments</a>
+      </li>
+      
+      <li >
+        <a href="/class/fixed-effects/">Fixed Effects &#43; DID</a>
+      </li>
+      
+      <li >
+        <a href="/class/uncertainty/">Uncertainty</a>
+      </li>
+      
+      <li >
+        <a href="/class/rdd/">Regression discontinuity</a>
+      </li>
+      
+      <li >
+        <a href="/class/bootstrap/">Bootstrap</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+        </div>
+
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+            <article class="article">
+
+                <div class="docs-article-container">
+                    <h1>Summarizing Data</h1>
+
+                    
+
+                    
+
+                    
+
+                    <div class="article-style">
+                        
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+<div id="TOC">
+<ul>
+<li><a href="#in-class-example" id="toc-in-class-example">In-class example</a></li>
+<li><a href="#summarize" id="toc-summarize">Summarize</a></li>
+<li><a href="#summarize-group_by" id="toc-summarize-group_by">Summarize + group_by()</a></li>
+<li><a href="#the-bob-ross-example" id="toc-the-bob-ross-example">The Bob Ross example</a></li>
+<li><a href="#the-flying-etiquette-example" id="toc-the-flying-etiquette-example">The flying etiquette example</a></li>
+</ul>
+</div>
+
+<div id="in-class-example" class="section level2">
+<h2>In-class example</h2>
+<p>Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”</p>
+<ul>
+<li><a href="/slides/code/day1-summarise.R"><i class="fas fa-file-archive"></i> <code>day1-summarise.R</code></a></li>
+<li><a href="/slides/code/day2-summarise.R"><i class="fas fa-file-archive"></i> <code>day2-summarise.R</code></a></li>
+</ul>
+</div>
+<div id="summarize" class="section level2">
+<h2>Summarize</h2>
+<p>Let’s load the libraries.</p>
+<pre class="r"><code># libraries
+library(tidyverse)
+library(nycflights13)
+library(fivethirtyeight)</code></pre>
+<p>Say we want to take the average of a variable in our dataset. <code>summarize()</code> can help us do that.</p>
+<p>Say we wanted to know how late in departure is the <em>average</em> flight in our dataset and what’s the latest a flight has ever been?</p>
+<pre class="r"><code>## on average, how late are flights in departing?
+flights %&gt;%
+  summarise(avg_late = mean(dep_delay, na.rm = TRUE),
+            most_late = max(dep_delay, na.rm = TRUE))</code></pre>
+<pre><code>## # A tibble: 1 × 2
+##   avg_late most_late
+##      &lt;dbl&gt;     &lt;dbl&gt;
+## 1     12.6      1301</code></pre>
+<p>Not the <code>na.rm = TRUE</code> above and what happens if you remove it. The problem is there are missing values (<code>NA</code>) in our data, and R can’t take the average of a bunch of numbers where some are missing. <code>na.rm = TRUE</code> tells R to ignore those missing numbers and use only the complete observations.</p>
+</div>
+<div id="summarize-group_by" class="section level2">
+<h2>Summarize + group_by()</h2>
+<p>Say we wanted to know how average departure delays vary across airlines. Conceptually, this means taking the average of departure delays for each airline in the dataset separately. We can do this by combining <code>group_by()</code> and <code>summarise()</code>.</p>
+<pre class="r"><code># what if we wanted to know these statistics
+## for each month in our dataset?
+carrier_late = flights %&gt;%
+  group_by(carrier) %&gt;%
+  summarise(avg_late = mean(dep_delay, na.rm = TRUE),
+            most_late = max(dep_delay, na.rm = TRUE))
+
+
+# make a plot
+ggplot(carrier_late, aes(x = carrier, y = avg_late)) +
+  geom_col() +
+  coord_flip()</code></pre>
+<p><img src="/class/data-summary_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="the-bob-ross-example" class="section level2">
+<h2>The Bob Ross example</h2>
+<p>Happy tree?</p>
+<pre class="r"><code>bob_ross %&gt;%
+  summarise(prop_tree = mean(tree, na.rm = TRUE))</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   prop_tree
+##       &lt;dbl&gt;
+## 1     0.896</code></pre>
+<p>Clouds over time?</p>
+<pre class="r"><code>bob_clouds = bob_ross %&gt;%
+  group_by(season) %&gt;%
+  summarise(prop_clouds = mean(clouds, na.rm = TRUE))
+
+ggplot(bob_clouds, aes(x = season, y = prop_clouds)) + geom_line()</code></pre>
+<p><img src="/class/data-summary_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>snowy mountain?</p>
+<pre class="r"><code>bob_ross %&gt;%
+  filter(mountain == 1) %&gt;%
+  summarise(snowiness = mean(snowy_mountain, na.rm = TRUE))</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   snowiness
+##       &lt;dbl&gt;
+## 1     0.681</code></pre>
+<pre class="r"><code>bob_ross %&gt;%
+  group_by(mountain) %&gt;%
+  summarise(snowiness = mean(snowy_mountain, na.rm = TRUE))</code></pre>
+<pre><code>## # A tibble: 2 × 2
+##   mountain snowiness
+##      &lt;int&gt;     &lt;dbl&gt;
+## 1        0     0    
+## 2        1     0.681</code></pre>
+<p>Steve ross?</p>
+<pre class="r"><code>bob_ross %&gt;%
+  group_by(steve_ross) %&gt;%
+  summarise(lake_chance = mean(lake, na.rm = TRUE))</code></pre>
+<pre><code>## # A tibble: 2 × 2
+##   steve_ross lake_chance
+##        &lt;int&gt;       &lt;dbl&gt;
+## 1          0       0.339
+## 2          1       0.909</code></pre>
+</div>
+<div id="the-flying-etiquette-example" class="section level2">
+<h2>The flying etiquette example</h2>
+<p>Middle arm rest?</p>
+<pre class="r"><code>middle_arm_rests = flying %&gt;%
+  group_by(two_arm_rests) %&gt;%
+  tally() %&gt;%
+  mutate(percent = n/sum(n))
+
+ggplot(middle_arm_rests, aes(x = percent, y = two_arm_rests)) +
+  geom_col()</code></pre>
+<p><img src="/class/data-summary_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Unruly children?</p>
+<pre class="r"><code>nasty_kids = flying %&gt;%
+  group_by(children_under_18, unruly_child) %&gt;%
+  tally() %&gt;%
+  mutate(p_unruly = n/sum(n))
+
+ggplot(nasty_kids, aes(x = unruly_child, y = p_unruly, fill = children_under_18)) + geom_col(position = &quot;dodge&quot;)</code></pre>
+<p><img src="/class/data-summary_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+
+                    </div>
+
+                    
+
+
+
+                    
+                </div>
+
+                <div class="body-footer">
+                    <p>Last updated on January 1, 0001</p>
+
+                    
+
+
+
+
+
+                    
+
+                </div>
+
+            </article>
+
+            <footer>
+    <hr>
+
+    <div class="row course-info">
+        <div class="col-md-7">
+            <p>
+                <strong>POLI502: Methods of Political Analysis (Fall 2023)</strong><br>
+
+                <a href="https://sc.edu/" target="_blank" rel="noopener">University of South Carolina</a> &emsp;&emsp;
+                <a href="https://sc.edu/" target="_blank" rel="noopener">Department of Political Science</a>
+            </p>
+
+            <p>
+                <a href="https://www.howardhliu.com" target="_blank" rel="noopener"><i class="fas fa-user"></i>
+                    Howard Liu</a> &emsp;&emsp;
+                <a href="mailto:howard.liu@sc.edu"><i class="fas fa-envelope"></i>
+                    howard.liu@sc.edu</a>
+            </p>
+
+            <p>
+                <i class="far fa-calendar-alt"></i> T,TH &emsp;&emsp;
+                <i class="far fa-clock"></i> 2:50 PM - 4:00 PM <br>
+                <i class="fas fa-university"></i> GAM 502
+            </p>
+        </div>
+
+        <div class="col-md-5 credits">
+            <p>All content licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+            
+            <p>Content <i class="fab fa-creative-commons"></i> 2023 <a href="https://www.howardhliu.com" target="_blank" rel="noopener">Howard Liu</a></p>                    
+            
+            <p><a href="https://github.com/haoliuhoward/" target="_blank" rel="noopener"><i class="fab fa-github"></i> View the source at GitHub.</a></p>
+        </div>
+    </div>
+</footer>
+
+
+        </main>
+    </div>
+</div>
+
+        
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.0fb7942447739a02d0f559c43b9bf1aa.js"></script>
+
+    
+
+
+
+
+
+
+    
+    
+
+    
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quantitative Methods</title>
+    <link>/authors/jftellez/</link>
+      <atom:link href="/authors/jftellez/index.xml" rel="self" type="application/rss+xml" />
+    <description>Quantitative Methods</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en</language>
+    <image>
+      <url>/media/social-image.png</url>
+      <title>Quantitative Methods</title>
+      <link>/authors/jftellez/</link>
+    </image>
+    
+  </channel>
+</rss>

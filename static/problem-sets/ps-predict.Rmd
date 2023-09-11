@@ -1,0 +1,117 @@
+---
+title: "Problem set 5: Prediction"
+output: html_document
+---
+
+
+# Instructions
+
+
+- You will do your work in this `Rmarkdown` document but will submit all your answers on Canvas
+- *very important*: As you move through the document, make sure to run all code chunks (grey bits) that already have code in them
+- Write your own code in the empty code chunks
+- Useful shortcuts: 
+    - to run all the code in a specific code chunk, press the green right-facing triangle at the top right of the code chunk
+    - to run all *prior* code chunks, press the downward-facing gray triangle at the top right of the code chunk
+
+
+
+```{r load-libraries, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(socviz)
+library(broom)
+library(moderndive) # install if you don't have it!
+library(juanr)
+```
+
+
+
+# Task 1: Zillow model
+
+
+Let's look at data from `moderndive` which contains information on house prices and house characteristics from 2014-2015, in King's County, Washington state, which includes Seattle. 
+
+```{r}
+house_prices
+?house_prices
+```
+
+Remember, you can use `?dataset_name` with datasets that come from packages to look at the codebook.
+
+
+A seller wants to know: how much should I expect to sell my house for? Fit a model that predicts a house's price based on its: number of bedrooms, number of bathrooms, the square footage of the living area, square footage of the lot, number of floors, whether it is on the waterfront, and the year it was built. 
+
+```{r}
+
+
+```
+
+
+Now, using the model, answer the following questions. 
+
+What is the estimated price for the seller's house, which has 2 beds, 2 baths, 1,100 sq ft, a 3,000 sq ft lot, 1 floor, no waterfront view, and which was built in 1980? 
+
+```{r}
+
+
+```
+
+**Q1: Estimate, rounding to nearest whole number**
+
+
+Next, a thought experiment: what if that same house was larger or smaller? How would the price change? And what if it *did* have a waterfront view? Keep everything in your scenario the same, except now vary the square footage of the living space between 800 sq ft and 3000 sq ft. Vary also whether the house has a waterfront view. 
+
+Make a line plot to show how the estimated price changes as the size of the living space changes. Color the line by whether the house has a waterfront view. Add `scale_y_continuous(labels = scales::dollar)` to your plot so you can see the Y-axis in dollars.
+
+```{r}
+
+
+```
+
+**Q2: right click the graph --> "save image as" --> and save it somewhere on your computer. You will need to submit the plot!**
+
+
+
+# Task 2: Nate Silver
+
+
+Now, let's look at the `elections` dataset again:
+
+```{r}
+elections
+```
+
+Fit a model that explains GOP performance in 2016 as a function of census_region, population, percent of the population that is Black, household income, and the GOP's performance in that county in 2012. 
+
+```{r}
+
+
+```
+
+
+What's our best estimate for a county in the West, where the GOP got 23% of the vote in 2012, the population is about 100,000, the percent of the population that is Black is 6%, and median household income is $42,000? 
+
+```{r}
+
+
+```
+
+**Q3: rounding to two decimal places, what's the estimated GOP share as a PERCENT (not a proportion; CAREFUL)?**
+
+
+Finally, let's get a precise estimate for a particular county. Look up Broward county, and using it's characteristics and your model for above, produce the estimated vote share for Republicans in Broward in 2016: 
+
+```{r}
+
+
+```
+
+**Q4: rounding to two decimal places, what's the estimate for the GOP vote share in Broward County as a PERCENT (not a proportion; CAREFUL)?**
+
+
+Finally, compare this estimate to how the GOP *actually performed* in the 2020 election in Broward County. In a way, this is like asking how good our guess would be for the 2020 election if we were using data from 2016. That is, how good is our model at predicting "out of sample". 
+
+**Q5: Rounding to two decimal places, how wrong is our estimate from above compared to actual 2020 performance? Take the difference between the two numbers. report the number as a PERCENT (not a proportion; CAREFUL)**
+
+
+**Q6: In general, which prediction will be worse: out-of-sample or in-sample?**

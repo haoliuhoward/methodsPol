@@ -1,0 +1,863 @@
+---
+title: "Drawing DAGs"
+subtitle: "The Scientific Study of Politics"  
+author: 
+  - "Juan Tellez"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    lib_dir: "libs"
+    css: ["default", "css/my-theme.css", "css/ath-inferno-fonts.css"]
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLanguage: ["r"]
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      navigation:
+        scroll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, 
+  fig.height=3.5, 
+  fig.retina=3,
+  fig.align = 'center',
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+
+
+```{r packages}
+library(tidyverse)
+library(ggdag)
+library(rethinking)
+library(paletteer)
+data("WaffleDivorce")
+
+# dubois colors
+red = "#dc354a"
+yellow = "#ecb025"
+blue = "#213772"
+
+
+# theme
+theme_nice = function() {
+  theme_minimal(base_family = "Barlow", base_size = 14) +
+    theme(panel.grid.minor = element_blank(),
+          plot.background = element_rect(fill = "white", color = NA),
+          plot.title = element_text(face = "bold"),
+          axis.title = element_text(face = "bold"),
+          strip.text = element_text(face = "bold"),
+          strip.background = element_rect(fill = "grey80", color = NA),
+          legend.title = element_text(face = "bold"), 
+          plot.subtitle = element_text(hjust = .5, face = "italic"))
+}
+theme_set(theme_nice())
+
+
+# set seed
+set.seed(1990)
+
+```
+
+
+
+class: left, middle
+background-image: url("images/dubois-spiral-2.png")
+background-position: right
+background-size: contain
+
+# `r rmarkdown::metadata$title`
+
+### *`r rmarkdown::metadata$subtitle`*
+
+### Professor `r rmarkdown::metadata$author` 
+
+#### University of California, Davis
+
+---
+
+
+class: center
+.large[
+# Today's agenda
+]
+
+--
+.box-1.large.sp-after[Why DAG?]
+
+--
+.box-2.large.sp-after[Identifying effects]
+
+--
+.box-3.large.sp-after[`ggdag`]
+
+---
+
+class: center, middle, inverse
+# Why DAG?
+---
+
+
+# Why DAG
+
+
+We want to identify the effect of X (waffles) on Y (divorce)
+
+--
+
+We can use our model to identify that effect, BUT:
+
+--
+
+We also know that **lurking variables** might make things go awry (the South)
+
+
+---
+
+
+# Why DAG
+
+
+We know that the DAG on the left will produce the **spurious** correlation on the right
+
+.pull-left[
+```{r}
+dagify(Divorce ~ South, 
+       Waffle ~ South, 
+       exposure = "Waffle",
+       outcome = "Divorce", 
+       coords = list(x = c(Waffle = 0, Divorce = 2, South = 1), 
+                      y = c(Waffle = 0, Divorce = 0, South = 1))) %>% 
+  ggdag_status(text = FALSE, use_labels = "name") + theme_dag_blank() + 
+  theme(legend.position = "none")
+```
+]
+
+.pull-right[
+```{r}
+ggplot(WaffleDivorce, aes(x = WaffleHouses/Population, y = Divorce)) + 
+  geom_point(size = 3, fill = red, alpha = .8, shape = 21, color = "white") + 
+  geom_smooth(method = "lm", color = red, fill = red) + 
+  theme_nice() + 
+  labs(x = "Waffle Houses per million residents", 
+       y = "Divorce rate per 1,000 adults")
+```
+]
+
+
+Regardless of whether or not waffles cause divorce
+
+
+---
+
+
+# Why not control for everything? 
+
+--
+
+.pull-left[
+Controlling for the wrong thing can *close* a **perplexing pipe** -- this erases **part** or **all** of the effect that X has on Y
+
+
+```{r}
+dagify(Y ~ Z, 
+       Z ~ X,
+       exposure = "X",
+       outcome = "Y", 
+       coords = list(x = c(Y = 2, X = 0, Z = 1), 
+                      y = c(Y = 0, X = 0, Z = 0))) %>% 
+  ggdag_status(text = FALSE, use_labels = "name", stylized = TRUE) +
+  theme_dag_blank() + 
+  theme(legend.position = "none") + 
+  scale_color_manual(values = c(blue, red)) + 
+  scale_fill_manual(values = c(blue, red))
+```
+]
+
+--
+
+.pull-right[
+Or *open* up an **exploding collider** -- creates weird correlation between X and Y
+
+```{r}
+collider_triangle(x = "X", y = "Y", m = "Z") %>% 
+  ggdag_status(text = FALSE, use_labels = "name", stylized = TRUE) +
+  theme_dag_blank() + 
+  theme(legend.position = "none") + 
+  scale_color_manual(values = c(blue, red)) + 
+  scale_fill_manual(values = c(blue, red))
+```
+
+]
+
+
+---
+
+
+# Example: Bias in police use of force
+
+
+Are the police more likely to use deadly force against people of color?
+
+--
+
+*Black Americans are 3.23 times more likely than white Americans to be killed by police* (Schwartz and Jahn, 2020)
+
+--
+
+Yet there are big debates about how exactly to estimate this bias (and the extent to which it exists)
+
+
+--
+
+.shout[Fryer (2019)] finds that Blacks and Hispanics are 50% more likely to be stopped by police, but that *conditional on being stopped by the police*, there are no racial differences in officer-involved shootings
+
+
+
+---
+
+
+# Bias in use of force
+
+Fryer used extensive controls about the nature of the interaction, time of day, and hundreds of factors that I’ve captured with `Confounds`
+
+```{r, out.width="90%"}
+coords = list(x = c(Minority = .5, Stop = .5, Force = 1, 
+                                 Confounds = .5), 
+                           y = c(Minority = .1, Stop = 0, Force = 0, 
+                                 Confounds = .25))
+dag = dagify(Force ~ Stop + Suspicion + Confounds + Minority, 
+             Minority ~ Confounds, 
+             Stop ~ Minority + Suspicion, 
+             exposure = "Minority", 
+             outcome = "Force", 
+             latent = "Suspicion",
+             coords = coords)
+
+ggdag_status(dag, text = FALSE, use_labels = "name", stylized = TRUE) +
+  theme_dag_blank() + 
+  theme(legend.position = "none") + 
+  scale_color_manual(values = c(blue, yellow, red)) + 
+  scale_fill_manual(values = c(blue, yellow, red))
+```
+
+
+---
+
+
+# Bias in use of force
+
+
+Fryer shows that once you account for the indirect effect, the direct effect is basically not there -- once the police has stopped someone, they do **not** use deadly force more often against POC than Whites
+
+
+```{r, out.width="90%"}
+dag = dagify(Force ~ Stop + Suspicion + Confounds + Minority, 
+             Minority ~ Confounds, 
+             Stop ~ Minority + Suspicion, 
+             exposure = "Minority", 
+             outcome = "Force", 
+             latent = "Suspicion",
+             coords = coords)
+
+ggdag_status(dag, text = FALSE, use_labels = "name", stylized = TRUE) +
+  theme_dag_blank() + 
+  theme(legend.position = "none") + 
+  scale_color_manual(values = c(blue, yellow, red)) + 
+  scale_fill_manual(values = c(blue, yellow, red))
+```
+
+---
+
+# Bias in police use of force
+
+
+But what if police are more likely to stop people they believe are "suspicious" AND use force against people they find "suspicious"? THEN conditioning on the stop is equivalent to .shout[conditioning on a collider]
+
+
+```{r, out.width="80%"}
+dag = dagify(Force ~ Stop + Suspicion + Confounds + Minority, 
+             Minority ~ Confounds, 
+             Stop ~ Minority + Suspicion, 
+             exposure = "Minority", 
+             outcome = "Force", 
+             latent = "Suspicion",
+             coords = list(x = c(Minority = .5, Stop = .5, Force = 1, 
+                                 Confounds = .5, 
+                                 Suspicion = .75), 
+                           y = c(Minority = .1, Stop = -.1, Force = 0, 
+                                 Suspicion = -.25, 
+                                 Confounds = .25)))
+
+ggdag_status(dag, text = FALSE, use_labels = "name", stylized = TRUE) +
+  theme_dag_blank() + 
+  theme(legend.position = "none") + 
+  scale_color_manual(values = c(blue, yellow, red)) + 
+  scale_fill_manual(values = c(blue, yellow, red))
+```
+
+
+
+---
+
+
+
+class: center, middle, inverse
+# What do we do?
+
+
+We have to be careful and slow
+
+--
+
+Think carefully about what the DAG *probably* looks like
+
+--
+
+Use the DAG to figure out what we need to control 
+
+(and what must be left alone)
+
+
+--
+
+**Next time:** how to actually control for stuff
+
+
+---
+
+
+# Why experiments work
+
+
+DAGs can also help us see why experiments "work":
+
+--
+
+```{r}
+experiment = tibble(Person = 1:5, 
+       `Shown an ad?` = c("Yes", "No", "Yes", "No", "No"), 
+       `Democrats thermometer` = round(runif(n = 5, min = 0, max = 100) + 10*I(`Shown an ad?` == "Yes"), 2))
+
+knitr::kable(experiment, digits = 2)
+```
+
+---
+
+
+# Why experiments work
+
+
+Experiments seem simple...
+
+--
+
+```{r}
+dagify(Support ~ Ad, 
+       exposure = "Ad", 
+       outcome = "Support") %>% 
+  ggdag_status(text = FALSE, use_labels = "name") + theme_dag() + 
+  theme(legend.position = "none") + 
+  scale_color_paletteer_d(palette = "wesanderson::Darjeeling1") + 
+  scale_fill_paletteer_d(palette = "wesanderson::Darjeeling1")
+```
+
+---
+
+
+# Why experiments work
+
+
+But the outcome can be very complex ... 
+
+And yet we can still **identify** the effect because nothing **causes** you to receive the experimental treatment; it is random!
+
+
+--
+
+
+```{r,out.width="90%"}
+dagify(Support ~ Ad + Age + Income + Race + Region + Religion +
+         Parents + Media, 
+       Income ~ Region + Parents, 
+       Religion ~ Parents, 
+       Media ~ Parents + Religion + Age + Region, 
+       exposure = "Ad", 
+       outcome = "Support") %>% 
+  ggdag_status(text = FALSE, use_labels = "name") + theme_dag() + 
+  theme(legend.position = "none") + 
+  scale_fill_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20") + 
+  scale_color_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20")
+```
+
+---
+
+
+# When experiments go wrong
+
+
+Say the ad experiment was implemented on TikTok, and **younger people are more likely to use TikTok** than older people
+
+--
+
+
+```{r, out.width="70%"}
+dagify(Support ~ Ad + Age + Income + Race + Region + Religion +
+         Parents + Media, 
+       Income ~ Region + Parents, 
+       Religion ~ Parents, 
+       Media ~ Parents + Religion + Age + Region, 
+       Ad ~ Age,
+       exposure = "Ad", 
+       outcome = "Support") %>% 
+  ggdag_status(text = FALSE, use_labels = "name") + theme_dag() + 
+  theme(legend.position = "none") + 
+  scale_fill_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20") + 
+  scale_color_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20")
+```
+
+
+This means **Age** is now a *fork*
+
+
+---
+
+
+class: center, middle, inverse
+# Identifying effects
+---
+
+
+# Front-doors and back-doors
+
+
+.pull-left[
+The **back-door criterion** ties this all together
+
+Confounding caused by existence of an open “**back door**” from X to Y
+
+A backdoor path is *a non-causal path from X to Y*
+
+Need to close back-doors and keep front-doors open
+]
+
+.pull-right[
+```{r}
+knitr::include_graphics("images/backdoor.jpeg")
+```
+
+]
+
+
+---
+
+# Backdoor paths
+
+
+A backdoor path can involve a chain of variables -- like the **fork**, but with more steps
+
+We can identify X $\rightarrow$ Y by controlling for *any* variable in the backdoor path: `m`, `a`, or `b`
+
+```{r, out.width="70%"}
+dag = dagify(y ~ b, 
+      x ~ a, 
+      a ~ m,
+      b ~ m,
+      exposure = "x", 
+      outcome = "y", 
+      coords = list(x = c(y = 2, x = 0, a = 0, b = 2, m = 1),
+                          y = c(y = 0, x = 0, a = 1, b = 1, m = .5)))
+
+ggdag_status(dag, stylized = TRUE) +
+  theme_dag_blank() + 
+  theme(legend.position = "none") + 
+  scale_color_manual(values = c(blue, red)) + 
+  scale_fill_manual(values = c(blue, red))
+```
+
+
+---
+
+
+
+
+# Solve the DAG
+
+
+
+```{r}
+dagify(Y ~ X + I + A, 
+       X ~ A + S, 
+       A ~ S, 
+       I ~ S, 
+       exposure = "X", 
+       outcome = "Y") %>% 
+  ggdag_status() + theme_dag() + 
+  theme(legend.position = "none") + 
+  scale_fill_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20") + 
+  scale_color_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20")
+```
+
+???
+Control for A and I or A and S
+
+---
+
+
+# Solve the DAG
+
+
+```{r}
+dagify(y ~ c + x + u1 + u2,
+       c ~ t + x,
+       t ~ x,
+       x ~ u1 + u2, 
+       exposure = "x", 
+       outcome = "y") %>% 
+  ggdag_status() + theme_dag() + 
+  theme(legend.position = "none") + 
+  scale_fill_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20") + 
+  scale_color_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20")
+```
+
+
+???
+U1 and U2
+
+---
+
+
+# Solve the DAG
+
+
+```{r}
+dagify(y ~ x + c, 
+       x ~ u, 
+       u ~ a, 
+       c ~ a,
+       b ~ u + c, 
+       exposure = "x", 
+       outcome = "y") %>% 
+  ggdag_status(text = FALSE, use_labels = "name") + theme_dag() + 
+  theme(legend.position = "none") + 
+  scale_fill_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20") + 
+  scale_color_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20")
+```
+
+???
+A, C, or U
+What's B here?
+
+---
+
+
+# Solve the DAG
+
+
+```{r}
+dag = dagify(
+  y ~ x + z2 + w2 + w1,
+  x ~ z1 + w1 + w2,
+  z1 ~ w1 + v,
+  z2 ~ w2 + v,
+  w1 ~ w2, # bidirected path
+  exposure = "x",
+  outcome = "y") 
+ 
+ggdag_status(dag, stylized = TRUE) + theme_dag() + 
+  theme(legend.position = "none") + 
+  scale_fill_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20") + 
+  scale_color_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20")
+```
+
+???
+V, W1, W2
+W1, W2, Z1
+W1, W2, Z2
+
+---
+
+
+# Solve the DAG
+
+
+
+```{r}
+dag = dagify(y ~ b + m, 
+      m ~ a + b,
+      x ~ a + m, 
+      exposure = "x", 
+      outcome = "y", 
+      coords = list(x = c(y = 2, x = 0, a = 0, b = 2, m = 1),
+                          y = c(y = 0, x = 0, a = 1, b = 1, m = .5)))
+
+ggdag_status(dag, stylized = TRUE) +
+  theme_dag_blank() + 
+  theme(legend.position = "none") + 
+  scale_color_manual(values = c(blue, red)) + 
+  scale_fill_manual(values = c(blue, red))
+```
+
+---
+
+class: center, middle, inverse
+# Making DAGs in R
+---
+
+
+# The makings of a DAG
+
+
+We can use the `dagify()` function, from `ggdag`, to make a DAG
+
+
+```{r}
+dagify(Y ~ X + P + A + I, # Y is caused by X, P, A and I
+       X ~ P,  # X is caused by P
+       A ~ I + P,  # A is caused by I and P
+       exposure = "X", 
+       outcome = "Y") %>% 
+  ggdag_status(text = FALSE, use_labels = "name") + theme_dag() + 
+  theme(legend.position = "none") + 
+  scale_fill_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20") + 
+  scale_color_manual(values = wesanderson::wes_palettes$Darjeeling1, 
+                     na.value = "grey20")
+```
+
+
+---
+
+# The makings of a DAG
+
+
+Using same syntax as `lm()`, specify all of the **causes** of each of the variables in the `dagify()` function
+
+> Y is caused by X, P, A and I
+
+```{r, echo = TRUE}
+dag = dagify(Y ~ X + P + A + I, # Y is caused by X, P, A and I
+       X ~ P,  # X is caused by P
+       A ~ I + P,  # A is caused by I and P
+       exposure = "X", 
+       outcome = "Y")
+```
+
+
+
+---
+
+
+# The makings of a DAG
+
+
+
+> X is caused by P
+
+> A is caused by I and P
+
+```{r, echo = TRUE}
+dag = dagify(Y ~ X + P + A + I, # Y is caused by X, P, A and I
+       X ~ P,  # X is caused by P
+       A ~ I + P,  # A is caused by I and P
+       exposure = "X", 
+       outcome = "Y")
+```
+
+
+Finally, tell R which variable is the **treatment** ("exposure") and **outcome**
+
+
+---
+
+
+
+# Plotting with ggdag
+
+
+We can plot our dag using ggdag (*notice how the layout is randomly determined*)
+
+```{r, echo = TRUE, out.width="80%"}
+ggdag(dag)
+```
+
+
+---
+
+
+# Seeing the paths
+
+
+We can see all the paths from X to Y using `ggdag_paths()`:
+
+```{r, echo=TRUE, out.width="80%"}
+ggdag_paths(dag)
+```
+
+
+---
+
+
+# What to control for? 
+
+
+We can identify what to control for using `ggdag_adjustment_set()`:
+
+```{r, echo = TRUE, out.width="80%"}
+ggdag_adjustment_set(dag)
+```
+
+
+---
+
+
+# Optional: clean it up
+
+
+Can add some extra code to make the graph nice: 
+
+```{r, echo = TRUE, out.width="70%"}
+ggdag(dag, text = FALSE, use_labels = "name") + 
+  theme_dag()
+```
+
+---
+
+
+# Optional: words instead of letters
+
+
+We can also use words (no spaces!) instead of letters
+
+```{r, echo = TRUE, out.width="50%"}
+dag2 = dagify(child ~ grandpa + parent + neighborhood, 
+       parent ~ grandpa + neighborhood, 
+       exposure = "grandpa",
+       outcome = "child")
+ggdag(dag2, text = FALSE, use_labels = "name") + theme_dag()
+```
+
+---
+
+
+# A variable cannot cause itself
+
+Explanation takes us into the weeds, but DAGs are *acyclical*, meaning: a variable cannot be its own cause (even indirectly):
+
+```{r}
+dag = dagify(Y ~ Z, 
+             Z ~ X, 
+             X ~ Y, 
+             exposure = "X", 
+             outcome = "Y", 
+             coords = list(x = c(X = 0, Y = 1, Z = 2), 
+                           y = c(X = 0, Y = 1, Z = 0)))
+ggdag_status(dag, text = FALSE, use_labels = "name", stylized = TRUE) +
+  theme_dag_blank() + 
+  theme(legend.position = "none") + 
+  scale_color_manual(values = c(blue, red, yellow)) + 
+  scale_fill_manual(values = c(blue, red, yellow))
+```
+
+---
+
+# A variable cannot cause itself
+
+If you have a cycle in your DAG, `ggdag_adjustment_set()` will return this:
+
+
+```{r}
+ggdag_adjustment_set(dag)
+```
+
+---
+
+
+
+# 🐶 Your turn: make your own DAG 🐶
+
+
+Come up with your own theory of how one .blue[treatment] affects an .red[outcome]. Then think about all of the variables that might affect each of them. 
+
+
+1. Make a DAG to represent all of those relationships. Post your DAG in the Slack. 
+
+2. Use the tools we learned to identify all the paths from one variable to the other. 
+
+3. Use the tools to identify what **backdoor paths** need to be accounted for. 
+
+
+
+```{r}
+countdown::countdown(minutes = 15L, font_size = "1.25em")
+```
+
+---
+
+
+class: center, middle, inverse
+# Extra slides
+---
+
+exclude: true
+# Simulate the pipe
+
+
+```{r}
+fake_data = tibble(x = rnorm(500, mean = 10, sd = 2), 
+                   z = rnorm(500, mean = 10, sd = 2) + 2 * x, 
+                   y = rnorm(500, mean = 10, sd = 2) + 4 * z)
+
+y_minus_z = lm(y ~ z, data = fake_data)
+x_minus_z = lm(x ~ z, data = fake_data)
+fake_data$y_minus_z = residuals(y_minus_z)
+fake_data$x_minus_z = residuals(x_minus_z)
+
+ggplot(fake_data, aes(x = x_minus_z, y = y_minus_z)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+
+---
+
+exclude: true
+# Simulate collider
+
+```{r}
+fake_collider = tibble(x = rnorm(1000), 
+                       y = rnorm(1000)) %>% 
+  mutate(z = (x + y) > .25)
+
+
+ggplot(fake_collider, aes(x = x, y = y, color = z)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+

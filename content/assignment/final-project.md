@@ -1,0 +1,659 @@
+---
+title: "Final Project"
+linktitle: "Final Project"
+output:
+  blogdown::html_page:
+    toc: true
+# menu:
+#   assignment:
+#     parent: Problem sets
+#     weight: 20
+type: docs
+editor_options: 
+  chunk_output_type: console
+---
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+
+
+
+
+# Instructions
+
+
+Your primary goal is this: to explore the effect of some treatment on an outcome you are interested in, using one of the datasets below. You get to decide what the treatment and outcome variable are; there is more than one "right" answer. I provide a few ideas beneath each dataset but you can do what you want.
+
+
+Browse through the different topics, think about what causal story you want to tell, and pick the topic you want. Download the adjoining Rmarkdown template, and complete the following activities outlined there. 
+
+
+You can use your notes, slides, and any other material from the course, but *you must work on this independently.*
+
+
+Once you are done, you will submit the completed .Rmd file on Canvas. *Late submissions will not be accepted*. 
+
+
+## Help from instructors
+
+On the problem sets the instructors (the professor + TAs) provided substantial guidance. This is not the case for the final project. *We will not provide any help in answering questions*. This is your chance to show how much you have learned. 
+
+
+If there are MAJOR issues that prevent you from working on the project (e.g., you cannot load the dataset at the top of the Rmd file), reach out to us ASAP, by email. If there are clarification questions about the language of a question, also reach out to us ASAP by email. 
+
+
+# Evaluation
+
+
+Your project will be evaluated along two dimensions: 
+
+1) accuracy (90% of grade): did you answer the questions well? does your code work? did you interpret the results correctly? is your argument clear and persuasive? Basically: how good is your project? 
+2) professionalism (10% of grade): is it neat, organized, easy to read? is your writing grammatical, uses capitalization, punctuation, etc.? are graphs neat and well-labeled? Basically: how presentable is your project? 
+
+
+
+# Note
+
+If you need more information about the data, a specific variable, etc., look through the linked articles or codebooks. 
+
+
+
+# Dataset options
+
+
+## War, gender, and social change
+
+
+One of the big changes that World War II brought about in the US was the entrance of women into the labor force in massive numbers. Over this period, involvement of women in economic and political life also increased dramatically. 
+
+Wars are big, destabilizing events that can dramatically transform societies. Can wars, either domestic or foreign, change gender relations within a country? 
+
+
+This dataset comes from [this IO article by Webster, Chen, and Beardsley](https://www.cambridge.org/core/journals/international-organization/article/abs/conflict-peace-and-the-evolution-of-womens-empowerment/8507AFF68DD2AB7BF637B97064C2C2AF) and includes information on women's involvement in civil society and politics, war, and other related variables, using data from every country between 1900 and 2015. 
+
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> variable </th>
+   <th style="text-align:left;"> meaning </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> year </td>
+   <td style="text-align:left;width: 20em; "> Year </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> country_name </td>
+   <td style="text-align:left;width: 20em; "> Country name </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> polempowerment </td>
+   <td style="text-align:left;width: 20em; "> Measure of women's political empowerment in the country in that year, from VDEM (variable: V2x_GENDER). Ranges from 0 (low) to 1 (high). </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> civilsoci </td>
+   <td style="text-align:left;width: 20em; "> Measure of how active women are in civil society, from VDEM (variable: V2X_GENCS). Ranges from 0 (low) to 1 (high) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> fertility </td>
+   <td style="text-align:left;width: 20em; "> Women's fertility rates (average number of births per woman) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> inter_war </td>
+   <td style="text-align:left;width: 20em; "> Did an international war take place? (1 = yes, 0 = no). </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> intra_war </td>
+   <td style="text-align:left;width: 20em; "> Did a civil war take place? (1 = yes, 0 = no). </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> milper </td>
+   <td style="text-align:left;width: 20em; "> Military personnel per capita </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> milex_pc </td>
+   <td style="text-align:left;width: 20em; "> Military expenditures per capita </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> population </td>
+   <td style="text-align:left;width: 20em; "> Total population </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> polity2 </td>
+   <td style="text-align:left;width: 20em; "> Country's democracy score in that year, from POLITY2. Ranging from full autocracy (-10) to full democracy (10). </td>
+  </tr>
+</tbody>
+</table>
+
+
+Ideas: 
+
+- effects of civil war on women's empowerment
+- effects of international war on women's empowerment
+- effects of war on fertility
+- effect of democratization on military spending 
+
+
+### The template
+
+[`Webster template`](/files/final-project-data/final-webster.Rmd)
+
+
+
+<!-- ## Decapitation and counter-terrorism -->
+
+
+<!-- States spend lots of resources trying to capture or kill the leaders of non-state organizations such as terrorist groups, rebel groups, and criminal organizations. Does **decapitating** these orgs actually work? -->
+
+
+<!-- This dataset comes from [this II article by Milton and Price](https://www.tandfonline.com/doi/full/10.1080/03050629.2020.1719406?casa_token=cZ2b77wtvbMAAAAA%3AQzsQxZqs7asZricF_a2V9EnRMmsOCNPV0zh1c_DV1dMwwfZ5TTrhj03HiTnHv4i0OEE3Wy85ow). The dataset contains information on terrorist organizations, decapitation, and other associated variables for terrorist groups across the world.  -->
+
+<!-- ```{r} -->
+<!-- tribble(~variable, ~meaning,  -->
+<!--         "name", "The group's name",  -->
+<!--         "year", "Year",  -->
+<!--         "failure", "Did the group experience failure in this year?",  -->
+<!--         "allies", "Number of allies the group has",  -->
+<!--         "alliesties", "Number of ties a group's allies have (eigenvector centrality score)",  -->
+<!--         "size", "Size of group (from 0 to 3)",  -->
+<!--         "religious", "Is the group religious?",  -->
+<!--         "ethnic", "Is the group ethnically defined?",  -->
+<!--         "pop", "Country population",  -->
+<!--         "cinc", "Military capability score of country (as a percent of the world's total capabilities)",  -->
+<!--         "civilwar", "Is the country experiencing a civil war?",  -->
+<!--         "decap", "Was the group decapitated this year?",  -->
+<!--         "gdppercap", "Country's GDP per capita.") %>%  -->
+<!--   kable() %>%  -->
+<!--     column_spec(2, width = "20em") -->
+<!-- ``` -->
+
+
+<!-- Ideas:  -->
+
+<!-- - does decapitation cause organizational failure?  -->
+<!-- - do terrorist alliances reduce organizational failure?  -->
+<!-- - does religion or ethnicity make a group more likely to form alliances?  -->
+<!-- - does religious belief make a group more resistant to failure? -->
+
+
+<!-- ### The template -->
+
+<!-- [`Price template`](/files/final-project-data/final-price.Rmd) -->
+
+
+
+
+## Western education and the spread of democracy
+
+
+Despite living in autocratic countries, dictators often either attend or send their kids to universities in democratic countries where some of the world's top universities are often located. Does the experience of living in a democratic state influence leaders once they return? Could experiences like this "spread" democracy? 
+
+This dataset comes from [a JCR study by Gift and Krcmaric](https://journals.sagepub.com/doi/abs/10.1177/0022002715590878?casa_token=bHBIbxdpJBkAAAAA:CtPHs_mpTgoPZZheb0j7WWsWILbuDy-BQ37p4wKLA9INxK6iDeJoj5OXt-TysFpLc7dI0LuFjA). The dataset contains information on world leaders, where they were educated, how democracy changed in their countries during their tenure, and other factors. 
+
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> variable </th>
+   <th style="text-align:left;"> meaning </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> leader </td>
+   <td style="text-align:left;width: 20em; "> Name of the leader </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> startdate </td>
+   <td style="text-align:left;width: 20em; "> When the leader started their tenure </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> enddate </td>
+   <td style="text-align:left;width: 20em; "> When the leader ended their tenure </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> angloedu </td>
+   <td style="text-align:left;width: 20em; "> Was leader educated in an English-speaking country? </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> westedu </td>
+   <td style="text-align:left;width: 20em; "> Was leader educated in the West? </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> noedu </td>
+   <td style="text-align:left;width: 20em; "> Did leader have no higher education? </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> polity2change </td>
+   <td style="text-align:left;width: 20em; "> Change in POLITY2 score over leader's tenure (positive = country became more democratic, negative = less democratic) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BMRtransition </td>
+   <td style="text-align:left;width: 20em; "> 1 if country underwent democratic transition </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ethfrac </td>
+   <td style="text-align:left;width: 20em; "> Ethnic fractionalization index of country </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> britcolony </td>
+   <td style="text-align:left;width: 20em; "> Is leader in a former british colony? </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> igdp </td>
+   <td style="text-align:left;width: 20em; "> interpolated real GDP per capita /100,000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> usally </td>
+   <td style="text-align:left;width: 20em; "> did country have cold war alliance with USA at any point? </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ioil </td>
+   <td style="text-align:left;width: 20em; "> does the country have oil? </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ipolconiii </td>
+   <td style="text-align:left;width: 20em; "> Executive constraints variable (from 0 to 1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> studentflowthousand </td>
+   <td style="text-align:left;width: 20em; "> students studying in the US (in thousands) </td>
+  </tr>
+</tbody>
+</table>
+
+
+Ideas: 
+
+- does a leader receiving a Western education spread democracy to their home countries? 
+- does a leader receiving a Western education make alliances with the US more likely? 
+- does a leader having lots of students studying abroad in the US make US alliances more likely? 
+- does a country experiencing a democratic transition increase the likelihood a leader studies in the West? or that more of their students study in the West?
+
+
+### The template
+
+[`Gift template`](/files/final-project-data/final-gift.Rmd)
+
+
+
+
+## The effects of criminal victimization
+
+
+Many people in the world become victims of crime at some point or another in their lives. These experiences can be highly traumatic. How does criminal victimization change people and their attitudes and beliefs? Do they become more conservative, or liberal? Do they become more supportive of harsh policies? Or do they become more involved in their communities, and seek change? 
+
+
+This dataset comes from [LAPOP](https://www.vanderbilt.edu/lapop/), and the [codebook](https://www.vanderbilt.edu/lapop/ab2018/AB2018-V12.0-Eng_190131_W.pdf). The data is a survey of people living across a dozen countries in Latin America, their experiences with crime, their attitudes towards democracy, how they think the state should respond to crime, and so on. 
+
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> variable </th>
+   <th style="text-align:left;"> meaning </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> country </td>
+   <td style="text-align:left;width: 20em; "> Country </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> sex </td>
+   <td style="text-align:left;width: 20em; "> Sex </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> age </td>
+   <td style="text-align:left;width: 20em; "> Age </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> education </td>
+   <td style="text-align:left;width: 20em; "> Years of education </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ethnicity </td>
+   <td style="text-align:left;width: 20em; "> Ethnicity </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> vigilante </td>
+   <td style="text-align:left;width: 20em; "> Approval of Vigilante Justice (1 = none, 10 = a lot) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> income </td>
+   <td style="text-align:left;width: 20em; "> Income </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> victim </td>
+   <td style="text-align:left;width: 20em; "> Victim of a crime in last 12 months </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> coup_support </td>
+   <td style="text-align:left;width: 20em; "> Agrees that a military coup is justified if crime is high </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> neighbor_crime </td>
+   <td style="text-align:left;width: 20em; "> Murders have taken place in neighborhood </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> attend_meeting </td>
+   <td style="text-align:left;width: 20em; "> Did respondent attend community meeting? </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> protested </td>
+   <td style="text-align:left;width: 20em; "> Did respondent participate in a protest? </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> solve_problems </td>
+   <td style="text-align:left;width: 20em; "> How often respondent helps solve local problem (1, Once a week, 2 = Once or twice a month, 3 = Once or twice a year, 4 = Never) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ideology </td>
+   <td style="text-align:left;width: 20em; "> Ideology (1 = far left, 10 = far right) </td>
+  </tr>
+</tbody>
+</table>
+
+
+Ideas: 
+
+- does being a victim of a crime increase support for military coups or vigilante justice? 
+- can education reduce support for military coups? 
+- does being a victim of crime make someone more ideologically conservative? 
+- do victims of crime become more involved in their communities, or engage in protest? 
+- does the experience of participating in a protest make someone become more liberal or conservative? 
+
+
+### The template
+
+[`LAPOP template`](/files/final-project-data/final-lap-crime.Rmd)
+
+
+
+
+## Judicial appointments and public opinion in the US
+
+
+The appointment and confirmation of judges to the Supreme Court is an increasingly important and politicized process. Do politicians, in voting to confirm a Supreme Court nominee, respond to public pressure? Or do they act more autonomously? 
+
+This dataset comes from a [JOP article by Kastellec, Lax, and Phillips](https://www.journals.uchicago.edu/doi/abs/10.1017/S0022381610000150?casa_token=lcXn5k2nWHYAAAAA:xDh4ZxsRNVtKuGGe-hZN1HZjfh2D7jbctAsK3qSAfwgl57wmVjA_tOA5xEoz3ehUWgq-Mln2). The dataset contains estimates of public support for the confirmation of 10 recent Supreme Court nominees, how Senators voted during the confirmation process, and other factors, in all 50 states. 
+
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> variable </th>
+   <th style="text-align:left;"> meaning </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> nominee </td>
+   <td style="text-align:left;width: 20em; "> Name of the nominated judge </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> state </td>
+   <td style="text-align:left;width: 20em; "> State </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> year </td>
+   <td style="text-align:left;width: 20em; "> Year </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> congress </td>
+   <td style="text-align:left;width: 20em; "> Congressional number </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> name </td>
+   <td style="text-align:left;width: 20em; "> Name of Senator </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> democrat </td>
+   <td style="text-align:left;width: 20em; "> Whether Senator is a Democrat </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> senator_ideology </td>
+   <td style="text-align:left;width: 20em; "> Senator's ideology, on a -1 (liberal) to +1 (conservative) scale </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> vote </td>
+   <td style="text-align:left;width: 20em; "> if the senator voted to confirm the nominee </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> pres.dem </td>
+   <td style="text-align:left;width: 20em; "> if the nominating president was a Democrat </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> sameprty </td>
+   <td style="text-align:left;width: 20em; "> if the senator is the same party as the president </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nom_ideology </td>
+   <td style="text-align:left;width: 20em; "> Nominee's ideology, on a 0 (conservative) to 1 (liberal) scale </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> opinion </td>
+   <td style="text-align:left;width: 20em; "> nominee's approval rating (out of 100%) in the senator's state at the time of the vote </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> reelection </td>
+   <td style="text-align:left;width: 20em; "> if the senator faces reelection within two years of the vote </td>
+  </tr>
+</tbody>
+</table>
+
+
+Ideas: 
+
+- does public support for a Supreme Court nominee cause a Senator to vote for that candidate? 
+- does not having to face reelection change how Senators vote? 
+- does a senator's ideology cause them to vote in particular ways during Senate confirmations? 
+
+
+### The template
+
+[`Kastellec template`](/files/final-project-data/final-kastellec.Rmd)
+
+
+
+## Welfare and race in the United States
+
+
+There's a big literature on how debates over redistributive policy (e.g., welfare measures) in the United States can often become racialized -- that people support or oppose welfare policies not on the merits but rather on which groups they anticipate will benefit from such policies and their attitudes towards those groups. 
+
+This data comes from the [2019 Democracy Fund Voter Study Group](https://www.voterstudygroup.org), [codebook here](https://www.dropbox.com/s/qr2mw5olguglpj7/dfvsg_Guide_2019_VOTER_Survey.pdf?dl=0). The data is a survey of Americans, and includes  information on racial prejudice, demographics, ideology, and support for welfare policies. 
+
+
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> variable </th>
+   <th style="text-align:left;"> meaning </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> state </td>
+   <td style="text-align:left;width: 20em; "> State </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> birth_year </td>
+   <td style="text-align:left;width: 20em; "> Year born </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> sex </td>
+   <td style="text-align:left;width: 20em; "> Sex </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> race </td>
+   <td style="text-align:left;width: 20em; "> Race </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> party_id </td>
+   <td style="text-align:left;width: 20em; "> Party identification </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ideo5_2019 </td>
+   <td style="text-align:left;width: 20em; "> Ideology (1  = very liberal, 5 = very conservative) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> newsint_2019 </td>
+   <td style="text-align:left;width: 20em; "> Interested in politics (1 = most of the time, 4 = hardly at all) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> pew_religimp_2019 </td>
+   <td style="text-align:left;width: 20em; "> Importance of religion (1 = very important, 4 = not all important) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> faminc_new_2019 </td>
+   <td style="text-align:left;width: 20em; "> Check codebook </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> educ_2019 </td>
+   <td style="text-align:left;width: 20em; "> Check codebook </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ft_black_2017 </td>
+   <td style="text-align:left;width: 20em; "> Feeling thermometer, Blacks (0 = strong dislike, 100 = strong like) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ft_hisp_2017 </td>
+   <td style="text-align:left;width: 20em; "> Feeling thermometer, Hispanics (0 = strong dislike, 100 = strong like) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ft_asian_2017 </td>
+   <td style="text-align:left;width: 20em; "> Feeling thermometer, Asians (0 = strong dislike, 100 = strong like) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> diff_inc_2019 </td>
+   <td style="text-align:left;width: 20em; "> Government should redistribute wealth (1 = strongly agree, 5 = strongly disagree) </td>
+  </tr>
+</tbody>
+</table>
+
+
+Ideas: 
+
+- does racial prejudice cause changes in support for redistributive policies? does it depend on the group in question? 
+- can education reduce racial prejudice? 
+- does education cause people to become more liberal or more conservative? 
+
+
+### The template
+
+
+[`Prejudice template`](/files/final-project-data/final-prejudice.Rmd)
+
+
+
+## Coca and conflict in Colombia
+
+
+Colombia has one of the longest-running internal conflicts in the world, involving multiple armed groups over decades and also a thriving drug trade. Does past violence beget current violence? Does the drug trade cause conflict? 
+
+
+This data comes from [The Center for Economic Development at the University of Los Andes, in Colombia](https://economia.uniandes.edu.co/cede), codebook [here (in Spanish!)](https://www.dropbox.com/s/j5e5i9esrxui2uu/9ce_Panel_conflicto_y_violencia%28062016%29.pdf?dl=0)
+
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> variable </th>
+   <th style="text-align:left;"> meaning </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> department </td>
+   <td style="text-align:left;width: 20em; "> Department </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> muni </td>
+   <td style="text-align:left;width: 20em; "> Municipality </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> year </td>
+   <td style="text-align:left;width: 20em; "> Year </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rural_pop </td>
+   <td style="text-align:left;width: 20em; "> Rural population </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> urban_pop </td>
+   <td style="text-align:left;width: 20em; "> Urban population </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> total_pop </td>
+   <td style="text-align:left;width: 20em; "> Total population </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> area </td>
+   <td style="text-align:left;width: 20em; "> Area (km2) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> altitude </td>
+   <td style="text-align:left;width: 20em; "> Altitude (meters above sea level) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> discapital </td>
+   <td style="text-align:left;width: 20em; "> Distance to department capital </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> la_violencia </td>
+   <td style="text-align:left;width: 20em; "> Dummy for violence during La Violencia (1948-1953) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ocup_espan </td>
+   <td style="text-align:left;width: 20em; "> Dummy for Spanish occupation from 1510 - 1561 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> land_conflicts </td>
+   <td style="text-align:left;width: 20em; "> Dummy for land conflicts, 1901-1931 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> homicides </td>
+   <td style="text-align:left;width: 20em; "> Total homicides </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> coca_hectares </td>
+   <td style="text-align:left;width: 20em; "> Number of hectares of coca cultivations (less accurate) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> coca </td>
+   <td style="text-align:left;width: 20em; "> Dummy for coca presence (more accurate) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> farc_attacks </td>
+   <td style="text-align:left;width: 20em; "> Number of attacks by the FARC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> para_attacks </td>
+   <td style="text-align:left;width: 20em; "> Number of attacks by the AUC </td>
+  </tr>
+</tbody>
+</table>
+
+
+Ideas: 
+
+- does the coca trade cause conflict by one group or another, or general homicides? 
+- do past conflicts, either during La Violencia, or over land, cause current conflicts? 
+- how has the experience of Spanish colonization in some parts of the country but not others influenced contemporary outcomes? 
+
+
+### The template
+
+[`Colombia template`](/files/final-project-data/final-colombia.Rmd)

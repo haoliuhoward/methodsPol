@@ -1,0 +1,726 @@
+---
+title: "Relationships II"
+subtitle: "The Scientific Study of Politics"  
+author: 
+  - "Juan Tellez"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    lib_dir: "libs"
+    css: ["default", "css/my-theme.css", "css/halloween.css"]
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLanguage: ["r"]
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      navigation:
+        scroll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, 
+  fig.height=3.5, 
+  fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+
+
+```{r packages}
+library(tidyverse)
+library(gapminder)
+library(fivethirtyeight)
+library(juanr)
+
+# dubois colors
+red = "#dc354a"
+yellow = "#ecb025"
+blue = "#213772"
+
+
+
+# theme
+theme_nice = function() {
+  theme_minimal(base_family = "Fira Sans Condensed", base_size = 14) +
+    theme(panel.grid.minor = element_blank(),
+          plot.background = element_rect(fill = "white", color = NA),
+          plot.title = element_text(face = "bold"),
+          axis.title = element_text(face = "bold"),
+          strip.text = element_text(face = "bold"),
+          strip.background = element_rect(fill = "grey80", color = NA),
+          legend.title = element_text(face = "bold"), 
+          plot.subtitle = element_text(hjust = .5, face = "italic"))
+}
+theme_set(theme_nice())
+
+```
+
+
+
+class: left, middle
+background-image: url("images/dubois-spiral-2.png")
+background-position: right
+background-size: contain
+
+# `r rmarkdown::metadata$title`
+
+### *`r rmarkdown::metadata$subtitle`*
+
+### Professor `r rmarkdown::metadata$author` 
+
+#### University of California, Davis
+
+---
+
+class: center
+.large[
+# Today's agenda
+]
+
+--
+.box-1.large.sp-after[Comparing across groups]
+
+--
+.box-2.large.sp-after[Dummy variables]
+
+--
+.box-3.large.sp-after[Categorical variables]
+
+---
+
+
+
+# The feeling thermometer
+
+
+We can use `summarise()` to measure average support for different groups:
+
+```{r, echo = TRUE}
+therm %>% 
+  summarise(avg_police = mean(ft_police, na.rm = TRUE)) #<<
+```
+
+
+---
+
+# Feeling thermometer
+
+
+We can *compare* where support is highest and lowest:
+
+```{r, echo = TRUE}
+therm %>% 
+  summarise(avg_police = mean(ft_police, na.rm = TRUE), 
+            avg_muslim = mean(ft_muslim, na.rm = TRUE), #<<
+            avg_white = mean(ft_white, na.rm = TRUE), #<<
+            avg_immig = mean(ft_christ, na.rm = TRUE), #<<
+            avg_fem = mean(ft_fem, na.rm = TRUE), #<<
+            avg_black = mean(ft_black, na.rm = TRUE)) #<<
+```
+
+??? 
+Patterns?
+
+---
+
+# The secret shortcut
+
+```{r, echo = TRUE}
+therm %>% 
+  summarise(across(c(ft_black:ft_rep), ~mean(.,na.rm = TRUE))) #<<
+```
+
+
+You're not responsible for this!
+
+---
+
+
+# Breaking down support
+
+We can look for patterns by using `group_by()` to separate average support *by* respondent characteristics:
+
+--
+
+.scroll-output[
+```{r, echo = TRUE}
+therm %>% 
+  group_by(party_id) %>% #<<
+  summarise(avg_police = mean(ft_police, na.rm = TRUE), avg_muslim = mean(ft_muslim, na.rm = TRUE), avg_white = mean(ft_white, na.rm = TRUE), avg_immig = mean(ft_christ, na.rm = TRUE), avg_fem = mean(ft_fem, na.rm = TRUE), avg_black = mean(ft_black, na.rm = TRUE))
+```
+]
+
+???
+Take code and iteratively change it
+---
+
+
+# Breaking down support
+
+We can use `filter()` to focus our search on fewer categories: 
+
+--
+
+.scroll-output[
+```{r, echo = TRUE}
+therm %>% 
+  filter(party_id %in% c("Democrat", "Republican", "Independent")) %>% #<<
+  group_by(party_id) %>% 
+  summarise(avg_police = mean(ft_police, na.rm = TRUE),avg_muslim = mean(ft_muslim, na.rm = TRUE), avg_white = mean(ft_white, na.rm = TRUE),avg_immig = mean(ft_christ, na.rm = TRUE),avg_fem = mean(ft_fem, na.rm = TRUE),avg_black = mean(ft_black, na.rm = TRUE))
+```
+]
+
+
+???
+Where are the biggest partisan gaps? 
+What's going on with immigrants? Is this really an apples-to-apples comparison? 
+
+---
+
+class: center, middle, inverse
+# Making sense of the immigration gap
+
+--
+
+The problem with interpreting the immigration attitudes gap is that immigrants are disproportionately Democrat
+
+--
+
+How much of the difference we are observing across parties solely about **parties** and how much is it about *demographic* differences?
+
+--
+
+It might be, for instance, that the attitudes of non-migrants don't differ much across parties
+
+--
+
+that is, the big gap we see is all because immigrants are *both* more likely to be Democrats *and* have stronger views of own community
+
+---
+
+# Making sense of the migration gap
+
+We can (very imperfectly with this data!) "test" this concern by breaking the data down further, by race: 
+
+--
+
+```{r, echo = TRUE}
+therm %>% 
+  filter(party_id %in% c("Democrat", "Republican", "Independent")) %>%
+  group_by(party_id, race) %>% #<<
+  summarise(avg_imm = mean(ft_immig, na.rm = TRUE))
+```
+
+
+---
+
+
+# Visualizing the pattern
+
+We can create a new object to make a nice plot:
+
+```{r, echo = TRUE}
+therm_party_immig = therm %>% 
+  filter(party_id %in% c("Democrat", "Republican", "Independent")) %>%
+  filter(race %in% c("White", "Black", "Hispanic", "Asian", "Native American")) %>% 
+  group_by(party_id, race) %>% #<<
+  summarise(avg_imm = mean(ft_immig, na.rm = TRUE))
+```
+
+---
+
+# The plot
+
+```{r, echo = TRUE, out.width="80%"}
+ggplot(therm_party_immig, aes(x = party_id, 
+                              y = avg_imm, fill = race)) + 
+  geom_col() #<<
+```
+
+---
+
+# The better plot
+
+`position = "dodge"` "unstacks" the columns
+
+```{r,echo = TRUE, out.width="70%"}
+ggplot(therm_party_immig, aes(x = party_id, 
+                              y = avg_imm, fill = race)) + 
+  geom_col(position = "dodge") #<<
+```
+
+---
+
+
+# The immigration attitudes gap
+
+
+```{r,echo = FALSE, out.width="100%"}
+ggplot(therm_party_immig, aes(x = party_id, 
+                              y = avg_imm, fill = race)) + 
+  geom_col(position = "dodge") + 
+  scale_fill_viridis_d(option = "rocket", end = .8) + 
+  labs(x = "Party Identification", y = "Average thermometer level\nfor immigrants", fill = "Respondent race:") + 
+  theme(legend.position = "top")
+```
+
+
+---
+
+class: center, middle, inverse
+# Big picture
+
+
+The immigration gap persists, even comparing non-immigrants against non-immigrants and immigrants against immigrants
+
+--
+
+Our analysis is a way of **accounting** for differences in groups (Democrats versus Republicans); it's closer to an "apples to apples" comparison
+
+
+--
+
+
+Big differences **across groups** should raise eyebrows; what's going on here? 
+
+--
+
+We can break the data down further to see what's going on beneath the surface
+
+---
+
+# Non-differences can be surprsing too
+
+
+```{r, echo = TRUE}
+therm %>% 
+  summarise(avg_dems = mean(ft_dem, na.rm = TRUE), 
+            avg_reps = mean(ft_rep, na.rm = TRUE))
+```
+
+--
+
+Pretty neutral feelings; mass polarization is dead! Alert the media!!!
+
+---
+
+# Oh...
+
+Breaking down data says something different
+
+--
+
+```{r}
+therm %>% 
+  group_by(party_id) %>% #<<
+  summarise(dems = mean(ft_dem, na.rm = TRUE), 
+            reps = mean(ft_rep, na.rm = TRUE))
+```
+
+---
+
+# Negative polarization
+
+```{r}
+therm %>% 
+  filter(party_id %in% c("Democrat", "Republican")) %>% 
+  select(party_id, ft_dem, ft_rep) %>% 
+  pivot_longer(-party_id) %>% 
+  ggplot(aes(x = value, y = name, fill = party_id)) + 
+  ggridges::geom_density_ridges(color = "white", alpha = .8) + 
+  theme_nice() + 
+  scale_y_discrete(labels = c("Democrats", "Republicans")) + 
+  theme(legend.position = "top") + 
+  labs(y = "How respondents feel about...", 
+       x = "Thermometer rating", fill = "Respondent is a...") + 
+  scale_fill_brewer(palette = "Set1", direction = -1)
+```
+
+---
+
+class: middle, center, inverse
+# Nothing is as it first seems
+
+--
+# You gotta poke around
+
+
+---
+
+
+
+class: middle, center, inverse
+# Dummy variables
+---
+
+
+# Dummy variables
+
+Often, *categorical* variables are coded 0/1 to represent "yes/no" or "presence/absence"
+
+--
+
+```{r}
+pokemon %>% 
+  select(name, type1, weight_kg, height_m, is_legendary) %>% 
+  sample_n(10, weight = is_legendary) %>% 
+  knitr::kable()
+```
+
+---
+
+class: center, middle
+# Dummy proportions
+
+--
+When you take the average of a dummy variable you get a **proportion**:
+
+--
+
+Showered today? 1, 0, 0, 0, 1
+
+--
+
+
+Average of shower = $\frac{1 + 0 + 0 + 0 + 1}{5} = .40$
+
+--
+
+We can think about that proportion as a **probability** or **likelihood**
+
+--
+
+What is the **probability** a random student in class has showered? 2/5 = 40%
+
+???
+Convince yourself this is true
+
+---
+
+# Dummy variables
+
+
+When you take the average of a dummy variable you get a proportion:
+
+```{r}
+pokemon %>% 
+  summarise(prop_legendary = mean(is_legendary, na.rm = TRUE)) #<<
+```
+
+Approximately 8% of pokemon are legendary, or: 
+
+--
+
+there's an 8% **chance** a pokemon is legendary
+
+
+???
+Convince yourself this is true
+
+---
+
+
+# Dummy variables
+
+
+Like with anything else, we can take averages by groups
+
+--
+
+For example, are creators making **more** legendary pokemon as time goes on to try to artificially make the show more exciting?
+
+--
+
+.scroll-output[
+```{r,echo = TRUE}
+pokemon %>% 
+  group_by(generation) %>% #<<
+  summarise(prop_legendary = mean(is_legendary, na.rm = TRUE))
+```
+]
+
+---
+
+# Dummy variables
+
+
+We can store as an object, to make a plot:
+
+```{r,echo=TRUE}
+legend_gen = pokemon %>% #<<
+  group_by(generation) %>% 
+  summarise(prop_legendary = mean(is_legendary, na.rm = TRUE))
+```
+
+---
+
+# Legendary pokemon over time
+
+```{r,echo = TRUE, out.width = "90%"}
+ggplot(legend_gen, aes(x = generation, y = prop_legendary)) + 
+  geom_col(fill = "#324200")
+```
+
+---
+
+
+# 🚨 Your turn: 🎨 Bob Ross 🎨 🚨
+
+
+All dummy data on the paintings of Bob Ross (the media market is so saturated with true crime there is **even** a true crime show about Bob Ross)
+
+
+```{r, out.width="60%",fig.align='center'}
+knitr::include_graphics("images/bob-ross.png")
+```
+
+
+
+---
+
+
+# 🚨 Your turn: 🎨 Bob Ross 🎨 🚨
+
+
+.scroll-output[
+```{r}
+knitr::kable(bob_ross)
+```
+]
+
+---
+
+# 🚨 Your turn: 🎨 Bob Ross 🎨 🚨
+
+Using the `bob_ross` data
+
+.small[
+1. How likely was Bob Ross to include a happy little `tree` in one of his paintings? 
+
+2. How has the frequency with which Bob Ross included `clouds` in his paintings changed across the show's seasons? Make a time series to illustrate. 
+
+3. If there is a `mountain` in a Bob Ross painting, how likely is it that mountain is *snowy*?
+
+4. How much more likely was Steve Ross to paint a lake than his dad? 
+]
+
+
+```{r}
+countdown::countdown(minutes = 15L)
+```
+
+---
+
+
+
+class: center, middle, inverse
+# Analyzing categorical variables
+
+--
+
+Some variables have values that are **categories** (race, sex, etc.)
+
+--
+
+Can't take the **mean** of a category!
+
+--
+
+But we *can* look at the *proportions* of observations in each category, and look for patterns there
+
+---
+
+# Pokemon types
+
+How many Pokemon are there of each type? What are the most and least common types?
+
+
+```{r}
+pokemon %>% 
+  select(name, type1) %>% 
+  sample_n(10) %>% 
+  knitr::kable()
+```
+
+---
+
+# Counting categories
+
+
+We can use a new function `tally()`, in combination with `group_by()`, to **count** how many observations are in each category:
+
+```{r, echo = TRUE}
+pokemon
+```
+
+---
+
+
+# Counting categories
+
+
+We can use a new function `tally()`, in combination with `group_by()`, to **count** how many observations are in each category:
+
+```{r, echo = TRUE}
+pokemon %>% 
+  group_by(type1) #<<
+```
+
+---
+
+# Counting categories
+
+
+We can use a new function `tally()`, in combination with `group_by()`, to **count** how many observations are in each category:
+
+.scroll-output[
+```{r, echo = TRUE}
+pokemon %>% 
+  group_by(type1) %>% 
+  tally() #<<
+```
+]
+
+
+---
+
+# From counts to percents
+
+
+We can can then use `mutate()` to calculate the **percent** in each group:
+
+.scroll-output[
+```{r, echo = TRUE}
+pokemon %>% 
+  group_by(type1) %>% 
+  tally() %>% 
+  mutate(percent = n/sum(n)) #<<
+```
+]
+
+
+???
+stop to show the n/sum(n)
+
+---
+
+# group_by + tally()
+
+
+We can then store as object for plotting:
+
+```{r, echo = TRUE}
+type_pct = pokemon %>% #<<
+  group_by(type1) %>% 
+  tally() %>% 
+  mutate(percent = n/sum(n))
+```
+
+---
+
+# group_by + tally()
+
+
+We can then store as object for plotting:
+
+```{r, echo = TRUE, out.width="80%"}
+ggplot(type_pct, aes(x = type1, y = percent)) + 
+  geom_col()
+```
+
+---
+
+# group_by + tally()
+
+
+Flip the coordinates for nicer plot:
+
+```{r, echo = TRUE,out.width="80%"}
+ggplot(type_pct, aes(x = type1, y = percent)) + 
+  geom_col() + coord_flip() #<<
+```
+
+---
+
+
+# group_by + tally()
+
+
+Pro-tip: you can reorder the x-axis **by** another variable using `reorder()`
+
+```{r, echo = TRUE,out.width="80%"}
+ggplot(type_pct, aes(x = reorder(type1, percent), y = percent)) + #<<
+  geom_col() + coord_flip()
+```
+
+---
+
+# group_by + tally()
+
+```{r}
+ggplot(type_pct, aes(x = reorder(type1, percent), y = percent, fill = type1)) + #<<
+  geom_col() + coord_flip() + theme_nice() + theme(legend.position = "none") + 
+  labs(x = "Type", y = "Percent of Pokemon") + scale_y_continuous(labels = scales::percent)
+```
+
+---
+
+# 🚨 Your turn: 💺 Flying etiquette 💺 🚨
+
+A survey of what's rude to do on a plane: 
+--
+
+
+.scroll-output[
+```{r}
+knitr::kable(flying %>% select(-respondent_id) %>% drop_na(gender))
+```
+]
+
+---
+
+
+# 🚨 Your turn: 💺 flying etiquette 💺 🚨
+
+Using the `flying` data (use `?flying` to read about the variables):
+
+.small[
+1. In a row of three seats, who should get to use the middle arm rest (`two_arm_rests`)? Make a barplot of the *percent* of respondents who gave each answer. 
+
+2. In general, is it rude to knowingly bring unruly children on a plane? Make a barplot of the *percent* who gave each answer, but **separated by** whether the respondent has a kid or not. 
+
+3. Make a barplot of responses to an etiquette dilemma of your liking. Bonus points if you break it down by a respondent characteristic. 
+]
+
+
+
+```{r}
+countdown::countdown(minutes = 15L)
+```
+
+---
+
+# Weekly check-in
+
+
+> Okay If the data is accurate I fin it totally awesome that water type pokemon have the highest numbers when it comes to their total combined power. I always chose water type pokemon over any other and it is just great to see. 
+
+
+> There was a burrito that I got after the last home game. I found that exciting. 
+
+> I have highly confused about how to use the mutate and case_when functions and am struggling to apply them in the code.
+
+> One thing that is pretty muddy is creating new variables and being able to use objects.

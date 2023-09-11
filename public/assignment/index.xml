@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Description of assignments | Methods of Political Analysis</title>
+    <link>/assignment/</link>
+      <atom:link href="/assignment/index.xml" rel="self" type="application/rss+xml" />
+    <description>Description of assignments</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en</language>
+    <image>
+      <url>/media/social-image.png</url>
+      <title>Description of assignments</title>
+      <link>/assignment/</link>
+    </image>
+    
+    <item>
+      <title>Controls</title>
+      <link>/assignment/ps-controls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/assignment/ps-controls/</guid>
+      <description>&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Download this: &lt;i class=&#34;far fa-file-archive&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;/files/ps-controls.Rmd&#34;&gt;&lt;code&gt;ps-controls&lt;/code&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;right-click, &amp;ldquo;save/download file as&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Complete all of the coding tasks in the &lt;code&gt;.Rmd&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Once you are done&lt;/strong&gt;, go on Canvas and answer the questions related to the assignment&lt;/li&gt;
+&lt;li&gt;You will submit your &lt;code&gt;.Rmd&lt;/code&gt; file in the Canvas assignment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure you:
+&lt;ul&gt;
+&lt;li&gt;run all of the code chunks that already have code in them&lt;/li&gt;
+&lt;li&gt;write your code in the empty code chunks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Useful shortcuts:
+&lt;ul&gt;
+&lt;li&gt;to run all the code in a specific code chunk, press the green right-facing triangle at the top right of the code chunk&lt;/li&gt;
+&lt;li&gt;to run all &lt;em&gt;prior&lt;/em&gt; code chunks, press the downward-facing gray triangle at the top right of the code chunk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DAGs</title>
+      <link>/assignment/ps-dags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/assignment/ps-dags/</guid>
+      <description>&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Download this: &lt;i class=&#34;far fa-file-archive&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;/problem-sets/ps-causality.Rmd&#34;&gt;&lt;code&gt;ps-causality&lt;/code&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;right-click, &amp;ldquo;save/download file as&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Complete all of the coding tasks in the &lt;code&gt;.Rmd&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Once you are done&lt;/strong&gt;, go on Canvas and answer the questions related to the assignment&lt;/li&gt;
+&lt;li&gt;You will submit your &lt;code&gt;.Rmd&lt;/code&gt; file in the Canvas assignment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure you:
+&lt;ul&gt;
+&lt;li&gt;run all of the code chunks that already have code in them&lt;/li&gt;
+&lt;li&gt;write your code in the empty code chunks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Useful shortcuts:
+&lt;ul&gt;
+&lt;li&gt;to run all the code in a specific code chunk, press the green right-facing triangle at the top right of the code chunk&lt;/li&gt;
+&lt;li&gt;to run all &lt;em&gt;prior&lt;/em&gt; code chunks, press the downward-facing gray triangle at the top right of the code chunk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data summaries</title>
+      <link>/assignment/ps-summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/assignment/ps-summary/</guid>
+      <description>&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Download this: &lt;i class=&#34;far fa-file-archive&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;/problem-sets/ps-summary.Rmd&#34;&gt;&lt;code&gt;ps-summary&lt;/code&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;right-click, &amp;ldquo;save/download file as&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Complete all of the coding tasks in the &lt;code&gt;.Rmd&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Once you are done&lt;/strong&gt;, go on Canvas and answer the questions related to the assignment&lt;/li&gt;
+&lt;li&gt;You will submit your &lt;code&gt;.Rmd&lt;/code&gt; file in the Canvas assignment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure you:
+&lt;ul&gt;
+&lt;li&gt;run all of the code chunks that already have code in them&lt;/li&gt;
+&lt;li&gt;write your code in the empty code chunks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Useful shortcuts:
+&lt;ul&gt;
+&lt;li&gt;to run all the code in a specific code chunk, press the green right-facing triangle at the top right of the code chunk&lt;/li&gt;
+&lt;li&gt;to run all &lt;em&gt;prior&lt;/em&gt; code chunks, press the downward-facing gray triangle at the top right of the code chunk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data visualization</title>
+      <link>/assignment/ps-viz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/assignment/ps-viz/</guid>
+      <description>&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Download this: &lt;i class=&#34;far fa-file-archive&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;/problem-sets/ps-viz.Rmd&#34;&gt;&lt;code&gt;ps-viz&lt;/code&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;right-click, &amp;ldquo;save/download file as&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Complete all of the coding tasks in the &lt;code&gt;.Rmd&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Once you are done&lt;/strong&gt;, go on Canvas and answer the questions related to the assignment&lt;/li&gt;
+&lt;li&gt;You will submit your &lt;code&gt;.Rmd&lt;/code&gt; file in the Canvas assignment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure you:
+&lt;ul&gt;
+&lt;li&gt;run all of the code chunks that already have code in them&lt;/li&gt;
+&lt;li&gt;write your code in the empty code chunks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Useful shortcuts:
+&lt;ul&gt;
+&lt;li&gt;to run all the code in a specific code chunk, press the green right-facing triangle at the top right of the code chunk&lt;/li&gt;
+&lt;li&gt;to run all &lt;em&gt;prior&lt;/em&gt; code chunks, press the downward-facing gray triangle at the top right of the code chunk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data wrangling</title>
+      <link>/assignment/ps-wrangle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/assignment/ps-wrangle/</guid>
+      <description>&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Download this: &lt;i class=&#34;far fa-file-archive&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;/problem-sets/ps-wrangle.Rmd&#34;&gt;&lt;code&gt;ps-wrangle&lt;/code&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;right-click, &amp;ldquo;save/download file as&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Complete all of the coding tasks in the &lt;code&gt;.Rmd&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Once you are done&lt;/strong&gt;, go on Canvas and answer the questions related to the assignment&lt;/li&gt;
+&lt;li&gt;You will submit your &lt;code&gt;.Rmd&lt;/code&gt; file in the Canvas assignment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure you:
+&lt;ul&gt;
+&lt;li&gt;run all of the code chunks that already have code in them&lt;/li&gt;
+&lt;li&gt;write your code in the empty code chunks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Useful shortcuts:
+&lt;ul&gt;
+&lt;li&gt;to run all the code in a specific code chunk, press the green right-facing triangle at the top right of the code chunk&lt;/li&gt;
+&lt;li&gt;to run all &lt;em&gt;prior&lt;/em&gt; code chunks, press the downward-facing gray triangle at the top right of the code chunk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Final Project</title>
+      <link>/assignment/final-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/assignment/final-project/</guid>
+      <description>&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;h1 id=&#34;instructions&#34;&gt;Instructions&lt;/h1&gt;
+&lt;p&gt;Your primary goal is this: to explore the effect of some treatment on an outcome you are interested in, using one of the datasets below. You get to decide what the treatment and outcome variable are; there is more than one &amp;ldquo;right&amp;rdquo; answer. I provide a few ideas beneath each dataset but you can do what you want.&lt;/p&gt;
+&lt;p&gt;Browse through the different topics, think about what causal story you want to tell, and pick the topic you want. Download the adjoining Rmarkdown template, and complete the following activities outlined there.&lt;/p&gt;
+&lt;p&gt;You can use your notes, slides, and any other material from the course, but &lt;em&gt;you must work on this independently.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Once you are done, you will submit the completed .Rmd file on Canvas. &lt;em&gt;Late submissions will not be accepted&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;help-from-instructors&#34;&gt;Help from instructors&lt;/h2&gt;
+&lt;p&gt;On the problem sets the instructors (the professor + TAs) provided substantial guidance. This is not the case for the final project. &lt;em&gt;We will not provide any help in answering questions&lt;/em&gt;. This is your chance to show how much you have learned.&lt;/p&gt;
+&lt;p&gt;If there are MAJOR issues that prevent you from working on the project (e.g., you cannot load the dataset at the top of the Rmd file), reach out to us ASAP, by email. If there are clarification questions about the language of a question, also reach out to us ASAP by email.&lt;/p&gt;
+&lt;h1 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h1&gt;
+&lt;p&gt;Your project will be evaluated along two dimensions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;accuracy (90% of grade): did you answer the questions well? does your code work? did you interpret the results correctly? is your argument clear and persuasive? Basically: how good is your project?&lt;/li&gt;
+&lt;li&gt;professionalism (10% of grade): is it neat, organized, easy to read? is your writing grammatical, uses capitalization, punctuation, etc.? are graphs neat and well-labeled? Basically: how presentable is your project?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;note&#34;&gt;Note&lt;/h1&gt;
+&lt;p&gt;If you need more information about the data, a specific variable, etc., look through the linked articles or codebooks.&lt;/p&gt;
+&lt;h1 id=&#34;dataset-options&#34;&gt;Dataset options&lt;/h1&gt;
+&lt;h2 id=&#34;war-gender-and-social-change&#34;&gt;War, gender, and social change&lt;/h2&gt;
+&lt;p&gt;One of the big changes that World War II brought about in the US was the entrance of women into the labor force in massive numbers. Over this period, involvement of women in economic and political life also increased dramatically.&lt;/p&gt;
+&lt;p&gt;Wars are big, destabilizing events that can dramatically transform societies. Can wars, either domestic or foreign, change gender relations within a country?&lt;/p&gt;
+&lt;p&gt;This dataset comes from 
+&lt;a href=&#34;https://www.cambridge.org/core/journals/international-organization/article/abs/conflict-peace-and-the-evolution-of-womens-empowerment/8507AFF68DD2AB7BF637B97064C2C2AF&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this IO article by Webster, Chen, and Beardsley&lt;/a&gt; and includes information on women&amp;rsquo;s involvement in civil society and politics, war, and other related variables, using data from every country between 1900 and 2015.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; variable &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; meaning &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; year &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Year &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; country_name &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Country name &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; polempowerment &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Measure of women&#39;s political empowerment in the country in that year, from VDEM (variable: V2x_GENDER). Ranges from 0 (low) to 1 (high). &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; civilsoci &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Measure of how active women are in civil society, from VDEM (variable: V2X_GENCS). Ranges from 0 (low) to 1 (high) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; fertility &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Women&#39;s fertility rates (average number of births per woman) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; inter_war &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Did an international war take place? (1 = yes, 0 = no). &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; intra_war &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Did a civil war take place? (1 = yes, 0 = no). &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; milper &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Military personnel per capita &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; milex_pc &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Military expenditures per capita &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; population &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Total population &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; polity2 &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Country&#39;s democracy score in that year, from POLITY2. Ranging from full autocracy (-10) to full democracy (10). &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;effects of civil war on women&amp;rsquo;s empowerment&lt;/li&gt;
+&lt;li&gt;effects of international war on women&amp;rsquo;s empowerment&lt;/li&gt;
+&lt;li&gt;effects of war on fertility&lt;/li&gt;
+&lt;li&gt;effect of democratization on military spending&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-template&#34;&gt;The template&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/files/final-project-data/final-webster.Rmd&#34;&gt;&lt;code&gt;Webster template&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!-- ## Decapitation and counter-terrorism --&gt;
+&lt;!-- States spend lots of resources trying to capture or kill the leaders of non-state organizations such as terrorist groups, rebel groups, and criminal organizations. Does **decapitating** these orgs actually work? --&gt;
+&lt;!-- This dataset comes from [this II article by Milton and Price](https://www.tandfonline.com/doi/full/10.1080/03050629.2020.1719406?casa_token=cZ2b77wtvbMAAAAA%3AQzsQxZqs7asZricF_a2V9EnRMmsOCNPV0zh1c_DV1dMwwfZ5TTrhj03HiTnHv4i0OEE3Wy85ow). The dataset contains information on terrorist organizations, decapitation, and other associated variables for terrorist groups across the world.  --&gt;
+&lt;!-- ```{r} --&gt;
+&lt;!-- tribble(~variable, ~meaning,  --&gt;
+&lt;!--         &#34;name&#34;, &#34;The group&#39;s name&#34;,  --&gt;
+&lt;!--         &#34;year&#34;, &#34;Year&#34;,  --&gt;
+&lt;!--         &#34;failure&#34;, &#34;Did the group experience failure in this year?&#34;,  --&gt;
+&lt;!--         &#34;allies&#34;, &#34;Number of allies the group has&#34;,  --&gt;
+&lt;!--         &#34;alliesties&#34;, &#34;Number of ties a group&#39;s allies have (eigenvector centrality score)&#34;,  --&gt;
+&lt;!--         &#34;size&#34;, &#34;Size of group (from 0 to 3)&#34;,  --&gt;
+&lt;!--         &#34;religious&#34;, &#34;Is the group religious?&#34;,  --&gt;
+&lt;!--         &#34;ethnic&#34;, &#34;Is the group ethnically defined?&#34;,  --&gt;
+&lt;!--         &#34;pop&#34;, &#34;Country population&#34;,  --&gt;
+&lt;!--         &#34;cinc&#34;, &#34;Military capability score of country (as a percent of the world&#39;s total capabilities)&#34;,  --&gt;
+&lt;!--         &#34;civilwar&#34;, &#34;Is the country experiencing a civil war?&#34;,  --&gt;
+&lt;!--         &#34;decap&#34;, &#34;Was the group decapitated this year?&#34;,  --&gt;
+&lt;!--         &#34;gdppercap&#34;, &#34;Country&#39;s GDP per capita.&#34;) %&gt;%  --&gt;
+&lt;!--   kable() %&gt;%  --&gt;
+&lt;!--     column_spec(2, width = &#34;20em&#34;) --&gt;
+&lt;!-- ``` --&gt;
+&lt;!-- Ideas:  --&gt;
+&lt;!-- - does decapitation cause organizational failure?  --&gt;
+&lt;!-- - do terrorist alliances reduce organizational failure?  --&gt;
+&lt;!-- - does religion or ethnicity make a group more likely to form alliances?  --&gt;
+&lt;!-- - does religious belief make a group more resistant to failure? --&gt;
+&lt;!-- ### The template --&gt;
+&lt;!-- [`Price template`](/files/final-project-data/final-price.Rmd) --&gt;
+&lt;h2 id=&#34;western-education-and-the-spread-of-democracy&#34;&gt;Western education and the spread of democracy&lt;/h2&gt;
+&lt;p&gt;Despite living in autocratic countries, dictators often either attend or send their kids to universities in democratic countries where some of the world&amp;rsquo;s top universities are often located. Does the experience of living in a democratic state influence leaders once they return? Could experiences like this &amp;ldquo;spread&amp;rdquo; democracy?&lt;/p&gt;
+&lt;p&gt;This dataset comes from 
+&lt;a href=&#34;https://journals.sagepub.com/doi/abs/10.1177/0022002715590878?casa_token=bHBIbxdpJBkAAAAA:CtPHs_mpTgoPZZheb0j7WWsWILbuDy-BQ37p4wKLA9INxK6iDeJoj5OXt-TysFpLc7dI0LuFjA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;a JCR study by Gift and Krcmaric&lt;/a&gt;. The dataset contains information on world leaders, where they were educated, how democracy changed in their countries during their tenure, and other factors.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; variable &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; meaning &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; leader &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Name of the leader &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; startdate &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; When the leader started their tenure &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; enddate &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; When the leader ended their tenure &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; angloedu &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Was leader educated in an English-speaking country? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; westedu &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Was leader educated in the West? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; noedu &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Did leader have no higher education? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; polity2change &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Change in POLITY2 score over leader&#39;s tenure (positive = country became more democratic, negative = less democratic) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BMRtransition &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; 1 if country underwent democratic transition &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; ethfrac &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Ethnic fractionalization index of country &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; britcolony &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Is leader in a former british colony? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; igdp &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; interpolated real GDP per capita /100,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; usally &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; did country have cold war alliance with USA at any point? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; ioil &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; does the country have oil? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; ipolconiii &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Executive constraints variable (from 0 to 1) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; studentflowthousand &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; students studying in the US (in thousands) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;does a leader receiving a Western education spread democracy to their home countries?&lt;/li&gt;
+&lt;li&gt;does a leader receiving a Western education make alliances with the US more likely?&lt;/li&gt;
+&lt;li&gt;does a leader having lots of students studying abroad in the US make US alliances more likely?&lt;/li&gt;
+&lt;li&gt;does a country experiencing a democratic transition increase the likelihood a leader studies in the West? or that more of their students study in the West?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-template-1&#34;&gt;The template&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/files/final-project-data/final-gift.Rmd&#34;&gt;&lt;code&gt;Gift template&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-effects-of-criminal-victimization&#34;&gt;The effects of criminal victimization&lt;/h2&gt;
+&lt;p&gt;Many people in the world become victims of crime at some point or another in their lives. These experiences can be highly traumatic. How does criminal victimization change people and their attitudes and beliefs? Do they become more conservative, or liberal? Do they become more supportive of harsh policies? Or do they become more involved in their communities, and seek change?&lt;/p&gt;
+&lt;p&gt;This dataset comes from 
+&lt;a href=&#34;https://www.vanderbilt.edu/lapop/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LAPOP&lt;/a&gt;, and the 
+&lt;a href=&#34;https://www.vanderbilt.edu/lapop/ab2018/AB2018-V12.0-Eng_190131_W.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;codebook&lt;/a&gt;. The data is a survey of people living across a dozen countries in Latin America, their experiences with crime, their attitudes towards democracy, how they think the state should respond to crime, and so on.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; variable &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; meaning &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; country &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Country &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; sex &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Sex &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; age &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Age &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; education &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Years of education &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; ethnicity &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Ethnicity &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; vigilante &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Approval of Vigilante Justice (1 = none, 10 = a lot) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; income &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Income &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; victim &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Victim of a crime in last 12 months &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; coup_support &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Agrees that a military coup is justified if crime is high &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; neighbor_crime &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Murders have taken place in neighborhood &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; attend_meeting &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Did respondent attend community meeting? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; protested &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Did respondent participate in a protest? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; solve_problems &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; How often respondent helps solve local problem (1, Once a week, 2 = Once or twice a month, 3 = Once or twice a year, 4 = Never) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; ideology &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Ideology (1 = far left, 10 = far right) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;does being a victim of a crime increase support for military coups or vigilante justice?&lt;/li&gt;
+&lt;li&gt;can education reduce support for military coups?&lt;/li&gt;
+&lt;li&gt;does being a victim of crime make someone more ideologically conservative?&lt;/li&gt;
+&lt;li&gt;do victims of crime become more involved in their communities, or engage in protest?&lt;/li&gt;
+&lt;li&gt;does the experience of participating in a protest make someone become more liberal or conservative?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-template-2&#34;&gt;The template&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/files/final-project-data/final-lap-crime.Rmd&#34;&gt;&lt;code&gt;LAPOP template&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;judicial-appointments-and-public-opinion-in-the-us&#34;&gt;Judicial appointments and public opinion in the US&lt;/h2&gt;
+&lt;p&gt;The appointment and confirmation of judges to the Supreme Court is an increasingly important and politicized process. Do politicians, in voting to confirm a Supreme Court nominee, respond to public pressure? Or do they act more autonomously?&lt;/p&gt;
+&lt;p&gt;This dataset comes from a 
+&lt;a href=&#34;https://www.journals.uchicago.edu/doi/abs/10.1017/S0022381610000150?casa_token=lcXn5k2nWHYAAAAA:xDh4ZxsRNVtKuGGe-hZN1HZjfh2D7jbctAsK3qSAfwgl57wmVjA_tOA5xEoz3ehUWgq-Mln2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JOP article by Kastellec, Lax, and Phillips&lt;/a&gt;. The dataset contains estimates of public support for the confirmation of 10 recent Supreme Court nominees, how Senators voted during the confirmation process, and other factors, in all 50 states.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; variable &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; meaning &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; nominee &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Name of the nominated judge &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; state &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; State &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; year &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Year &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; congress &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Congressional number &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; name &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Name of Senator &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; democrat &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Whether Senator is a Democrat &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; senator_ideology &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Senator&#39;s ideology, on a -1 (liberal) to +1 (conservative) scale &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; vote &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; if the senator voted to confirm the nominee &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; pres.dem &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; if the nominating president was a Democrat &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; sameprty &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; if the senator is the same party as the president &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; nom_ideology &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Nominee&#39;s ideology, on a 0 (conservative) to 1 (liberal) scale &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; opinion &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; nominee&#39;s approval rating (out of 100%) in the senator&#39;s state at the time of the vote &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; reelection &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; if the senator faces reelection within two years of the vote &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;does public support for a Supreme Court nominee cause a Senator to vote for that candidate?&lt;/li&gt;
+&lt;li&gt;does not having to face reelection change how Senators vote?&lt;/li&gt;
+&lt;li&gt;does a senator&amp;rsquo;s ideology cause them to vote in particular ways during Senate confirmations?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-template-3&#34;&gt;The template&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/files/final-project-data/final-kastellec.Rmd&#34;&gt;&lt;code&gt;Kastellec template&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;welfare-and-race-in-the-united-states&#34;&gt;Welfare and race in the United States&lt;/h2&gt;
+&lt;p&gt;There&amp;rsquo;s a big literature on how debates over redistributive policy (e.g., welfare measures) in the United States can often become racialized &amp;ndash; that people support or oppose welfare policies not on the merits but rather on which groups they anticipate will benefit from such policies and their attitudes towards those groups.&lt;/p&gt;
+&lt;p&gt;This data comes from the 
+&lt;a href=&#34;https://www.voterstudygroup.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2019 Democracy Fund Voter Study Group&lt;/a&gt;, 
+&lt;a href=&#34;https://www.dropbox.com/s/qr2mw5olguglpj7/dfvsg_Guide_2019_VOTER_Survey.pdf?dl=0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;codebook here&lt;/a&gt;. The data is a survey of Americans, and includes  information on racial prejudice, demographics, ideology, and support for welfare policies.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; variable &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; meaning &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; state &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; State &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; birth_year &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Year born &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; sex &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Sex &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; race &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Race &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; party_id &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Party identification &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; ideo5_2019 &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Ideology (1  = very liberal, 5 = very conservative) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; newsint_2019 &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Interested in politics (1 = most of the time, 4 = hardly at all) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; pew_religimp_2019 &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Importance of religion (1 = very important, 4 = not all important) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; faminc_new_2019 &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Check codebook &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; educ_2019 &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Check codebook &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; ft_black_2017 &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Feeling thermometer, Blacks (0 = strong dislike, 100 = strong like) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; ft_hisp_2017 &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Feeling thermometer, Hispanics (0 = strong dislike, 100 = strong like) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; ft_asian_2017 &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Feeling thermometer, Asians (0 = strong dislike, 100 = strong like) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; diff_inc_2019 &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Government should redistribute wealth (1 = strongly agree, 5 = strongly disagree) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;does racial prejudice cause changes in support for redistributive policies? does it depend on the group in question?&lt;/li&gt;
+&lt;li&gt;can education reduce racial prejudice?&lt;/li&gt;
+&lt;li&gt;does education cause people to become more liberal or more conservative?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-template-4&#34;&gt;The template&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/files/final-project-data/final-prejudice.Rmd&#34;&gt;&lt;code&gt;Prejudice template&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;coca-and-conflict-in-colombia&#34;&gt;Coca and conflict in Colombia&lt;/h2&gt;
+&lt;p&gt;Colombia has one of the longest-running internal conflicts in the world, involving multiple armed groups over decades and also a thriving drug trade. Does past violence beget current violence? Does the drug trade cause conflict?&lt;/p&gt;
+&lt;p&gt;This data comes from 
+&lt;a href=&#34;https://economia.uniandes.edu.co/cede&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Center for Economic Development at the University of Los Andes, in Colombia&lt;/a&gt;, codebook 
+&lt;a href=&#34;https://www.dropbox.com/s/j5e5i9esrxui2uu/9ce_Panel_conflicto_y_violencia%28062016%29.pdf?dl=0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here (in Spanish!)&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; variable &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; meaning &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; department &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Department &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; muni &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Municipality &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; year &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Year &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rural_pop &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Rural population &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; urban_pop &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Urban population &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; total_pop &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Total population &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; area &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Area (km2) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; altitude &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Altitude (meters above sea level) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; discapital &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Distance to department capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; la_violencia &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Dummy for violence during La Violencia (1948-1953) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; ocup_espan &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Dummy for Spanish occupation from 1510 - 1561 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; land_conflicts &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Dummy for land conflicts, 1901-1931 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; homicides &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Total homicides &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; coca_hectares &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Number of hectares of coca cultivations (less accurate) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; coca &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Dummy for coca presence (more accurate) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; farc_attacks &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Number of attacks by the FARC &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; para_attacks &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt; Number of attacks by the AUC &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;does the coca trade cause conflict by one group or another, or general homicides?&lt;/li&gt;
+&lt;li&gt;do past conflicts, either during La Violencia, or over land, cause current conflicts?&lt;/li&gt;
+&lt;li&gt;how has the experience of Spanish colonization in some parts of the country but not others influenced contemporary outcomes?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-template-5&#34;&gt;The template&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/files/final-project-data/final-colombia.Rmd&#34;&gt;&lt;code&gt;Colombia template&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Models</title>
+      <link>/assignment/ps-reg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/assignment/ps-reg/</guid>
+      <description>&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Download this: &lt;i class=&#34;far fa-file-archive&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;/problem-sets/ps-models.Rmd&#34;&gt;&lt;code&gt;ps-models&lt;/code&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;right-click, &amp;ldquo;save/download file as&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Complete all of the coding tasks in the &lt;code&gt;.Rmd&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Once you are done&lt;/strong&gt;, go on Canvas and answer the questions related to the assignment&lt;/li&gt;
+&lt;li&gt;You will submit your &lt;code&gt;.Rmd&lt;/code&gt; file in the Canvas assignment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure you:
+&lt;ul&gt;
+&lt;li&gt;run all of the code chunks that already have code in them&lt;/li&gt;
+&lt;li&gt;write your code in the empty code chunks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Useful shortcuts:
+&lt;ul&gt;
+&lt;li&gt;to run all the code in a specific code chunk, press the green right-facing triangle at the top right of the code chunk&lt;/li&gt;
+&lt;li&gt;to run all &lt;em&gt;prior&lt;/em&gt; code chunks, press the downward-facing gray triangle at the top right of the code chunk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Prediction</title>
+      <link>/assignment/ps-predict/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/assignment/ps-predict/</guid>
+      <description>&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Download this: &lt;i class=&#34;far fa-file-archive&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;/problem-sets/ps-predict.Rmd&#34;&gt;&lt;code&gt;ps-predict&lt;/code&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;right-click, &amp;ldquo;save/download file as&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Complete all of the coding tasks in the &lt;code&gt;.Rmd&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Once you are done&lt;/strong&gt;, go on Canvas and answer the questions related to the assignment&lt;/li&gt;
+&lt;li&gt;You will submit your &lt;code&gt;.Rmd&lt;/code&gt; file in the Canvas assignment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure you:
+&lt;ul&gt;
+&lt;li&gt;run all of the code chunks that already have code in them&lt;/li&gt;
+&lt;li&gt;write your code in the empty code chunks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Useful shortcuts:
+&lt;ul&gt;
+&lt;li&gt;to run all the code in a specific code chunk, press the green right-facing triangle at the top right of the code chunk&lt;/li&gt;
+&lt;li&gt;to run all &lt;em&gt;prior&lt;/em&gt; code chunks, press the downward-facing gray triangle at the top right of the code chunk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Uncertainty</title>
+      <link>/assignment/ps-uncertainty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/assignment/ps-uncertainty/</guid>
+      <description>&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Download this: &lt;i class=&#34;far fa-file-archive&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;/problem-sets/ps-uncertainty.Rmd&#34;&gt;&lt;code&gt;ps-uncertainty&lt;/code&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;right-click, &amp;ldquo;save/download file as&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Complete all of the coding tasks in the &lt;code&gt;.Rmd&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Once you are done&lt;/strong&gt;, go on Canvas and answer the questions related to the assignment&lt;/li&gt;
+&lt;li&gt;You will submit your &lt;code&gt;.Rmd&lt;/code&gt; file in the Canvas assignment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure you:
+&lt;ul&gt;
+&lt;li&gt;run all of the code chunks that already have code in them&lt;/li&gt;
+&lt;li&gt;write your code in the empty code chunks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Useful shortcuts:
+&lt;ul&gt;
+&lt;li&gt;to run all the code in a specific code chunk, press the green right-facing triangle at the top right of the code chunk&lt;/li&gt;
+&lt;li&gt;to run all &lt;em&gt;prior&lt;/em&gt; code chunks, press the downward-facing gray triangle at the top right of the code chunk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
