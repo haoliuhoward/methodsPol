@@ -33,7 +33,7 @@
   
     
   
-  <meta name="description" content="Regression discontinuity design (RDD) Regression discontinuity design (RDD) Remember the example from class about the effect of being in a gifted program on future earnings. The DAG looks like this:
+  <meta name="description" content="Regression discontinuity design (RDD) Remember the example from class about the effect of being in a gifted program on future earnings. The DAG looks like this:
 library(ggdag) library(tidyverse) # dag dagify(earnings ~ gifted &#43; ability, gifted ~ ability, exposure = &quot;gifted&quot;, outcome = &quot;earnings&quot;) %&gt;% ggdag_status(text = FALSE, use_labels = &quot;name&quot;) &#43; theme_dag() &#43; theme(legend.position = &quot;none&quot;) The problem is that students aren’t randomly placed in gifted programs; they are put there for a host of reasons (including, for instance, “ability”).">
 
   
@@ -256,7 +256,7 @@ library(ggdag) library(tidyverse) # dag dagify(earnings ~ gifted &#43; ability, 
   <meta property="og:site_name" content="Methods of Political Analysis">
   <meta property="og:url" content="/class/rdd/">
   <meta property="og:title" content="Regression discontinuity | Methods of Political Analysis">
-  <meta property="og:description" content="Regression discontinuity design (RDD) Regression discontinuity design (RDD) Remember the example from class about the effect of being in a gifted program on future earnings. The DAG looks like this:
+  <meta property="og:description" content="Regression discontinuity design (RDD) Remember the example from class about the effect of being in a gifted program on future earnings. The DAG looks like this:
 library(ggdag) library(tidyverse) # dag dagify(earnings ~ gifted &#43; ability, gifted ~ ability, exposure = &quot;gifted&quot;, outcome = &quot;earnings&quot;) %&gt;% ggdag_status(text = FALSE, use_labels = &quot;name&quot;) &#43; theme_dag() &#43; theme(legend.position = &quot;none&quot;) The problem is that students aren’t randomly placed in gifted programs; they are put there for a host of reasons (including, for instance, “ability”)."><meta property="og:image" content="/media/social-image.png">
   <meta property="twitter:image" content="/media/social-image.png"><meta property="og:locale" content="en">
   
@@ -622,19 +622,9 @@ library(ggdag) library(tidyverse) # dag dagify(earnings ~ gifted &#43; ability, 
                     
 
                     <div class="article-style">
-                        
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-
-<div id="TOC">
-<ul>
-<li><a href="#regression-discontinuity-design-rdd">Regression discontinuity design (RDD)</a></li>
-</ul>
-</div>
-
-<div id="regression-discontinuity-design-rdd" class="section level2">
-<h2>Regression discontinuity design (RDD)</h2>
+                        <h2 id="regression-discontinuity-design-rdd">Regression discontinuity design (RDD)</h2>
 <p>Remember the example from class about the effect of being in a gifted program on future earnings. The DAG looks like this:</p>
-<pre class="r"><code>library(ggdag)
+<pre><code class="language-r">library(ggdag)
 library(tidyverse)
 
 # dag
@@ -643,13 +633,14 @@ dagify(earnings ~ gifted + ability,
        exposure = &quot;gifted&quot;, 
        outcome = &quot;earnings&quot;) %&gt;% 
   ggdag_status(text = FALSE, use_labels = &quot;name&quot;) + theme_dag() + 
-  theme(legend.position = &quot;none&quot;)</code></pre>
-<p><img src="/class/rdd_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+  theme(legend.position = &quot;none&quot;)
+</code></pre>
+<img src="/class/rdd_files/figure-html/unnamed-chunk-1-1.png" width="672" />
 <p>The problem is that students aren’t randomly placed in gifted programs; they are put there for a host of reasons (including, for instance, “ability”).</p>
 <p>The idea behind the RDD is to exploit the fact that the exact test score that gets you into gifted is arbitrary, while the test itself is noisy. This means that students just below and above that cutoff score (75) are pretty similar, but some just barely made it and others just barely didn’t (for reasons that are arguably random: luck, mostly).</p>
 <p>That phrase is key: “for reasons that are arguably <strong>random</strong>…”. Some students got treatment and others got the control condition randomly, i.e., an experiment.</p>
 <p>Make up data to see how it works:</p>
-<pre class="r"><code>set.seed(1991)
+<pre><code class="language-r">set.seed(1991)
 
 
 # discontinuity example
@@ -660,20 +651,22 @@ fake = tibble(kids = 1:1000,
 
 
 ggplot(fake, aes(x = test, y = earnings)) + 
-  geom_point()</code></pre>
-<p><img src="/class/rdd_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+  geom_point()
+</code></pre>
+<img src="/class/rdd_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 <p>Do it by hand:</p>
-<pre class="r"><code># rdd by hand
+<pre><code class="language-r"># rdd by hand
 fake %&gt;% 
   filter(test &gt;= 73, test &lt;= 77) %&gt;% 
   group_by(gifted) %&gt;% 
-  summarise(earnings = mean(earnings))</code></pre>
-<pre><code>## # A tibble: 2 x 2
+  summarise(earnings = mean(earnings))
+</code></pre>
+<pre><code>## # A tibble: 2 × 2
 ##   gifted earnings
 ##    &lt;dbl&gt;    &lt;dbl&gt;
 ## 1      0     54.7
-## 2      1     68.2</code></pre>
-</div>
+## 2      1     68.2
+</code></pre>
 
                     </div>
 

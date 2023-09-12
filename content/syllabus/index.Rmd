@@ -2,7 +2,7 @@
 title: Syllabus
 slug: syllabus
 citeproc: true
-bibliography: /Users/juan/Dropbox/github/whistle2/master.bib
+bibliography: /Users/howardliu/Library/CloudStorage/Dropbox/Whistle-share/master.bib
 csl: ../../static/bib/chicago-syllabus-no-bib.csl
 output:
   blogdown::html_page:

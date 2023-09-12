@@ -1,5 +1,5 @@
 lessons:
-  - title: '<span class="fake-header-table">Data wrangling</span>'
+  - title: '<span class="fake-header-table">Fundamentals</span>'
     header: True
 
   - title: 'Week 1: Introduction & Logistics'
@@ -7,23 +7,21 @@ lessons:
     reading: "01-start"
     class: "getting-started"
     
-  - title: 'Week 2: Visualizing data with ggplot<br><i class="fas fa-star"></i> **Assignment 1**'
-    date: "Sep 27, Sep 29"
+  - title: 'Week 2: APSA (no class) <br><i class="fas fa-star"></i> **Assignment 1**'
+    date: "8/29, 8/31"
     class: "dataviz"
     reading: "02-viz"
     assignment: "ps-viz"
     
-  - title: 'Week 3: Data wrangling<br><i class="fas fa-star"></i> **Assignment 2**'
-    date: "Oct 4, Oct 6"
+  - title: 'Week 3: Scientific Studies of Political Science<br><i class="fas fa-star"></i> **Assignment 2**'
+    date: "9/5, 9/7"
     class: "data-wrangle"
     reading: "03-wrangle"
     assignment: "ps-wrangle"
- 
-  - title: '<span class="fake-header-table">Relationships in data</span>'
-    header: True
+  
 
-  - title: 'Week 4: Relationships between variables<br><i class="fas fa-star"></i> **Assignment 3**'
-    date: "Oct 11, Oct 13"
+  - title: 'Week 4: Basic Research Design<br><i class="fas fa-star"></i> **Assignment 3**'
+    date: "9/12, 9/14"
     class: "data-summary"
     reading: "04-relationships"
     assignment: "ps-summary"

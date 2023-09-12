@@ -33,7 +33,7 @@
   
     
   
-  <meta name="description" content="In-class example Making DAGs with ggdag() In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+  <meta name="description" content="In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
 day1-dags.R day2-dags.R Making DAGs with ggdag() To make DAGs we use dagify() from the ggdag package. Note the basic format:
 Y ~ A &#43; B &#43; C &#43; … = think of this as “Y is caused by A, B, C, …”.">
 
@@ -257,7 +257,7 @@ Y ~ A &#43; B &#43; C &#43; … = think of this as “Y is caused by A, B, C, �
   <meta property="og:site_name" content="Methods of Political Analysis">
   <meta property="og:url" content="/class/dags/">
   <meta property="og:title" content="DAGs | Methods of Political Analysis">
-  <meta property="og:description" content="In-class example Making DAGs with ggdag() In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+  <meta property="og:description" content="In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
 day1-dags.R day2-dags.R Making DAGs with ggdag() To make DAGs we use dagify() from the ggdag package. Note the basic format:
 Y ~ A &#43; B &#43; C &#43; … = think of this as “Y is caused by A, B, C, …”."><meta property="og:image" content="/media/social-image.png">
   <meta property="twitter:image" content="/media/social-image.png"><meta property="og:locale" content="en">
@@ -624,64 +624,57 @@ Y ~ A &#43; B &#43; C &#43; … = think of this as “Y is caused by A, B, C, �
                     
 
                     <div class="article-style">
-                        
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-
-<div id="TOC">
-<ul>
-<li><a href="#in-class-example" id="toc-in-class-example">In-class example</a>
-<ul>
-<li><a href="#making-dags-with-ggdag" id="toc-making-dags-with-ggdag">Making DAGs with ggdag()</a></li>
-</ul></li>
-</ul>
-</div>
-
-<div id="in-class-example" class="section level1">
-<h1>In-class example</h1>
+                        <h1 id="in-class-example">In-class example</h1>
 <p>Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.</p>
 <ul>
-<li><a href="/slides/code/day1-dags.R"><i class="fas fa-file-archive"></i> <code>day1-dags.R</code></a></li>
-<li><a href="/slides/code/day2-dags.R"><i class="fas fa-file-archive"></i> <code>day2-dags.R</code></a></li>
+<li>
+<a href="/slides/code/day1-dags.R"><i class="fas fa-file-archive"></i> <code>day1-dags.R</code></a></li>
+<li>
+<a href="/slides/code/day2-dags.R"><i class="fas fa-file-archive"></i> <code>day2-dags.R</code></a></li>
 </ul>
-<div id="making-dags-with-ggdag" class="section level2">
-<h2>Making DAGs with ggdag()</h2>
+<h2 id="making-dags-with-ggdag">Making DAGs with ggdag()</h2>
 <p>To make DAGs we use <code>dagify()</code> from the <code>ggdag</code> package. Note the basic format:</p>
 <ul>
 <li>Y ~ A + B + C + … = think of this as “Y is caused by A, B, C, …”.</li>
 <li>you need to specify the treatment variable with <code>exposure</code> (another word for “treatment”) and the outcome variable with <code>outcome</code></li>
 </ul>
-<pre class="r"><code>library(ggdag)
+<pre><code class="language-r">library(ggdag)
 library(tidyverse)
 
 # make a dag
 dag = dagify(Y ~ X + A + B + C, 
              X ~ A, 
-             A ~ B + C, exposure = &quot;X&quot;, outcome = &quot;Y&quot;)</code></pre>
+             A ~ B + C, exposure = &quot;X&quot;, outcome = &quot;Y&quot;)
+</code></pre>
 <p>We can then plot with <code>ggdag</code>:</p>
-<pre class="r"><code># plot it
-ggdag(dag)</code></pre>
-<p><img src="/class/dags_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre><code class="language-r"># plot it
+ggdag(dag)
+</code></pre>
+<img src="/class/dags_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 <p>We can make prettier in the following ways (but no need):</p>
-<pre class="r"><code>ggdag(dag) + theme_dag()</code></pre>
-<p><img src="/class/dags_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre><code class="language-r">ggdag(dag) + theme_dag()
+</code></pre>
+<img src="/class/dags_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 <p>We can use <code>ggdag_paths</code> to identify front and backdoor paths from treatment to outcome:</p>
-<pre class="r"><code>ggdag_paths(dag)</code></pre>
-<p><img src="/class/dags_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre><code class="language-r">ggdag_paths(dag)
+</code></pre>
+<img src="/class/dags_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 <p>We can use <code>ggdag_adjustment_set</code> to see what variables we need to control for:</p>
-<pre class="r"><code>ggdag_adjustment_set(dag)</code></pre>
-<p><img src="/class/dags_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre><code class="language-r">ggdag_adjustment_set(dag)
+</code></pre>
+<img src="/class/dags_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 <p>We can also use words instead of letters:</p>
-<pre class="r"><code>## made up exqmple: shuttle service --&gt; turnout
+<pre><code class="language-r">## made up exqmple: shuttle service --&gt; turnout
 dag = dagify(turnout ~ shuttle + income + distance_poll + schedule_flex, 
              income ~ job + location, 
              distance_poll ~ location + car, 
              shuttle ~ cost + partisan + location, 
-             exposure = &quot;shuttle&quot;, outcome = &quot;turnout&quot;)</code></pre>
+             exposure = &quot;shuttle&quot;, outcome = &quot;turnout&quot;)
+</code></pre>
 <p>If we want to use labels instead of text to make it easier to read:</p>
-<pre class="r"><code>ggdag(dag, use_labels = &quot;name&quot;, text = FALSE) + theme_dag()</code></pre>
-<p><img src="/class/dags_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-</div>
-</div>
+<pre><code class="language-r">ggdag(dag, use_labels = &quot;name&quot;, text = FALSE) + theme_dag()
+</code></pre>
+<img src="/class/dags_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
                     </div>
 

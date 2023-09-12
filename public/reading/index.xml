@@ -17,37 +17,25 @@
       <link>/reading/11-bootstrap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/11-bootstrap/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;h2 id=&#34;optional&#34;&gt;Optional&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#optional&#34; id=&#34;toc-optional&#34;&gt;Optional&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tuesday&#34; id=&#34;toc-tuesday&#34;&gt;Tuesday&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://moderndive.com/7-sampling.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chapter 7 in ModernDive&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://moderndive.com/8-confidence-intervals.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch.8 in &lt;em&gt;ModernDive&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;optional&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Optional&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://moderndive.com/7-sampling.html&#34;&gt;Chapter 7 in ModernDive&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://moderndive.com/8-confidence-intervals.html&#34;&gt;Ch.8 in &lt;em&gt;ModernDive&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
-&lt;div id=&#34;tuesday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Tuesday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/12-bootstrap.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
+&lt;h3 id=&#34;tuesday&#34;&gt;Tuesday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/12-bootstrap.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/12-bootstrap.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -57,51 +45,40 @@
       <link>/reading/07-causal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/07-causal/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended&#34; id=&#34;toc-recommended&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tuesday&#34; id=&#34;toc-tuesday&#34;&gt;Tuesday&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#thursday&#34; id=&#34;toc-thursday&#34;&gt;Thursday&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.khanacademy.org/math/probability/scatterplots-a1/creating-interpreting-scatterplots/v/correlation-and-causality&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this video from Khan Academy&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://mixtape.scunning.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Introduction in Causal Inference: The Mixtape&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;recommended&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.khanacademy.org/math/probability/scatterplots-a1/creating-interpreting-scatterplots/v/correlation-and-causality&#34;&gt;this video from Khan Academy&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://mixtape.scunning.com&#34;&gt;Introduction in Causal Inference: The Mixtape&lt;/a&gt;&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
-&lt;div id=&#34;tuesday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Tuesday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/08-causality.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
+&lt;h3 id=&#34;tuesday&#34;&gt;Tuesday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/08-causality.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/08-causality.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;thursday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Thursday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/08-causality-II.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h3 id=&#34;thursday&#34;&gt;Thursday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/08-causality-II.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/08-causality-II.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;footnotes footnotes-end-of-document&#34;&gt;
-&lt;hr /&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;This reading is mathy-er than what we’ve covered so far. It also features code from STATA, which we don’t use. Don’t worry about that so much; we will focus on broad concepts/ideas.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;This reading is mathy-er than what we’ve covered so far. It also features code from STATA, which we don’t use. Don’t worry about that so much; we will focus on broad concepts/ideas.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -112,52 +89,43 @@
       <link>/reading/08-dags/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/08-dags/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended&#34; id=&#34;toc-recommended&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tuesday&#34; id=&#34;toc-tuesday&#34;&gt;Tuesday&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#thursday&#34; id=&#34;toc-thursday&#34;&gt;Thursday&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;work through the examples in the &lt;code&gt;ggdag&lt;/code&gt; package vignette 
+&lt;a href=&#34;https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://mixtape.scunning.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Directed Acyclical Graphs in Causal Inference: The Mixtape&lt;/a&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;recommended&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;work through the examples in the &lt;code&gt;ggdag&lt;/code&gt; package vignette &lt;a href=&#34;https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html&#34;&gt;here&lt;/a&gt;.&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://mixtape.scunning.com&#34;&gt;Directed Acyclical Graphs in Causal Inference: The Mixtape&lt;/a&gt;&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
-&lt;div id=&#34;tuesday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Tuesday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/09-dags.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
+&lt;h3 id=&#34;tuesday&#34;&gt;Tuesday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/09-dags.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/09-dags.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;thursday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Thursday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/10-controls-I.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h3 id=&#34;thursday&#34;&gt;Thursday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/10-controls-I.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/10-controls-I.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;footnotes footnotes-end-of-document&#34;&gt;
-&lt;hr /&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Don’t just copy/paste the code; write it out yourself! Change the variables in the smoking/cancer example to something of interest to you.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;This reading is mathy-er than what we’ve covered so far. It also features code from STATA, which we don’t use. Don’t worry about that so much; we will focus on broad concepts/ideas.&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Don’t just copy/paste the code; write it out yourself! Change the variables in the smoking/cancer example to something of interest to you.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;This reading is mathy-er than what we’ve covered so far. It also features code from STATA, which we don’t use. Don’t worry about that so much; we will focus on broad concepts/ideas.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -168,22 +136,17 @@
       <link>/reading/did/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/did/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+      <description>&lt;h2 id=&#34;required&#34;&gt;Required&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#required&#34; id=&#34;toc-required&#34;&gt;Required&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; Pages 263 through 287 in Scott Cunningham’s 
+&lt;a href=&#34;http://scunning.com/cunningham_mixtape.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Causal Mixtape&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; Watch this video on estimating the effects of migration on employment, using a diff-in-diff 
+&lt;a href=&#34;https://www.youtube.com/watch?v=xniasePiSd8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;design&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;required&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Required&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; Pages 263 through 287 in Scott Cunningham’s &lt;a href=&#34;http://scunning.com/cunningham_mixtape.pdf&#34;&gt;The Causal Mixtape&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; Watch this video on estimating the effects of migration on employment, using a diff-in-diff &lt;a href=&#34;https://www.youtube.com/watch?v=xniasePiSd8&#34;&gt;design&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 </description>
     </item>
     
@@ -192,21 +155,11 @@
       <link>/reading/fixed-effects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/fixed-effects/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+      <description>&lt;h2 id=&#34;required&#34;&gt;Required&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#required&#34; id=&#34;toc-required&#34;&gt;Required&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;http://www.jblumenstock.com/files/courses/econ174/FEModels.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Read this overview of fixed effects models&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;required&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Required&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;a href=&#34;http://www.jblumenstock.com/files/courses/econ174/FEModels.pdf&#34;&gt;Read this overview of fixed effects models&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 </description>
     </item>
     
@@ -215,29 +168,22 @@
       <link>/reading/data-import/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/data-import/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+      <description>&lt;h2 id=&#34;required&#34;&gt;Required&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#required&#34; id=&#34;toc-required&#34;&gt;Required&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended&#34; id=&#34;toc-recommended&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://moderndive.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch.4 in ModernDive&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://r4ds.had.co.nz/tidy-data.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch.12 in R for Data Science&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;required&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Required&lt;/h2&gt;
+&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://moderndive.com/&#34;&gt;Ch.4 in ModernDive&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://r4ds.had.co.nz/tidy-data.html&#34;&gt;Ch.12 in R for Data Science&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://r4ds.had.co.nz/tibbles.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch.11 in R for Data Science&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;recommended&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://r4ds.had.co.nz/tibbles.html&#34;&gt;Ch.11 in R for Data Science&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 </description>
     </item>
     
@@ -246,21 +192,11 @@
       <link>/reading/inference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/inference/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+      <description>&lt;h2 id=&#34;required&#34;&gt;Required&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#required&#34; id=&#34;toc-required&#34;&gt;Required&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://moderndive.com/10-inference-for-regression.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch.10 in &lt;em&gt;ModernDive&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;required&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Required&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://moderndive.com/10-inference-for-regression.html&#34;&gt;Ch.10 in &lt;em&gt;ModernDive&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 </description>
     </item>
     
@@ -269,45 +205,27 @@
       <link>/reading/05-reg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/05-reg/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended&#34; id=&#34;toc-recommended&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tuesday&#34; id=&#34;toc-tuesday&#34;&gt;Tuesday&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#thursday&#34; id=&#34;toc-thursday&#34;&gt;Thursday&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://moderndive.com/5-regression.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CH.5 in ModernDive&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;recommended&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://moderndive.com/5-regression.html&#34;&gt;CH.5 in ModernDive&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
-&lt;div id=&#34;tuesday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Tuesday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/06-modeling-I.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
+&lt;h3 id=&#34;tuesday&#34;&gt;Tuesday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/06-modeling-I.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/06-modeling-I.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;thursday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Thursday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/06-modeling-II.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h3 id=&#34;thursday&#34;&gt;Thursday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/06-modeling-II.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/06-modeling-II.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -317,43 +235,24 @@
       <link>/reading/09-controls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/09-controls/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended&#34; id=&#34;toc-recommended&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tuesday&#34; id=&#34;toc-tuesday&#34;&gt;Tuesday&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#thursday&#34; id=&#34;toc-thursday&#34;&gt;Thursday&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;recommended&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
+&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;
 &lt;p&gt;None&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
-&lt;div id=&#34;tuesday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Tuesday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/10-controls-II.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
+&lt;h3 id=&#34;tuesday&#34;&gt;Tuesday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/10-controls-II.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/10-controls-II.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;thursday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Thursday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/diff-in-diff.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h3 id=&#34;thursday&#34;&gt;Thursday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/diff-in-diff.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/diff-in-diff.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -363,30 +262,18 @@
       <link>/reading/06-pred/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/06-pred/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended&#34; id=&#34;toc-recommended&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://moderndive.com/6-multiple-regression.html#multiple-regression&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CH.6 in ModernDive&lt;/a&gt;, but ignore the stuff on the interactions&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;recommended&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://moderndive.com/6-multiple-regression.html#multiple-regression&#34;&gt;CH.6 in ModernDive&lt;/a&gt;, but ignore the stuff on the interactions&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/07-prediction.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/07-prediction.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/07-prediction.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -396,26 +283,17 @@
       <link>/reading/01-start/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/01-start/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+      <description>&lt;h2 id=&#34;required&#34;&gt;Required&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#required&#34; id=&#34;toc-required&#34;&gt;Required&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; If you haven’t already done so, go to this 
+&lt;a href=&#34;https://forms.gle/DM45VFRPB7W4imuDA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Form&lt;/a&gt; and tell me about yourself&lt;/li&gt;
+&lt;li&gt;Read the 
+&lt;a href=&#34;/syllabus/&#34;&gt;syllabus&lt;/a&gt; and 
+&lt;a href=&#34;/assignment/&#34;&gt;assignments&lt;/a&gt; pages for this class&lt;/li&gt;
+&lt;li&gt;You need to install R and Rstudio following 
+&lt;a href=&#34;/reference/install/&#34;&gt;this guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;required&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Required&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; If you haven’t already done so, go to this &lt;a href=&#34;https://forms.gle/DM45VFRPB7W4imuDA&#34;&gt;Google Form&lt;/a&gt; and tell me about yourself&lt;/li&gt;
-&lt;li&gt;Read the &lt;a href=&#34;/syllabus/&#34;&gt;syllabus&lt;/a&gt; and &lt;a href=&#34;/assignment/&#34;&gt;assignments&lt;/a&gt; pages for this class&lt;/li&gt;
-&lt;li&gt;You need to install R and Rstudio following &lt;a href=&#34;/reference/install/&#34;&gt;this guide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
 &lt;p&gt;Slides would go here, but there are none on the first week of class.&lt;/p&gt;
 &lt;!-- ## using xaringan embed --&gt;
 &lt;!-- ```{r,echo=FALSE} --&gt;
@@ -424,7 +302,6 @@
 &lt;!--   ratio = &#34;16:9&#34; --&gt;
 &lt;!-- ) --&gt;
 &lt;!-- ``` --&gt;
-&lt;/div&gt;
 </description>
     </item>
     
@@ -433,21 +310,11 @@
       <link>/reading/reg-discon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/reg-discon/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+      <description>&lt;h2 id=&#34;required&#34;&gt;Required&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#required&#34; id=&#34;toc-required&#34;&gt;Required&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Watch this very short video from this weird, EU robot-voice 
+&lt;a href=&#34;https://www.youtube.com/watch?v=UeROebc6PQo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;required&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Required&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Watch this very short video from this weird, EU robot-voice &lt;a href=&#34;https://www.youtube.com/watch?v=UeROebc6PQo&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 </description>
     </item>
     
@@ -456,53 +323,34 @@
       <link>/reading/04-relationships/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/04-relationships/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended&#34; id=&#34;toc-recommended&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended-1&#34; id=&#34;toc-recommended-1&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tuesday&#34; id=&#34;toc-tuesday&#34;&gt;Tuesday&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#thursday&#34; id=&#34;toc-thursday&#34;&gt;Thursday&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://moderndive.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch. 3 in ModernDive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://r4ds.had.co.nz/transform.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch. 5 in R for Data Science&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;recommended&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
+&lt;h2 id=&#34;recommended-1&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://moderndive.com/&#34;&gt;Ch. 3 in ModernDive&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://r4ds.had.co.nz/transform.html&#34;&gt;Ch. 5 in R for Data Science&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Print out this 
+&lt;a href=&#34;https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cheat sheet&lt;/a&gt; and have it somewhere handy while you’re doing work in this course&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;recommended-1&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Print out this &lt;a href=&#34;https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf&#34;&gt;cheat sheet&lt;/a&gt; and have it somewhere handy while you’re doing work in this course&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
-&lt;div id=&#34;tuesday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Tuesday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/05-relationships.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
+&lt;h3 id=&#34;tuesday&#34;&gt;Tuesday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/05-relationships.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/05-relationships.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;thursday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Thursday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/05-relationshipsII.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h3 id=&#34;thursday&#34;&gt;Thursday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/05-relationshipsII.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/05-relationshipsII.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -512,36 +360,19 @@
       <link>/reading/10-uncertainty/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/10-uncertainty/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended&#34; id=&#34;toc-recommended&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tuesday&#34; id=&#34;toc-tuesday&#34;&gt;Tuesday&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; Chapter 7 from 
+&lt;a href=&#34;https://moderndive.com/7-sampling.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ModernDive&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;recommended&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; Chapter 7 from &lt;a href=&#34;https://moderndive.com/7-sampling.html&#34;&gt;ModernDive&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
-&lt;div id=&#34;tuesday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Tuesday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/11-uncertainty.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
+&lt;h3 id=&#34;tuesday&#34;&gt;Tuesday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/11-uncertainty.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/11-uncertainty.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -551,54 +382,39 @@
       <link>/reading/02-viz/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/02-viz/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended&#34; id=&#34;toc-recommended&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#helpful&#34; id=&#34;toc-helpful&#34;&gt;Helpful!&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tuesday&#34; id=&#34;toc-tuesday&#34;&gt;Tuesday&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#thursday&#34; id=&#34;toc-thursday&#34;&gt;Thursday&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://moderndive.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch.2 in ModernDive on Data Visualization&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://r4ds.had.co.nz/data-visualisation.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch.3 in R for Data Science&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;recommended&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
+&lt;h2 id=&#34;helpful&#34;&gt;Helpful!&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://moderndive.com&#34;&gt;Ch.2 in ModernDive on Data Visualization&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://r4ds.had.co.nz/data-visualisation.html&#34;&gt;Ch.3 in R for Data Science&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; The 
+&lt;a href=&#34;https://www.rstudio.com/resources/cheatsheets/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cheatsheet for data visualization with ggplot&lt;/a&gt; might be a helpful resource&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;helpful&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Helpful!&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;i class=&#34;fa fa-external-link-square-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; The &lt;a href=&#34;https://www.rstudio.com/resources/cheatsheets/&#34;&gt;cheatsheet for data visualization with ggplot&lt;/a&gt; might be a helpful resource&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Tip&lt;/strong&gt;: You can navigate through the slides with &lt;kbd&gt;←&lt;/kbd&gt; and &lt;kbd&gt;→&lt;/kbd&gt;. If you type &lt;kbd&gt;F&lt;/kbd&gt; you can go full-screen.&lt;/p&gt;
-&lt;div id=&#34;tuesday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Tuesday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/02-viz.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h3 id=&#34;tuesday&#34;&gt;Tuesday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/02-viz.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/02-viz.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;thursday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Thursday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/03-viz2.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h3 id=&#34;thursday&#34;&gt;Thursday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/03-viz2.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/03-viz2.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -608,54 +424,35 @@
       <link>/reading/03-wrangle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/reading/03-wrangle/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
+&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended&#34; id=&#34;toc-recommended&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#recommended-1&#34; id=&#34;toc-recommended-1&#34;&gt;Recommended&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#slides&#34; id=&#34;toc-slides&#34;&gt;Slides&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tuesday&#34; id=&#34;toc-tuesday&#34;&gt;Tuesday&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#thursday&#34; id=&#34;toc-thursday&#34;&gt;Thursday&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://moderndive.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch. 3 in ModernDive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; 
+&lt;a href=&#34;https://r4ds.had.co.nz/transform.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch. 5 in R for Data Science&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;recommended&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
+&lt;h2 id=&#34;recommended-1&#34;&gt;Recommended&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://moderndive.com/&#34;&gt;Ch. 3 in ModernDive&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;i class=&#34;fas fa-book&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://r4ds.had.co.nz/transform.html&#34;&gt;Ch. 5 in R for Data Science&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Print out this 
+&lt;a href=&#34;https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cheat sheet&lt;/a&gt; and have it somewhere handy while you’re doing work in this course&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;recommended-1&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Recommended&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Print out this &lt;a href=&#34;https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf&#34;&gt;cheat sheet&lt;/a&gt; and have it somewhere handy while you’re doing work in this course&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slides&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slides&lt;/h2&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Tip&lt;/strong&gt;: You can navigate through the slides with &lt;kbd&gt;←&lt;/kbd&gt; and &lt;kbd&gt;→&lt;/kbd&gt;. If you type &lt;kbd&gt;F&lt;/kbd&gt; you can go full-screen.&lt;/p&gt;
-&lt;div id=&#34;tuesday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Tuesday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/04-wrangle1.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h3 id=&#34;tuesday&#34;&gt;Tuesday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/04-wrangle1.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/04-wrangle1.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;thursday&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Thursday&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;/slides/04-wrangle2.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;h3 id=&#34;thursday&#34;&gt;Thursday&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;/slides/04-wrangle2.html&#34;&gt;Class slides here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34; data-exeternal=&#34;1&#34;&gt;
 &lt;iframe src=&#34;/slides/04-wrangle2.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>

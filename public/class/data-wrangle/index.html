@@ -33,7 +33,7 @@
   
     
   
-  <meta name="description" content="In-class example Filtering Examples Leaders Mutating Creating categorical variables In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
+  <meta name="description" content="In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
 wrangle-day1.R
 Filtering Often, we have a big dataset that covers lots of stuff (say, all flights coming out of NYC in 2013) but we’re only interested in a subset of those things (say, flights that arrived late over that time period).">
 
@@ -257,7 +257,7 @@ Filtering Often, we have a big dataset that covers lots of stuff (say, all fligh
   <meta property="og:site_name" content="Methods of Political Analysis">
   <meta property="og:url" content="/class/data-wrangle/">
   <meta property="og:title" content="Data Wrangling | Methods of Political Analysis">
-  <meta property="og:description" content="In-class example Filtering Examples Leaders Mutating Creating categorical variables In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
+  <meta property="og:description" content="In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
 wrangle-day1.R
 Filtering Often, we have a big dataset that covers lots of stuff (say, all flights coming out of NYC in 2013) but we’re only interested in a subset of those things (say, flights that arrived late over that time period)."><meta property="og:image" content="/media/social-image.png">
   <meta property="twitter:image" content="/media/social-image.png"><meta property="og:locale" content="en">
@@ -624,46 +624,29 @@ Filtering Often, we have a big dataset that covers lots of stuff (say, all fligh
                     
 
                     <div class="article-style">
-                        
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-
-<div id="TOC">
-<ul>
-<li><a href="#in-class-example" id="toc-in-class-example">In-class example</a></li>
-<li><a href="#filtering" id="toc-filtering">Filtering</a>
-<ul>
-<li><a href="#examples" id="toc-examples">Examples</a></li>
-<li><a href="#leaders" id="toc-leaders">Leaders</a></li>
-</ul></li>
-<li><a href="#mutating" id="toc-mutating">Mutating</a>
-<ul>
-<li><a href="#creating-categorical-variables" id="toc-creating-categorical-variables">Creating categorical variables</a></li>
-</ul></li>
-</ul>
-</div>
-
-<div id="in-class-example" class="section level2">
-<h2>In-class example</h2>
+                        <h2 id="in-class-example">In-class example</h2>
 <p>Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”</p>
-<p><a href="/slides/code/wrangle-day1.R"><i class="fas fa-file-archive"></i> <code>wrangle-day1.R</code></a></p>
-</div>
-<div id="filtering" class="section level2">
-<h2>Filtering</h2>
-<p>Often, we have a big dataset that covers lots of stuff (say, all flights coming out of NYC in 2013) but we’re only interested in a <em>subset</em> of those things (say, flights that arrived late over that time period). The <code>filter()</code> function is a way to subset operations that match some rule or set of rules (e.g., rule = “flights that arrived late”). We define these rules using <a href="https://www.statmethods.net/management/operators.html">logical operators</a>.</p>
-<div id="examples" class="section level3">
-<h3>Examples</h3>
+<p>
+<a href="/slides/code/wrangle-day1.R"><i class="fas fa-file-archive"></i> <code>wrangle-day1.R</code></a></p>
+<h2 id="filtering">Filtering</h2>
+<p>Often, we have a big dataset that covers lots of stuff (say, all flights coming out of NYC in 2013) but we’re only interested in a <em>subset</em> of those things (say, flights that arrived late over that time period). The <code>filter()</code> function is a way to subset operations that match some rule or set of rules (e.g., rule = “flights that arrived late”). We define these rules using 
+<a href="https://www.statmethods.net/management/operators.html" target="_blank" rel="noopener">logical operators</a>.</p>
+<h3 id="examples">Examples</h3>
 <p>Let’s load the libraries.</p>
-<pre class="r"><code># libraries
+<pre><code class="language-r"># libraries
 library(tidyverse)
-library(nycflights13)</code></pre>
+library(nycflights13)
+</code></pre>
 <p>Remember you can look at the data like this.</p>
-<pre class="r"><code># look at the data
+<pre><code class="language-r"># look at the data
 View(flights) # open data in viewer
-?flights # read data documentation</code></pre>
+?flights # read data documentation
+</code></pre>
 <p>Let’s look at flights from February.</p>
-<pre class="r"><code># look at fights, but only from February
+<pre><code class="language-r"># look at fights, but only from February
 flights %&gt;%
-  filter(month == 2)</code></pre>
+  filter(month == 2)
+</code></pre>
 <pre><code>## # A tibble: 24,951 × 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -677,14 +660,17 @@ flights %&gt;%
 ##  8  2013     2     1      552            600        -8      655            709
 ##  9  2013     2     1      553            600        -7      833            815
 ## 10  2013     2     1      553            600        -7      821            825
-## # … with 24,941 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
-## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
-## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+## # ℹ 24,941 more rows
+## # ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
 <p>Let’s look at flights on Valentine’s Day.</p>
-<pre class="r"><code># now let&#39;s look at flights on Valentine&#39;s Day
+<pre><code class="language-r"># now let's look at flights on Valentine's Day
 flights %&gt;%
   filter(month == 2) %&gt;%
-  filter(day == 14)</code></pre>
+  filter(day == 14)
+</code></pre>
 <pre><code>## # A tibble: 956 × 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -698,14 +684,17 @@ flights %&gt;%
 ##  8  2013     2    14      551            600        -9      831            906
 ##  9  2013     2    14      552            600        -8      657            708
 ## 10  2013     2    14      553            600        -7      902            856
-## # … with 946 more rows, and 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;,
-## #   flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;,
-## #   distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+## # ℹ 946 more rows
+## # ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
 <p>Let’s try the OR logical operator by looking at flights going to ATL or SFO.</p>
-<pre class="r"><code># try one using text and the OR symbol
+<pre><code class="language-r"># try one using text and the OR symbol
 # look at fights going to ATL or SFO
 flights %&gt;%
-  filter(dest == &quot;ATL&quot; | dest == &quot;SFO&quot;)</code></pre>
+  filter(dest == &quot;ATL&quot; | dest == &quot;SFO&quot;)
+</code></pre>
 <pre><code>## # A tibble: 30,546 × 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -719,15 +708,18 @@ flights %&gt;%
 ##  8  2013     1     1      658            700        -2      944            939
 ##  9  2013     1     1      729            730        -1     1049           1115
 ## 10  2013     1     1      734            737        -3     1047           1113
-## # … with 30,536 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
-## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
-## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+## # ℹ 30,536 more rows
+## # ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
 <p>Let’s look at flights between noon and 5pm.</p>
-<pre class="r"><code># try one using greater than or less than
+<pre><code class="language-r"># try one using greater than or less than
 # look at flights departing between 12pm and 5pm
 flights %&gt;%
   filter(dep_time &gt;= 1200) %&gt;%
-  filter(dep_time &lt;= 1700)</code></pre>
+  filter(dep_time &lt;= 1700)
+</code></pre>
 <pre><code>## # A tibble: 99,136 × 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -741,19 +733,21 @@ flights %&gt;%
 ##  8  2013     1     1     1206           1209        -3     1325           1328
 ##  9  2013     1     1     1208           1158        10     1540           1502
 ## 10  2013     1     1     1211           1215        -4     1423           1413
-## # … with 99,126 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
-## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
-## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+## # ℹ 99,126 more rows
+## # ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
 <p>Let’s look at how many flights arrived late on christmas day.</p>
-<pre class="r"><code>## how many flights arrived LATE, on christmas day?
+<pre><code class="language-r">## how many flights arrived LATE, on christmas day?
 late_xmas = flights %&gt;%
   filter(arr_time &gt; sched_arr_time) %&gt;%
-  filter(month == 12, day == 25)</code></pre>
-</div>
-<div id="leaders" class="section level3">
-<h3>Leaders</h3>
-<pre class="r"><code>library(juanr)
-leader</code></pre>
+  filter(month == 12, day == 25)
+</code></pre>
+<h3 id="leaders">Leaders</h3>
+<pre><code class="language-r">library(juanr)
+leader
+</code></pre>
 <pre><code>## # A tibble: 17,686 × 16
 ##    country gwcode leader gender  year yr_office   age edu     mil_service combat
 ##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;         &lt;dbl&gt;  &lt;dbl&gt;
@@ -767,77 +761,83 @@ leader</code></pre>
 ##  8 USA          2 Grant  M       1876         8    54 Univer…           1      1
 ##  9 USA          2 Grant  M       1877         9    55 Univer…           1      1
 ## 10 USA          2 Hayes  M       1877         1    55 Gradua…           1      1
-## # … with 17,676 more rows, and 6 more variables: rebel &lt;dbl&gt;, yrs_exp &lt;dbl&gt;,
-## #   phys_health &lt;dbl&gt;, mental_health &lt;dbl&gt;, will_force &lt;dbl&gt;,
-## #   will_force_sd &lt;dbl&gt;</code></pre>
-<ol style="list-style-type: decimal">
+## # ℹ 17,676 more rows
+## # ℹ 6 more variables: rebel &lt;dbl&gt;, yrs_exp &lt;dbl&gt;, phys_health &lt;dbl&gt;,
+## #   mental_health &lt;dbl&gt;, will_force &lt;dbl&gt;, will_force_sd &lt;dbl&gt;
+</code></pre>
+<ol>
 <li>A Vietnamese Emperor who, in his first year in office, was 11 years old. Famously depraved.</li>
 </ol>
-<pre class="r"><code>leader %&gt;%
+<pre><code class="language-r">leader %&gt;%
   # first year in office
   filter(yr_office == 1) %&gt;%
   # age at that point
   filter(age == 11) %&gt;%
   # vietnamese
-  filter(country == &quot;VNM&quot;)</code></pre>
+  filter(country == &quot;VNM&quot;)
+</code></pre>
 <pre><code>## # A tibble: 1 × 16
-##   country gwcode leader   gender  year yr_office   age edu    mil_service combat
-##   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;        &lt;dbl&gt;  &lt;dbl&gt;
-## 1 VNM        815 Thanh T… M       1889         1    11 Secon…           0      0
-## # … with 6 more variables: rebel &lt;dbl&gt;, yrs_exp &lt;dbl&gt;, phys_health &lt;dbl&gt;,
-## #   mental_health &lt;dbl&gt;, will_force &lt;dbl&gt;, will_force_sd &lt;dbl&gt;</code></pre>
-<ol start="2" style="list-style-type: decimal">
+##   country gwcode leader    gender  year yr_office   age edu   mil_service combat
+##   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt;  &lt;dbl&gt;
+## 1 VNM        815 Thanh Th… M       1889         1    11 Seco…           0      0
+## # ℹ 6 more variables: rebel &lt;dbl&gt;, yrs_exp &lt;dbl&gt;, phys_health &lt;dbl&gt;,
+## #   mental_health &lt;dbl&gt;, will_force &lt;dbl&gt;, will_force_sd &lt;dbl&gt;
+</code></pre>
+<ol start="2">
 <li>Leaders with graduate degrees who in 2015 reached their 16th year in power.</li>
 </ol>
-<pre class="r"><code>leader %&gt;%
-  filter(edu == &quot;Graduate&quot;, yr_office == 16, year == 2015)</code></pre>
+<pre><code class="language-r">leader %&gt;%
+  filter(edu == &quot;Graduate&quot;, yr_office == 16, year == 2015)
+</code></pre>
 <pre><code>## # A tibble: 2 × 16
 ##   country gwcode leader    gender  year yr_office   age edu   mil_service combat
 ##   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt;  &lt;dbl&gt;
 ## 1 RUS        365 Putin     M       2015        16    63 Grad…           0      0
 ## 2 SYR        652 Bashar a… M       2015        16    50 Grad…           1      0
-## # … with 6 more variables: rebel &lt;dbl&gt;, yrs_exp &lt;dbl&gt;, phys_health &lt;dbl&gt;,
-## #   mental_health &lt;dbl&gt;, will_force &lt;dbl&gt;, will_force_sd &lt;dbl&gt;</code></pre>
-<ol start="3" style="list-style-type: decimal">
+## # ℹ 6 more variables: rebel &lt;dbl&gt;, yrs_exp &lt;dbl&gt;, phys_health &lt;dbl&gt;,
+## #   mental_health &lt;dbl&gt;, will_force &lt;dbl&gt;, will_force_sd &lt;dbl&gt;
+</code></pre>
+<ol start="3">
 <li>The number of world leaders in the post-2000 period who have known physical or mental health issues.</li>
 </ol>
-<pre class="r"><code>leader %&gt;%
-  filter((year &gt; 2000) &amp; (phys_health == 1 | mental_health == 1))</code></pre>
+<pre><code class="language-r">leader %&gt;%
+  filter((year &gt; 2000) &amp; (phys_health == 1 | mental_health == 1))
+</code></pre>
 <pre><code>## # A tibble: 103 × 16
-##    country gwcode leader  gender  year yr_office   age edu    mil_service combat
-##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;        &lt;dbl&gt;  &lt;dbl&gt;
-##  1 CAN         20 Chreti… M       2001         9    62 Unive…           0      0
-##  2 CAN         20 Chreti… M       2002        10    63 Unive…           0      0
-##  3 CAN         20 Chreti… M       2003        11    64 Unive…           0      0
-##  4 SLV        349 Drnovs… M       2001         2    51 Gradu…           0      0
-##  5 SLV        349 Drnovs… M       2002         3    52 Gradu…           0      0
-##  6 BLR        370 Lukash… M       2001         8    47 Gradu…           1      0
-##  7 BLR        370 Lukash… M       2002         9    48 Gradu…           1      0
-##  8 BLR        370 Lukash… M       2003        10    49 Gradu…           1      0
-##  9 BLR        370 Lukash… M       2004        11    50 Gradu…           1      0
-## 10 BLR        370 Lukash… M       2005        12    51 Gradu…           1      0
-## # … with 93 more rows, and 6 more variables: rebel &lt;dbl&gt;, yrs_exp &lt;dbl&gt;,
-## #   phys_health &lt;dbl&gt;, mental_health &lt;dbl&gt;, will_force &lt;dbl&gt;,
-## #   will_force_sd &lt;dbl&gt;</code></pre>
-</div>
-</div>
-<div id="mutating" class="section level2">
-<h2>Mutating</h2>
+##    country gwcode leader   gender  year yr_office   age edu   mil_service combat
+##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt;  &lt;dbl&gt;
+##  1 CAN         20 Chretien M       2001         9    62 Univ…           0      0
+##  2 CAN         20 Chretien M       2002        10    63 Univ…           0      0
+##  3 CAN         20 Chretien M       2003        11    64 Univ…           0      0
+##  4 SLV        349 Drnovsek M       2001         2    51 Grad…           0      0
+##  5 SLV        349 Drnovsek M       2002         3    52 Grad…           0      0
+##  6 BLR        370 Lukashe… M       2001         8    47 Grad…           1      0
+##  7 BLR        370 Lukashe… M       2002         9    48 Grad…           1      0
+##  8 BLR        370 Lukashe… M       2003        10    49 Grad…           1      0
+##  9 BLR        370 Lukashe… M       2004        11    50 Grad…           1      0
+## 10 BLR        370 Lukashe… M       2005        12    51 Grad…           1      0
+## # ℹ 93 more rows
+## # ℹ 6 more variables: rebel &lt;dbl&gt;, yrs_exp &lt;dbl&gt;, phys_health &lt;dbl&gt;,
+## #   mental_health &lt;dbl&gt;, will_force &lt;dbl&gt;, will_force_sd &lt;dbl&gt;
+</code></pre>
+<h2 id="mutating">Mutating</h2>
 <p>Sometimes we want to create new variables. For example, we might want to combine or alter existing variables in our dataset. The <code>mutate()</code> function is one way of doing this.</p>
 <p>Let’s convert arrival delay from minutes to hours.</p>
-<pre class="r"><code>## convert arrival_delay to hours
+<pre><code class="language-r">## convert arrival_delay to hours
 new_flights = flights %&gt;%
-  mutate(arr_delay_hrs = arr_delay/60)</code></pre>
+  mutate(arr_delay_hrs = arr_delay/60)
+</code></pre>
 <p>If you look in the dataset you will see a new variable called <code>arr_delay_hrs</code>.</p>
 <p>Let’s convert distance traveled from miles to thousands of miles.</p>
-<pre class="r"><code>## convert distance to thousands of miles
+<pre><code class="language-r">## convert distance to thousands of miles
 new_flights2 = flights %&gt;%
-  mutate(dist_miles = distance/1000)</code></pre>
-<div id="creating-categorical-variables" class="section level3">
-<h3>Creating categorical variables</h3>
-<p>Sometimes we want to create more complicated variables. Here’s where <a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a> comes into play.</p>
+  mutate(dist_miles = distance/1000)
+</code></pre>
+<h3 id="creating-categorical-variables">Creating categorical variables</h3>
+<p>Sometimes we want to create more complicated variables. Here’s where 
+<a href="https://dplyr.tidyverse.org/reference/case_when.html" target="_blank" rel="noopener">case_when</a> comes into play.</p>
 <p>Let’s create a variable that tells us what season a flight took off in.</p>
-<pre class="r"><code>## create a new variable called season
+<pre><code class="language-r">## create a new variable called season
 ## that tells me if flight departed
 ## in summer, winter, fall, or spring
 new_flights = flights %&gt;%
@@ -852,25 +852,28 @@ new_flights = flights %&gt;%
                              month == 2 ~ &quot;Winter&quot;,
                              month == 3 ~ &quot;Spring&quot;,
                              month == 4 ~ &quot;Spring&quot;,
-                             month == 5 ~ &quot;Spring&quot;))</code></pre>
+                             month == 5 ~ &quot;Spring&quot;))
+</code></pre>
 <p>We can then plot the distribution of arrival delays by season, below.</p>
-<pre class="r"><code># plot histogram of arrival delay
+<pre><code class="language-r"># plot histogram of arrival delay
 # separate it by season
 ggplot(new_flights, aes(x = arr_delay, fill = seasons)) +
   geom_histogram() +
-  facet_wrap(vars(seasons))</code></pre>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 9430 rows containing non-finite values (stat_bin).</code></pre>
-<p><img src="/class/data-wrangle_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+  facet_wrap(vars(seasons))
+</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+## Warning: Removed 9430 rows containing non-finite values (`stat_bin()`).
+</code></pre>
+<img src="/class/data-wrangle_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 <p>Let’s say we wanted to categorize flights by how late they are. See an example, below.</p>
-<pre class="r"><code>new_flights = flights %&gt;%
+<pre><code class="language-r">new_flights = flights %&gt;%
   mutate(time_flight = case_when(arr_delay &gt;= 120 ~ &quot;very late&quot;,
                                  arr_delay &gt; 0 &amp; arr_delay &lt; 120 ~ &quot;a little late&quot;,
                                  arr_delay == 0 ~ &quot;on time&quot;,
                                  arr_delay &lt; 0 &amp; arr_delay &gt; -120 ~ &quot;a little early&quot;,
-                                 arr_delay &lt;=-120 ~ &quot;very early&quot;))</code></pre>
-</div>
-</div>
+                                 arr_delay &lt;=-120 ~ &quot;very early&quot;))
+</code></pre>
 
                     </div>
 

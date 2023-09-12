@@ -1,0 +1,23 @@
+---
+title: "Causality"
+citeproc: true
+bibliography: ../../static/bib/references.bib
+csl: ../../static/bib/chicago-fullnote-bibliography-no-bib.csl
+menu: 
+  class:
+    parent: Class
+    weight: 7
+type: docs
+output:
+  blogdown::html_page:
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# In-class example
+
+Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+
+- [<i class="fas fa-file-archive"></i> `day1-causality.R`](/slides/code/day1-causality.R)
+- [<i class="fas fa-file-archive"></i> `day2-causality.R`](/slides/code/day2-causality.R)

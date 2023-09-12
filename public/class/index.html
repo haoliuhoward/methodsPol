@@ -545,7 +545,9 @@
       <h2><a href="/class/bootstrap/" >Bootstrap</a></h2>
       <div class="article-style">
         
-          In-class example Bootstrapping concepts Using the infer package Bootstrapping averages Bootstrapping regression coefficients Standard errors and confidence intervals Hypothesis testing Hypothesis testing: permutation Alpha-levels (standards of evidence) Hypothesis testing: confidence intervals Alpha-levels: tradeoffs In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+day2-uncertainty.R
+Bootstrapping concepts library(tidyverse) library(moderndive) library(infer) library(socviz) library(broom) Remember, our estimate is based on a sample from some population, and each sample is going to give us a different estimate. This means our estimates will vary from sample to sample.
         
       </div>
     </div>
@@ -557,7 +559,7 @@
       <h2><a href="/class/causality/" >Causality</a></h2>
       <div class="article-style">
         
-           In-class example In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
 day1-causality.R day2-causality.R 
         
       </div>
@@ -570,7 +572,7 @@ day1-causality.R day2-causality.R
       <h2><a href="/class/confounds/" >Confounds</a></h2>
       <div class="article-style">
         
-          Confounding Marriage, divorce, age, and confounding Backdoors and front-doors The experimental gold standard Easy DAGs When things go wrong: Elemental confounds forks pipes collider More complicated DAGs Confounding Remember that we’re always trying to estimate the effect of some treatment, X, on some outcome, Y. The problem is that simply looking at the relationship between X and Y can lead you astray, since lots of things are correlated in the world that have no causal relationship (e.
+          Confounding Remember that we’re always trying to estimate the effect of some treatment, X, on some outcome, Y. The problem is that simply looking at the relationship between X and Y can lead you astray, since lots of things are correlated in the world that have no causal relationship (e.g., number of shark attacks and amount of ice cream consumed are probably positively correlated; but obviously ice cream does not cause shark attacks!
         
       </div>
     </div>
@@ -582,8 +584,8 @@ day1-causality.R day2-causality.R
       <h2><a href="/class/regression/" >Correlation and regression</a></h2>
       <div class="article-style">
         
-          In-class example Drawing lines (geom_smooth) ggcorrplot Draw the line Convince yourself IR Econ In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
-day1-models.R day2-models.R Drawing lines (geom_smooth) Why draw trend lines? Trend lines give us a good, educated guess as to what the value of a Y variable is given some value of X.
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
+day1-models.R day2-models.R Drawing lines (geom_smooth) Why draw trend lines? Trend lines give us a good, educated guess as to what the value of a Y variable is given some value of X. We can draw a trend line (or line of best fit) using geom_smooth, as below.
         
       </div>
     </div>
@@ -595,7 +597,7 @@ day1-models.R day2-models.R Drawing lines (geom_smooth) Why draw trend lines? Tr
       <h2><a href="/class/dags/" >DAGs</a></h2>
       <div class="article-style">
         
-          In-class example Making DAGs with ggdag() In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
 day1-dags.R day2-dags.R Making DAGs with ggdag() To make DAGs we use dagify() from the ggdag package. Note the basic format:
 Y ~ A + B + C + … = think of this as “Y is caused by A, B, C, …”.
         
@@ -609,7 +611,9 @@ Y ~ A + B + C + … = think of this as “Y is caused by A, B, C, …”.
       <h2><a href="/class/dataviz/" >Data visualization</a></h2>
       <div class="article-style">
         
-          In-class example Making graphs with ggplot The scatterplot The time series Multiple time series Histogram with geom_histogram() Grouped histogram Barplot with geom_col() The boxplot Other layers and features Multi-panel plots with facet_wrap() Make aesthetics static within the geometries Show a trend-line using geom_smooth() Show separate trend-lines Use different color and fill scales Many other themes In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course.
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+Day one: Five graphs Day two: Day 2 Making graphs with ggplot Here we will walk through how to make some of the basic graphs in R.
+The code chunk below loads our libraries and prepares the data.
         
       </div>
     </div>
@@ -621,7 +625,7 @@ Y ~ A + B + C + … = think of this as “Y is caused by A, B, C, …”.
       <h2><a href="/class/data-wrangle/" >Data Wrangling</a></h2>
       <div class="article-style">
         
-          In-class example Filtering Examples Leaders Mutating Creating categorical variables In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
 wrangle-day1.R
 Filtering Often, we have a big dataset that covers lots of stuff (say, all flights coming out of NYC in 2013) but we’re only interested in a subset of those things (say, flights that arrived late over that time period).
         
@@ -635,7 +639,7 @@ Filtering Often, we have a big dataset that covers lots of stuff (say, all fligh
       <h2><a href="/class/fixed-effects/" >Fixed Effects &#43; DID</a></h2>
       <div class="article-style">
         
-          The fixed effects DAG Simulation to show how it works Diff-in-diff by hand Diff-in-diff with regression library(ggdag) library(tidyverse) library(broom) library(fixest) library(gapminder) # set seed set.seed(1990) The fixed effects DAG Say we wanted to estimate the effect of GDP on life expectancy, and had a DAG like the following:
+          library(ggdag) library(tidyverse) library(broom) library(fixest) library(gapminder) # set seed set.seed(1990) The fixed effects DAG Say we wanted to estimate the effect of GDP on life expectancy, and had a DAG like the following:
 dagify(Life ~ GDP + Geography + Population + Pollution + WW2 + Equator, GDP ~ Geography + Population + Pollution + WW2 + Equator, exposure = &quot;GDP&quot;, outcome = &quot;Life&quot;) %&gt;% ggdag_status(text = FALSE, use_labels = &quot;name&quot;) + theme_dag(legend.
         
       </div>
@@ -648,7 +652,7 @@ dagify(Life ~ GDP + Geography + Population + Pollution + WW2 + Equator, GDP ~ Ge
       <h2><a href="/class/controls/" >Natural Experiments</a></h2>
       <div class="article-style">
         
-          In-class example Closing backdoors with controls Dealing with forks Dealing with pipes Dealing with colliders In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
 socviz-maps.R
 Closing backdoors with controls library(ggdag) library(tidyverse) library(broom) # set seed set.seed(1990) Remember that one of the lessons from our week on DAGs is that in order to estimate the effect of X on Y, sometimes we need to control for some variables and avoid controlling for others.
         
@@ -662,7 +666,7 @@ Closing backdoors with controls library(ggdag) library(tidyverse) library(broom)
       <h2><a href="/class/prediction/" >Prediction</a></h2>
       <div class="article-style">
         
-          In-class example Predictions (simple model, one explanatory variable) More complicated models (multiple explanatory variables) Interpreting regression output In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
 day1-prediction.R Predictions (simple model, one explanatory variable) # libraries library(tidyverse) library(broom) library(moderndive) Let’s say we want to use mtcars to make predictions about a car’s fuel efficency (mpg) using a car’s weight (wt).
         
       </div>

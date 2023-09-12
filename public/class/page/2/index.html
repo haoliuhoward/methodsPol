@@ -545,7 +545,7 @@
       <h2><a href="/class/getting-started/" >R, Rstudio, basics</a></h2>
       <div class="article-style">
         
-          In-class example Example: UN voting patterns In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
 UN Voting Data
 Example: UN voting patterns Your first class script eat-cake.R does two things:
 takes a dataset that records every vote at the UN going back decades and cleans it visualizes voting patterns over time for the US and Turkey At this point, none of this should “make sense” to you.
@@ -560,7 +560,7 @@ takes a dataset that records every vote at the UN going back decades and cleans 
       <h2><a href="/class/rdd/" >Regression discontinuity</a></h2>
       <div class="article-style">
         
-          Regression discontinuity design (RDD) Regression discontinuity design (RDD) Remember the example from class about the effect of being in a gifted program on future earnings. The DAG looks like this:
+          Regression discontinuity design (RDD) Remember the example from class about the effect of being in a gifted program on future earnings. The DAG looks like this:
 library(ggdag) library(tidyverse) # dag dagify(earnings ~ gifted + ability, gifted ~ ability, exposure = &quot;gifted&quot;, outcome = &quot;earnings&quot;) %&gt;% ggdag_status(text = FALSE, use_labels = &quot;name&quot;) + theme_dag() + theme(legend.position = &quot;none&quot;) The problem is that students aren’t randomly placed in gifted programs; they are put there for a host of reasons (including, for instance, “ability”).
         
       </div>
@@ -573,9 +573,10 @@ library(ggdag) library(tidyverse) # dag dagify(earnings ~ gifted + ability, gift
       <h2><a href="/class/data-summary/" >Summarizing Data</a></h2>
       <div class="article-style">
         
-          In-class example Summarize Summarize + group_by() The Bob Ross example The flying etiquette example In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”
 day1-summarise.R day2-summarise.R Summarize Let’s load the libraries.
-# libraries library(tidyverse) library(nycflights13) library(fivethirtyeight) Say we want to take the average of a variable in our dataset.
+# libraries library(tidyverse) library(nycflights13) library(fivethirtyeight) Say we want to take the average of a variable in our dataset. summarize() can help us do that.
+Say we wanted to know how late in departure is the average flight in our dataset and what’s the latest a flight has ever been?
         
       </div>
     </div>
@@ -587,9 +588,9 @@ day1-summarise.R day2-summarise.R Summarize Let’s load the libraries.
       <h2><a href="/class/data-tidy/" >Tidy data</a></h2>
       <div class="article-style">
         
-          Tidy data Counts and percentages (group_by + tally) Factor variables fct_reorder Tidy data We can use the pivot_longer function to make data that is in “wide” format into “long” format.
+          Tidy data We can use the pivot_longer function to make data that is in “wide” format into “long” format.
 Here’s an example, using the drinks dataset from fivethirtyheight.
-# load libraries library(tidyverse) library(fivethirtyeight) # too many countries, let&#39;s look at a few # %in% is a new logical operator: returns observations that match one of the strings drinks_subset = drinks %&gt;% filter(country %in% c(&quot;USA&quot;, &quot;China&quot;, &quot;Italy&quot;, &quot;Saudi Arabia&quot;)) # let&#39;s gather the three alcohol variables into two: type and serving tidy_drinks = drinks_subset %&gt;% pivot_longer(cols = c(beer_servings, spirit_servings, wine_servings), names_to = &quot;type&quot;, values_to = &quot;serving&quot;) tidy_drinks ## # A tibble: 12 x 4 ## country total_litres_of_pure_alcohol type serving ## &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt; &lt;int&gt; ## 1 China 5 beer_servings 79 ## 2 China 5 spirit_servings 192 ## 3 China 5 wine_servings 8 ## 4 Italy 6.
+# load libraries library(tidyverse) library(fivethirtyeight) # too many countries, let's look at a few # %in% is a new logical operator: returns observations that match one of the strings drinks_subset = drinks %&gt;% filter(country %in% c(&quot;USA&quot;, &quot;China&quot;, &quot;Italy&quot;, &quot;Saudi Arabia&quot;)) # let's gather the three alcohol variables into two: type and serving tidy_drinks = drinks_subset %&gt;% pivot_longer(cols = c(beer_servings, spirit_servings, wine_servings), names_to = &quot;type&quot;, values_to = &quot;serving&quot;) tidy_drinks ## # A tibble: 12 × 4 ## country total_litres_of_pure_alcohol type serving ## &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt; &lt;int&gt; ## 1 China 5 beer_servings 79 ## 2 China 5 spirit_servings 192 ## 3 China 5 wine_servings 8 ## 4 Italy 6.
         
       </div>
     </div>
@@ -601,7 +602,7 @@ Here’s an example, using the drinks dataset from fivethirtyheight.
       <h2><a href="/class/uncertainty/" >Uncertainty</a></h2>
       <div class="article-style">
         
-          In-class example Other examples Why are we uncertain? Become less uncertain More data, more certain Good and bad samples In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
+          In-class example Here’s the code we’ll be using in class. Download it and store it with the rest of your materials for this course. If simply clicking doesn’t trigger download, you should right-click and select “save link as…”.
 day1-uncertainty.R
 Other examples library(tidyverse) library(broom) library(socviz) library(moderndive) set.seed(1990) Why are we uncertain? Remember that with data we are always trying to estimate something: the effect of X on Y, the average value of Y among some population, etc, – but we can be more or less certain about our estimate.
         
